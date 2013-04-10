@@ -17,7 +17,13 @@
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-
+/**
+* @file
+* @brief Classes to use the address/data bus 
+* @details Classes to use the address/data buss from arduino-direct, spi or i2c
+* @author Arco van Geest <arco@appeltaart.mine.nu>
+*
+*/
 #ifndef CPUBUS_h
 #define CPUBUS_h
 
@@ -81,14 +87,30 @@
 
 
 
-
+/**
+* This is the base class for CPUBUS, containing virtual functions
+*/
 class CPUBUSClass
 {
   public:
 	//CPUBUSClass();
+	/**
+	* Initialize the CPUBUS
+	*/
 	virtual void init(void);
-    virtual uint8_t read(int address);
-    virtual void write(int address, uint8_t data);
+	/**
+	* read a byte from the CPUBUS
+	* @param address 16bit address
+	* @returns byte read from cpubus
+	*/
+  	virtual uint8_t read(int address);
+	/**
+	* write a byte from the CPUBUS
+	* @param address 16 bit address
+	* @param byte to write
+	* @return none
+	*/
+    	virtual void write(int address, uint8_t data);
 };
 
 //extern CPUBUSClass Cpubus;
