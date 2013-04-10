@@ -1,0 +1,85 @@
+\hypertarget{classCPUBUSClass}{\section{C\-P\-U\-B\-U\-S\-Class Class Reference}
+\label{classCPUBUSClass}\index{C\-P\-U\-B\-U\-S\-Class@{C\-P\-U\-B\-U\-S\-Class}}
+}
+
+
+{\ttfamily \#include $<$C\-P\-U\-B\-U\-S.\-h$>$}
+
+Inheritance diagram for C\-P\-U\-B\-U\-S\-Class\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCPUBUSClass}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classCPUBUSClass_a1d678455708cddc708d36c099c107bce}{init} (void)
+\item 
+virtual uint8\-\_\-t \hyperlink{classCPUBUSClass_adaa8b8d537417bd7f372dbb8d575f783}{read} (int address)
+\item 
+virtual void \hyperlink{classCPUBUSClass_aafbcfc88bd0d0b7bf91010000e32fcf9}{write} (int address, uint8\-\_\-t data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the base class for C\-P\-U\-B\-U\-S, containing virtual functions 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPUBUSClass_a1d678455708cddc708d36c099c107bce}{\index{C\-P\-U\-B\-U\-S\-Class@{C\-P\-U\-B\-U\-S\-Class}!init@{init}}
+\index{init@{init}!CPUBUSClass@{C\-P\-U\-B\-U\-S\-Class}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-P\-U\-B\-U\-S\-Class\-::init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCPUBUSClass_a1d678455708cddc708d36c099c107bce}
+Initialize the C\-P\-U\-B\-U\-S 
+
+Reimplemented in \hyperlink{classCpubus__SPI_a0d95def08507883f4592f9ca96644263}{Cpubus\-\_\-\-S\-P\-I}, and \hyperlink{classCpubus__Direct_ac00959b9e99bacd23e89c1dbfc6d09a1}{Cpubus\-\_\-\-Direct}.
+
+\hypertarget{classCPUBUSClass_adaa8b8d537417bd7f372dbb8d575f783}{\index{C\-P\-U\-B\-U\-S\-Class@{C\-P\-U\-B\-U\-S\-Class}!read@{read}}
+\index{read@{read}!CPUBUSClass@{C\-P\-U\-B\-U\-S\-Class}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint8\-\_\-t C\-P\-U\-B\-U\-S\-Class\-::read (
+\begin{DoxyParamCaption}
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCPUBUSClass_adaa8b8d537417bd7f372dbb8d575f783}
+read a byte from the C\-P\-U\-B\-U\-S 
+\begin{DoxyParams}{Parameters}
+{\em address} & 16bit address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+byte read from cpubus 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCpubus__SPI_a6710e52e4b221c1c999eecc30a73e676}{Cpubus\-\_\-\-S\-P\-I}, and \hyperlink{classCpubus__Direct_ad328ae744f1b2fc517d7344ac4306a3d}{Cpubus\-\_\-\-Direct}.
+
+\hypertarget{classCPUBUSClass_aafbcfc88bd0d0b7bf91010000e32fcf9}{\index{C\-P\-U\-B\-U\-S\-Class@{C\-P\-U\-B\-U\-S\-Class}!write@{write}}
+\index{write@{write}!CPUBUSClass@{C\-P\-U\-B\-U\-S\-Class}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-P\-U\-B\-U\-S\-Class\-::write (
+\begin{DoxyParamCaption}
+\item[{int}]{address, }
+\item[{uint8\-\_\-t}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCPUBUSClass_aafbcfc88bd0d0b7bf91010000e32fcf9}
+write a byte from the C\-P\-U\-B\-U\-S 
+\begin{DoxyParams}{Parameters}
+{\em address} & 16 bit address \\
+\hline
+{\em byte} & to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCpubus__SPI_a75d6b51bc35c93f1a0cfe56af86547b0}{Cpubus\-\_\-\-S\-P\-I}, and \hyperlink{classCpubus__Direct_a3cdfb2389ddbccff39dcdde141377f99}{Cpubus\-\_\-\-Direct}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CPUBUS_8h}{C\-P\-U\-B\-U\-S.\-h}\end{DoxyCompactItemize}
