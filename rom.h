@@ -23,14 +23,32 @@
 
 class ROM {
 public:
-	void init(  CPUBUSClass *busptr ,int addr, int size );
-	uint8_t read( int address );
-	uint8_t read_offset( int address );
+	/** initialize ROM 
+	*
+	*/
+	void init(  CPUBUSClass *busptr ,unsigned int addr, unsigned int size );
+
+	/** read byte from ROM, using real CPUBUS address 
+	* @param address real CPUBUS address
+	* @returns byte from the ROM
+	*/
+	uint8_t read( unsigned int address );
+	
+	
+	/** read byte n from start of ROM, start of rom=0 
+	* @param offset from start of ROM
+	* @returns byte from the ROM
+	*/
+	uint8_t read_offset( unsigned int offset );
+
+	/** Dump content of ROM */
 	void dump();
 
-	CPUBUSClass * bus;
-	int rom_address;
-	int rom_size;
+	// checksum
+ 
+	CPUBUSClass * bus; //!< Used CPUBUS
+	unsigned int rom_address; //!< start address of ROM
+	unsigned int rom_size;		//!< size of ROM
 };
 
 

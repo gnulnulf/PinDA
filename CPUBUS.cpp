@@ -24,6 +24,7 @@
 #include <inttypes.h>
 #include <stdio.h>
 
+
 #include <SPI.h>
 #include "Mcp23s17.h"
 
@@ -60,6 +61,21 @@
 /******************************************************************************
  * CPUBUS_Direct
  ******************************************************************************/
+
+Cpubus_Direct::Cpubus_Direct(void) {
+	writes=0;
+	reads=0;
+	Cpubus_Direct::init();
+}
+/*
+Cpubus_Direct::Cpubus_Direct( String _name ) {
+	writes=0;
+	reads=0;
+	name=_name;
+	Cpubus_Direct::init();
+}
+*/
+
 void Cpubus_Direct::init(void) {
 	//println("CPUBUS init DIRECT_ADDR_DIRECT");
 	//println("CPUBUS init DIRECT_DATA_CTRL");
@@ -72,40 +88,82 @@ void Cpubus_Direct::init(void) {
 	CPUBUS_CTL_DDR =0x0; 	// control IO
 	CPUBUS_CTL_PORT=0xff; 	//pullup
 
-	CPUBUS_ADDRL_PORT = 0x55;
-	CPUBUS_ADDRH_PORT = 0x55;
-	
+	CPUBUS_ADDRL_PORT = 0x00;
+	CPUBUS_ADDRH_PORT = 0x00;
+
 	pinMode( CPUBUS_E_PIN ,OUTPUT );
+	pinMode( CPUBUS_VMA_PIN ,OUTPUT );
 	pinMode( CPUBUS_RW_PIN ,OUTPUT );
-	pinMode( CPUBUS_RW_PIN ,OUTPUT );
+
+//	Cpubus_Direct::reset();
+
 } //init
 
-uint8_t Cpubus_Direct::read(int address) {
+String Cpubus_Direct::getStatus(void) {
+	String status="CPUBUS_DIRECT\n";
+	status += "Name   :";
+	status += name;
+	status += "\n";
+	status += "reads  : ";
+	status += reads;
+	status += "\n";
+	status += "writes : ";
+	status += writes;
+	status += "\n";
+	return status;
+	
+} //getStatus
+void Cpubus_Direct::reset(void) {
+	pinMode( CPUBUS_RESET_PIN ,OUTPUT );
+	digitalWrite(CPUBUS_RESET_PIN, LOW);   // Pull reset low
+	delay(500);                  
+//	digitalWrite(CPUBUS_RESET_PIN, HIGH);  // no pullup needed
+	pinMode( CPUBUS_RESET_PIN ,INPUT );
+
+} //reset
+
+uint8_t Cpubus_Direct::read(unsigned int address) {
+	reads++; //debug read count
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
 	CPUBUS_CTL_PORT |= ( 1<<CPUBUS_RW); 	//READ
 	CPUBUS_ADDRL_PORT = address&0xFF;		//Address Low
-	CPUBUS_ADDRH_PORT = (address>>8)&0xFF;	//Address High
+	CPUBUS_ADDRH_PORT = ( address >> 8 )&0xFF ;	//Address High
+	
+	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_VMA);		//VMA  high
+			__asm__("nop\n\t"); 
 	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_E);		//E high
-	__asm__("nop\n\t"); 					// (62.5ns on a 16MHz Arduino) 
+//	delay(1);
+//	for (int del=0;del<100;del++) {
+		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+//	}					// (62.5ns on a 16MHz Arduino) 
 	uint8_t data= CPUBUS_DATA_PINS;			//get data from bus
-	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E);	//E low
+	CPUBUS_CTL_PORT &= ~( ( 1<< CPUBUS_E ) | (1 << CPUBUS_VMA) );	//E and VMA  low 
 	return data;
 } //read
 
-void Cpubus_Direct::write(int address, uint8_t value) {
+void Cpubus_Direct::write(unsigned int address, uint8_t value) {
+	writes++; //debug write count
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_RW);	//Write
 	CPUBUS_ADDRL_PORT = address&0xFF;		//Address Low
 	CPUBUS_ADDRH_PORT = (address>>8)&0xFF;	//Address High
+	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_VMA);		//VMA high
+		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
 	CPUBUS_DATA_DDR =0xff;
 	CPUBUS_DATA_PORT= value & 0xff;
-	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_E);		//E high
-	//__asm__("nop\n\t"); 					// (62.5ns on a 16MHz Arduino) 
-	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
+	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_E)|( 1<< CPUBUS_VMA);		//E high
+//	delay(1);
+//	for (int del=0;del<10;del++) {
+		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+//	}
+	CPUBUS_CTL_PORT &= ~( ( 1<< CPUBUS_E ) | (1 << CPUBUS_VMA) );	//E and VMA  low 
+//	__asm__("nop\n\t"); 					// (62.5ns on a 16MHz Arduino) 
 	CPUBUS_DATA_DDR =0x00;					//D0-7 as input
 	CPUBUS_DATA_PORT=0xff;					//Pullup
 	CPUBUS_CTL_PORT |= ( 1<<CPUBUS_RW); 	//READ
 } //write
+	
+	
 	
 	
 /******************************************************************************
@@ -164,7 +222,7 @@ void Cpubus_SPI::init(void) {
   
 	} //init
 
-uint8_t Cpubus_SPI::read(int address) {
+uint8_t Cpubus_SPI::read(unsigned int address) {
   //digitalWrite(CPUBUS_SPI_SS,LOW);
   	PORTB &= ~( 1<< PB0); 	//SS LOW
 
@@ -182,7 +240,7 @@ uint8_t Cpubus_SPI::read(int address) {
 	return 0;
 } //read
 
-void Cpubus_SPI::write(int address, uint8_t value) {
+void Cpubus_SPI::write(unsigned int address, uint8_t value) {
   //digitalWrite(CPUBUS_SPI_SS,LOW);
     	PORTB &= ~( 1<< PB0); 	//SS LOW
   SPI.transfer(MCPADDR);

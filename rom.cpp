@@ -28,8 +28,8 @@
 /*****************************************************************************
 * Defines
 ******************************************************************************/
-	uint8_t read( int address );
-	uint8_t read_offset( int address );
+	uint8_t read( unsigned int address );
+	uint8_t read_offset( unsigned int address );
 	void dump();
 	
 	
@@ -37,25 +37,24 @@
  * Base class
  ******************************************************************************/
 
-void ROM::init(  CPUBUSClass *busptr ,int addr, int size ) {
+void ROM::init(  CPUBUSClass *busptr ,unsigned int addr, unsigned int size ) {
 	rom_address = addr; 
 	rom_size = size;
 	bus = busptr;
 } //init
 
-uint8_t ROM::read( int address ) {
+uint8_t ROM::read( unsigned int address ) {
 	return bus->read( address );
 } // read
 
-uint8_t ROM::read_offset( int offset ) {
+uint8_t ROM::read_offset( unsigned int offset ) {
 	if ( offset >= rom_size ) return 0;
 	return bus->read( rom_address + offset );
 } // read
 
 void ROM::dump(void) {
-    
 	printf("\nDUMP rom at %04X size %d bytes\n", rom_address,rom_size );
-	for(int i=0;i<rom_size;i++) {
+	for(unsigned int i=0;i<rom_size;i++) {
 		if ( i%32 == 0 ) { 
 			printf("\n%04X: ",rom_address+i);
 		} else { 
