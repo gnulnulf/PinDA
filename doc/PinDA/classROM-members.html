@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,15 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classROM.html#aa0e8713b59fee793cd51f8657342242b">bus</a></td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classROM.html#afccfd3650bbd6ed1637f5ead844e86a1">dump</a>()</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classROM.html#a5f8bc890526621a5fbd7aa48fbf5337f">init</a>(CPUBUSClass *busptr, unsigned int addr, unsigned int size)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classROM.html#a3698532ceef0725a688701cb2f87cf98">read</a>(unsigned int address)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classROM.html#a77e69479f22c916c54bd23b7d7be06f4">read_offset</a>(unsigned int offset)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>init</b>(CPUBUSClass *busptr, unsigned int addr, unsigned int size) (defined in <a class="el" href="classROM.html">ROM</a>)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>name</b> (defined in <a class="el" href="classROM.html">ROM</a>)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classROM.html#a3698532ceef0725a688701cb2f87cf98">read</a>(unsigned int address)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classROM.html#a77e69479f22c916c54bd23b7d7be06f4">read_offset</a>(unsigned int offset)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classROM.html#a3c182f836a6c92032dd83ef007d7b13c">ROM</a>(CPUBUSClass *busptr, unsigned int addr, unsigned int size, String name)</td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classROM.html#abc5acd845fd0e3c59543657013b9ba66">rom_address</a></td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classROM.html#a0c6d70cf17445b718bc232b4ce64e5bb">rom_size</a></td><td class="entry"><a class="el" href="classROM.html">ROM</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:04 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 19 2013 17:35:57 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

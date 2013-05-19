@@ -33,6 +33,12 @@
 
 #include "pinda.h"
 
+
+void PindaObj::test(void){
+	//Serial.print("PindaObj");
+	print( "PindaObj-test" );
+}
+
 const int maxInterrupts=32;
 const int maxLoop=32;
 
@@ -51,7 +57,8 @@ void pindaStartTimer(void){
 
  // OCR1A = 31250;            // compare match register 16MHz/256/2Hz
   OCR1A = 62;  	// 16Mhz/256=62500 -> every ms..
-  OCR1A = 6200;  	// 16Mhz/256=62500 -> every 100ms..
+ //OCR1A = 31;	
+  //  OCR1A = 6200;  	// 16Mhz/256=62500 -> every 100ms..
   TCCR1B |= (1 << WGM12);   // CTC mode
   TCCR1B |= (1 << CS12);    // 256 prescaler 
   TIMSK1 |= (1 << OCIE1A);  // enable timer compare interrupt
@@ -106,3 +113,45 @@ void pindaLoop(void){
 		}
     }
 }
+
+
+
+LATCH8::LATCH8(
+		CPUBUSClass * _bus,
+		unsigned int _address,
+		String _name
+	) :
+	state(0),
+	bus(_bus),
+	address(_address),
+	name(_name)
+{
+
+
+}
+
+void LATCH8::all(uint8_t data) {
+	state = data;
+	bus->write(address,state);
+}
+
+void LATCH8::on(uint8_t bit) {
+	state |= (1<<bit);
+	bus->write(address,state);
+}
+
+void LATCH8::off(uint8_t bit) {
+	state &= ~(1<<bit);
+	bus->write(address,state);
+}
+
+void LATCH8::toggle(uint8_t bit) {
+	(state & (1<<bit) )?off( bit ):on( bit );
+}
+
+bool LATCH8::isOn(uint8_t bit) {
+	return (state & (1<<bit) );
+}
+
+
+

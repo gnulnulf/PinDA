@@ -55,6 +55,14 @@ typedef void (*voidFunction) (void);
 //interrupt stuff
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <String>
+#include <vector>
+
+class PindaObj {
+	public:
+		virtual void test(void);
+	
+};
 
 
 //! Class to access the CPU(680n) BUS
@@ -66,11 +74,31 @@ typedef void (*voidFunction) (void);
 //!rom access 
 #include "rom.h"
 
+//!lamps 
+#include "lamps.h"
+
+//!switches
+#include "switches.h"
+
+//!solenoids
+#include "solenoids.h"
+
 //!protocol master-slave
 #include "cpubuscom.h"
 
+//!display
+//#include "lcdchars.h"
+#include "display.h"
 
 
+
+
+
+class Pinda {
+};
+
+
+//Pinda pinda;
 
 //pinda timer(s)
 void pindaStartTimer(void);
@@ -136,5 +164,7 @@ We are in no way responsible for any damage like breaking or burning.
 
  
 */
+
+
 
 #endif /* PINDA_h */

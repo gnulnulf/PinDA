@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,14 +112,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af80030c960e73dacc5a92e7a5f751f0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af80030c960e73dacc5a92e7a5f751f0c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td></tr>
 <tr class="separator:af80030c960e73dacc5a92e7a5f751f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0d4adc82fffc75f4f912e1739f2ea7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac0d4adc82fffc75f4f912e1739f2ea7c"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpubus__Direct.html#ac0d4adc82fffc75f4f912e1739f2ea7c">read</a> (unsigned int address)</td></tr>
-<tr class="memdesc:ac0d4adc82fffc75f4f912e1739f2ea7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">read byte from bus <br/></td></tr>
-<tr class="separator:ac0d4adc82fffc75f4f912e1739f2ea7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67a0d10018b7edad1273ff21bc6d7b6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67a0d10018b7edad1273ff21bc6d7b6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpubus__Direct.html#a67a0d10018b7edad1273ff21bc6d7b6f">write</a> (unsigned int address, uint8_t data)</td></tr>
-<tr class="memdesc:a67a0d10018b7edad1273ff21bc6d7b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">write byte to bus <br/></td></tr>
-<tr class="separator:a67a0d10018b7edad1273ff21bc6d7b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be2589d95fd0246528d8d1e39f929c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7be2589d95fd0246528d8d1e39f929c0"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpubus__Direct.html#a7be2589d95fd0246528d8d1e39f929c0">read</a> (const unsigned int address)</td></tr>
+<tr class="memdesc:a7be2589d95fd0246528d8d1e39f929c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">read byte from bus <br/></td></tr>
+<tr class="separator:a7be2589d95fd0246528d8d1e39f929c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2e8839c8bb6d47db5da14e4aa2f621"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc2e8839c8bb6d47db5da14e4aa2f621"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpubus__Direct.html#acc2e8839c8bb6d47db5da14e4aa2f621">write</a> (const unsigned int address, const uint8_t data)</td></tr>
+<tr class="memdesc:acc2e8839c8bb6d47db5da14e4aa2f621"><td class="mdescLeft">&#160;</td><td class="mdescRight">write byte to bus <br/></td></tr>
+<tr class="separator:acc2e8839c8bb6d47db5da14e4aa2f621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1c5de7be18fcb88f78f7c289aee666"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c1c5de7be18fcb88f78f7c289aee666"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>writeref</b> (const unsigned int &amp;address, const uint8_t &amp;dataref)</td></tr>
+<tr class="separator:a2c1c5de7be18fcb88f78f7c289aee666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b3b873abb30a5f5bd29fb4bdc9ca9d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b3b873abb30a5f5bd29fb4bdc9ca9d4"></a>
 String&#160;</td><td class="memItemRight" valign="bottom"><b>getStatus</b> (void)</td></tr>
 <tr class="separator:a5b3b873abb30a5f5bd29fb4bdc9ca9d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,7 +141,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:04 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 19 2013 17:35:56 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -26,6 +26,7 @@ public:
 	/** initialize ROM 
 	*
 	*/
+	ROM(CPUBUSClass *busptr ,unsigned int addr, unsigned int size ,String name );
 	void init(  CPUBUSClass *busptr ,unsigned int addr, unsigned int size );
 
 	/** read byte from ROM, using real CPUBUS address 
@@ -49,6 +50,7 @@ public:
 	CPUBUSClass * bus; //!< Used CPUBUS
 	unsigned int rom_address; //!< start address of ROM
 	unsigned int rom_size;		//!< size of ROM
+	String name;
 };
 
 

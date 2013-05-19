@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,7 +95,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f8bc890526621a5fbd7aa48fbf5337f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a5f8bc890526621a5fbd7aa48fbf5337f">init</a> (<a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr, unsigned int addr, unsigned int size)</td></tr>
+<tr class="memitem:a3c182f836a6c92032dd83ef007d7b13c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a3c182f836a6c92032dd83ef007d7b13c">ROM</a> (<a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr, unsigned int addr, unsigned int size, String name)</td></tr>
+<tr class="separator:a3c182f836a6c92032dd83ef007d7b13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f8bc890526621a5fbd7aa48fbf5337f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f8bc890526621a5fbd7aa48fbf5337f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> (<a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr, unsigned int addr, unsigned int size)</td></tr>
 <tr class="separator:a5f8bc890526621a5fbd7aa48fbf5337f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3698532ceef0725a688701cb2f87cf98"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a3698532ceef0725a688701cb2f87cf98">read</a> (unsigned int address)</td></tr>
 <tr class="separator:a3698532ceef0725a688701cb2f87cf98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,7 +121,50 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a0c6d70cf17445b718bc232b4ce64e5bb">rom_size</a></td></tr>
 <tr class="memdesc:a0c6d70cf17445b718bc232b4ce64e5bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of <a class="el" href="classROM.html">ROM</a> <br/></td></tr>
 <tr class="separator:a0c6d70cf17445b718bc232b4ce64e5bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156ccd55ef1682b791cba9eece09a057"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a156ccd55ef1682b791cba9eece09a057"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="separator:a156ccd55ef1682b791cba9eece09a057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3c182f836a6c92032dd83ef007d7b13c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROM::ROM </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *&#160;</td>
+          <td class="paramname"><em>busptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;ROM&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>initialize <a class="el" href="classROM.html">ROM</a> </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="afccfd3650bbd6ed1637f5ead844e86a1"></a>
 <div class="memitem">
@@ -133,39 +180,6 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 <p>Dump content of <a class="el" href="classROM.html">ROM</a> </p>
-
-</div>
-</div>
-<a class="anchor" id="a5f8bc890526621a5fbd7aa48fbf5337f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ROM::init </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *&#160;</td>
-          <td class="paramname"><em>busptr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>initialize <a class="el" href="classROM.html">ROM</a> </p>
 
 </div>
 </div>
@@ -224,7 +238,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:04 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 19 2013 17:35:57 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

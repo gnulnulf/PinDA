@@ -36,12 +36,14 @@
 /******************************************************************************
  * Base class
  ******************************************************************************/
-
-void ROM::init(  CPUBUSClass *busptr ,unsigned int addr, unsigned int size ) {
-	rom_address = addr; 
-	rom_size = size;
-	bus = busptr;
+ROM::ROM(  CPUBUSClass *busptr ,unsigned int addr, unsigned int size, String _name="ROM" ) :
+	rom_address(addr), 
+	rom_size(size),
+	bus(busptr),
+	name(_name)
+	{
 } //init
+
 
 uint8_t ROM::read( unsigned int address ) {
 	return bus->read( address );

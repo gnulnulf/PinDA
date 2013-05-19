@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,29 +111,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classROM.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classROM.html">ROM</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classROM.html#a5f8bc890526621a5fbd7aa48fbf5337f">init</a>(  <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr ,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> addr, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        uint8_t <a class="code" href="classROM.html#a3698532ceef0725a688701cb2f87cf98">read</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> address );</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classROM.html#a3c182f836a6c92032dd83ef007d7b13c">ROM</a>(<a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr ,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> addr, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size ,String name );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> init(  <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr ,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> addr, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        uint8_t <a class="code" href="classROM.html#a3698532ceef0725a688701cb2f87cf98">read</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> address );</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        uint8_t <a class="code" href="classROM.html#a77e69479f22c916c54bd23b7d7be06f4">read_offset</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> offset );</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classROM.html#afccfd3650bbd6ed1637f5ead844e86a1">dump</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// checksum</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="classROM.html#aa0e8713b59fee793cd51f8657342242b">   49</a></span>&#160;        <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> * <a class="code" href="classROM.html#aa0e8713b59fee793cd51f8657342242b" title="Used CPUBUS.">bus</a>; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classROM.html#abc5acd845fd0e3c59543657013b9ba66">   50</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classROM.html#abc5acd845fd0e3c59543657013b9ba66" title="start address of ROM">rom_address</a>; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classROM.html#a0c6d70cf17445b718bc232b4ce64e5bb">   51</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classROM.html#a0c6d70cf17445b718bc232b4ce64e5bb" title="size of ROM">rom_size</a>;          </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        uint8_t <a class="code" href="classROM.html#a77e69479f22c916c54bd23b7d7be06f4">read_offset</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> offset );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classROM.html#afccfd3650bbd6ed1637f5ead844e86a1">dump</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// checksum</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classROM.html#aa0e8713b59fee793cd51f8657342242b">   50</a></span>&#160;        <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> * <a class="code" href="classROM.html#aa0e8713b59fee793cd51f8657342242b" title="Used CPUBUS.">bus</a>; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classROM.html#abc5acd845fd0e3c59543657013b9ba66">   51</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classROM.html#abc5acd845fd0e3c59543657013b9ba66" title="start address of ROM">rom_address</a>; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classROM.html#a0c6d70cf17445b718bc232b4ce64e5bb">   52</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classROM.html#a0c6d70cf17445b718bc232b4ce64e5bb" title="size of ROM">rom_size</a>;          </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        String name;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* rom_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* rom_h */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:04 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 19 2013 17:35:56 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

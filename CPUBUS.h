@@ -4,8 +4,10 @@
 
 /**
 * @file
-* @author Arco van Geest <arco@appeltaart.mine.nu>
+*
 * @brief interface to the 8bit 68xx memory bus
+*
+* @author Arco van Geest <arco@appeltaart.mine.nu>
 * @copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
 * @version 1.0
 * 
@@ -56,39 +58,6 @@
 // #define CPUBUS_I2C 2
 
 
-#define CPUBUS_DATA_PORT PORTL
-#define CPUBUS_DATA_PINS PINL
-#define CPUBUS_DATA_DDR  DDRL
-
-#define CPUBUS_ADDRL_PORT PORTA
-#define CPUBUS_ADDRL_PINS PINA
-#define CPUBUS_ADDRL_DDR  DDRA
-
-#define CPUBUS_ADDRH_PORT PORTC
-#define CPUBUS_ADDRH_PINS PINC
-#define CPUBUS_ADDRH_DDR  DDRC
-
-#define CPUBUS_CTL_PORT PORTF
-#define CPUBUS_CTL_PINS PINF
-#define CPUBUS_CTL_DDR  DDRF
-
-const int CPUBUS_RW=0; //! RW bit on arduino port
-const int CPUBUS_E=1;	//! E bit on arduino port
-#define CPUBUS_VMA 2
-#define CPUBUS_RESET 3
-#define CPUBUS_HALT 4
-#define CPUBUS_MR 5
-#define CPUBUS_IRQ 6
-#define CPUBUS_NMI 7
-
-#define CPUBUS_RW_PIN A0
-#define CPUBUS_E_PIN A1
-#define CPUBUS_VMA_PIN A2
-#define CPUBUS_RESET_PIN A3
-#define CPUBUS_HALT_PIN A4
-#define CPUBUS_MR_PIN A5
-#define CPUBUS_IRQ_PIN A6
-#define CPUBUS_NMI_PIN A7
 
 #define CPUBUS_SPI_SS 53
 
@@ -105,10 +74,10 @@ class CPUBUSClass
 	virtual void init(void);
 	
 	//! read byte from bus
-    virtual uint8_t read(unsigned int address);
+    virtual uint8_t read(const unsigned int address);
 	
 	//! write byte to bus
-    virtual void write(unsigned int address, uint8_t data);
+    virtual void write(const unsigned int address, const uint8_t data);
 
 	//! toggle reset port on 68xx bus low
 	void reset(void);
@@ -121,20 +90,58 @@ class CPUBUSClass
 * CPUBUS using direct IO on arduino mega
 */
 class Cpubus_Direct : public CPUBUSClass {
+	//"private" defines
+	// I do not know how to static const define the PORTS.
+	#define CPUBUS_DATA_PORT PORTL
+	#define CPUBUS_DATA_PINS PINL
+	#define CPUBUS_DATA_DDR  DDRL
+
+	#define CPUBUS_ADDRL_PORT PORTA
+	#define CPUBUS_ADDRL_PINS PINA
+	#define CPUBUS_ADDRL_DDR  DDRA
+
+	#define CPUBUS_ADDRH_PORT PORTC
+	#define CPUBUS_ADDRH_PINS PINC
+	#define CPUBUS_ADDRH_DDR  DDRC
+
+	#define CPUBUS_CTL_PORT PORTF
+	#define CPUBUS_CTL_PINS PINF
+	#define CPUBUS_CTL_DDR  DDRF
+
   private:
 	unsigned long reads;
 	unsigned long writes;
 	String name;
 	String system;
-	
+
+	// hardware pins on arduino CPUBUS
+	static const uint8_t CPUBUS_RW=0; //! RW bit on arduino port
+	static const uint8_t CPUBUS_E=1;	//! E bit on arduino port
+	static const uint8_t CPUBUS_VMA=2;
+	static const uint8_t CPUBUS_RESET=3;
+	static const uint8_t CPUBUS_HALT=4;
+	static const uint8_t CPUBUS_MR=5;
+	static const uint8_t CPUBUS_IRQ=6;
+	static const uint8_t CPUBUS_NMI=7;
+
+	static const uint8_t CPUBUS_RW_PIN=A0; //! RW PIN on arduino port
+	static const uint8_t CPUBUS_E_PIN=A1;	//! E PIN on arduino port
+	static const uint8_t CPUBUS_VMA_PIN=A2;
+	static const uint8_t CPUBUS_RESET_PIN=A3;
+	static const uint8_t CPUBUS_HALT_PIN=A4;
+	static const uint8_t CPUBUS_MR_PIN=A5;
+	static const uint8_t CPUBUS_IRQ_PIN=A6;
+	static const uint8_t CPUBUS_NMI_PIN=A7;
+
   public:
 	Cpubus_Direct(void);
 	//Cpubus_Direct(String _name);
 
 	void init(void);
 	void reset(void);
-	uint8_t read(unsigned int address);
-    void write(unsigned int address, uint8_t data);
+	uint8_t read(const unsigned int  address);
+    void write(const unsigned int address, const uint8_t data);
+    void writeref(const unsigned int & address, const uint8_t & dataref);
 	//void setName( String name );
 	//String getName( void);
 	String getStatus(void);

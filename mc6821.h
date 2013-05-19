@@ -26,19 +26,53 @@
 ******************************************************************************/
 #include "CPUBUS.h"
 
+ enum pia_io { 
+	PIA_PA0=0,PIA_PA1,PIA_PA2,PIA_PA3,PIA_PA4,PIA_PA5,PIA_PA6,PIA_PA7,
+	PIA_PB0=8,PIA_PB1,PIA_PB2,PIA_PB3,PIA_PB4,PIA_PB5,PIA_PB6,PIA_PB7,
+	PIA_CA1=17,PIA_CA2=18,
+	PIA_CB1=19,PIA_CB2=20
+	};
 
 
 class MC6821 {
   public:
+	MC6821( void );
+	MC6821(  CPUBUSClass *busptr ,int addr , String _name="UNNAMED");
+    
+	void outputA(void);
+	void outputB(void);
+	void allOnA(void);
+	void allOnB(void);
+	void allOffA(void);
+	void allOffB(void);
+	void inputA(void);
+	void inputB(void);
+	void outputCRA2(void);
+	void outputCRB2(void);
+	void inputCRA2(void);
+	void inputCRB2(void);
+	void onCRA2(void);
+	void offCRA2(void);
+	void onCRB2(void);
+	void offCRB2(void);
+	//get int
+	//get CRA1/2  CRB1/2
+	//0-7=A 8-15=B 16=CRA1 17=CRA2 18=CRB1 19=CRB2
+	void on( uint8_t number);
+	void off( uint8_t number);
+	void toggle(uint8_t number);
+	bool isOn( uint8_t pin) ;
+	void output(uint8_t number);
+	
 	void init(  CPUBUSClass *busptr ,int addr );
-	uint8_t read( int address );
-	void write (int address, uint8_t data);
-	void write_cra( uint8_t data );
-	void write_crb( uint8_t data );
-	void write_ddra(uint8_t data);
-	void write_ddrb(uint8_t data);
-	void write_pdra(uint8_t data);
-	void write_pdrb(uint8_t data);
+	uint8_t read( const int & address );
+	void write (const int & address, const uint8_t & data);
+	void write_cra( const uint8_t & data );
+	void write_crb( const uint8_t & data );
+	void write_ddra(const uint8_t & data);
+	void write_ddrb(const uint8_t & data);
+	void write_pdra(const uint8_t & data);
+	void write_pdrb(const uint8_t & data);
 	uint8_t read_pdra();
 	uint8_t read_pdrb();
 	uint8_t read_cra();
@@ -52,6 +86,7 @@ class MC6821 {
 	//  protected:
     CPUBUSClass * bus;
     int pia_addr;
+	String name;
 	int cra;
 	int crb;
 	int ddra;

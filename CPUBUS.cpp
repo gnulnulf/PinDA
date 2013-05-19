@@ -122,8 +122,8 @@ void Cpubus_Direct::reset(void) {
 
 } //reset
 
-uint8_t Cpubus_Direct::read(unsigned int address) {
-	reads++; //debug read count
+uint8_t Cpubus_Direct::read(const unsigned int  address) {
+	//reads++; //debug read count
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
 	CPUBUS_CTL_PORT |= ( 1<<CPUBUS_RW); 	//READ
 	CPUBUS_ADDRL_PORT = address&0xFF;		//Address Low
@@ -141,7 +141,30 @@ uint8_t Cpubus_Direct::read(unsigned int address) {
 	return data;
 } //read
 
-void Cpubus_Direct::write(unsigned int address, uint8_t value) {
+void Cpubus_Direct::write(const unsigned int address, const uint8_t  value) {
+	//writes++; //debug write count
+	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
+	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_RW);	//Write
+	CPUBUS_ADDRL_PORT = address&0xFF;		//Address Low
+	CPUBUS_ADDRH_PORT = (address>>8)&0xFF;	//Address High
+	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_VMA);		//VMA high
+		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+	CPUBUS_DATA_DDR =0xff;
+//	CPUBUS_DATA_PORT= value & 0xff;
+	CPUBUS_DATA_PORT= value;
+	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_E)|( 1<< CPUBUS_VMA);		//E high
+//	delay(1);
+//	for (int del=0;del<10;del++) {
+		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+//	}
+	CPUBUS_CTL_PORT &= ~( ( 1<< CPUBUS_E ) | (1 << CPUBUS_VMA) );	//E and VMA  low 
+//	__asm__("nop\n\t"); 					// (62.5ns on a 16MHz Arduino) 
+	CPUBUS_DATA_DDR =0x00;					//D0-7 as input
+	CPUBUS_DATA_PORT=0xff;					//Pullup
+	CPUBUS_CTL_PORT |= ( 1<<CPUBUS_RW); 	//READ
+} //write
+
+void Cpubus_Direct::writeref(const unsigned int & address, const uint8_t & value) {
 	writes++; //debug write count
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_RW);	//Write
@@ -150,7 +173,7 @@ void Cpubus_Direct::write(unsigned int address, uint8_t value) {
 	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_VMA);		//VMA high
 		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
 	CPUBUS_DATA_DDR =0xff;
-	CPUBUS_DATA_PORT= value & 0xff;
+	CPUBUS_DATA_PORT= value;
 	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_E)|( 1<< CPUBUS_VMA);		//E high
 //	delay(1);
 //	for (int del=0;del<10;del++) {
@@ -198,12 +221,12 @@ void Cpubus_Direct::write(unsigned int address, uint8_t value) {
 void Cpubus_SPI::init(void) {
 	pinMode (CPUBUS_SPI_SS, OUTPUT);
 	SPI.begin();
-	  SPI.setClockDivider(SPI_CLOCK_DIV2); //16MHz / 2 = 8MHz
+	SPI.setClockDivider(SPI_CLOCK_DIV2); //16MHz / 2 = 8MHz
 	//MCP_ADDR = new MCP23S17( CPUBUS_SPI_SS,0x0 );
 	//MCP_DATA = new MCP23S17( CPUBUS_SPI_SS,0x1 );
   //IOCON設定(SEQOPのみDisable→0x20)
-  writeData(IOCON,0x20|HAEN);
-  writeData(IOCON+1,0x20|HAEN);
+	writeData(IOCON,0x20|HAEN);
+	writeData(IOCON+1,0x20|HAEN);
 
   //IODIRA,B設定(0で出力,1で入力)
   writeData(IODIRA,0x00);

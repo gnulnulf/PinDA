@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -80,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,13 +97,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>init()
 : <a class="el" href="classCPUBUSClass.html#a1d678455708cddc708d36c099c107bce">CPUBUSClass</a>
-, <a class="el" href="classROM.html#a5f8bc890526621a5fbd7aa48fbf5337f">ROM</a>
-, <a class="el" href="classCpubus__SPI.html#a0d95def08507883f4592f9ca96644263">Cpubus_SPI</a>
 , <a class="el" href="classCpubus__Direct.html#ac00959b9e99bacd23e89c1dbfc6d09a1">Cpubus_Direct</a>
+, <a class="el" href="classCpubus__SPI.html#a0d95def08507883f4592f9ca96644263">Cpubus_SPI</a>
+</li>
+<li>interrupt()
+: <a class="el" href="classlamps.html#a71768e24d11d4af621bd622be9ac1485">lamps</a>
+, <a class="el" href="classswitches.html#ae8d830d917aec8eb0c7c05a1f2b6c972">switches</a>
+</li>
+<li>on()
+: <a class="el" href="classlamps.html#adc64105cd19d7934568da06e00e805e5">lamps</a>
 </li>
 <li>read()
-: <a class="el" href="classCPUBUSClass.html#a4ce3eacf0455062630ba1c50ba65e07f">CPUBUSClass</a>
-, <a class="el" href="classCpubus__Direct.html#ac0d4adc82fffc75f4f912e1739f2ea7c">Cpubus_Direct</a>
+: <a class="el" href="classCPUBUSClass.html#a07f512da4c60e4159f58fb97920a7d1a">CPUBUSClass</a>
+, <a class="el" href="classCpubus__Direct.html#a7be2589d95fd0246528d8d1e39f929c0">Cpubus_Direct</a>
 , <a class="el" href="classROM.html#a3698532ceef0725a688701cb2f87cf98">ROM</a>
 , <a class="el" href="classCpubus__SPI.html#aca078ce47184aa534a13f6518041a35a">Cpubus_SPI</a>
 </li>
@@ -112,16 +119,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>reset()
 : <a class="el" href="classCPUBUSClass.html#a29a5a3436fbd75622cedd84df601dae0">CPUBUSClass</a>
 </li>
+<li>ROM()
+: <a class="el" href="classROM.html#a3c182f836a6c92032dd83ef007d7b13c">ROM</a>
+</li>
+<li>show()
+: <a class="el" href="classlamps.html#a9db2202f4a95fbbe1364a0a01b347661">lamps</a>
+</li>
 <li>write()
-: <a class="el" href="classCPUBUSClass.html#a5efa1c1e431706ce29f5adb803b0f3fb">CPUBUSClass</a>
+: <a class="el" href="classCPUBUSClass.html#aebdf14315ed88c6764a9a7c8be3e6fcf">CPUBUSClass</a>
 , <a class="el" href="classCpubus__SPI.html#a36f5cb7114cbb7499b8400cc69e1ea9a">Cpubus_SPI</a>
-, <a class="el" href="classCpubus__Direct.html#a67a0d10018b7edad1273ff21bc6d7b6f">Cpubus_Direct</a>
+, <a class="el" href="classCpubus__Direct.html#acc2e8839c8bb6d47db5da14e4aa2f621">Cpubus_Direct</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:05 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 19 2013 17:35:58 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write',['write',['../classCPUBUSClass.html#a5efa1c1e431706ce29f5adb803b0f3fb',1,'CPUBUSClass::write()'],['../classCpubus__Direct.html#a67a0d10018b7edad1273ff21bc6d7b6f',1,'Cpubus_Direct::write()'],['../classCpubus__SPI.html#a36f5cb7114cbb7499b8400cc69e1ea9a',1,'Cpubus_SPI::write()']]]
+  ['write',['write',['../classCPUBUSClass.html#aebdf14315ed88c6764a9a7c8be3e6fcf',1,'CPUBUSClass::write()'],['../classCpubus__Direct.html#acc2e8839c8bb6d47db5da14e4aa2f621',1,'Cpubus_Direct::write()'],['../classCpubus__SPI.html#a36f5cb7114cbb7499b8400cc69e1ea9a',1,'Cpubus_SPI::write()']]]
 ];
