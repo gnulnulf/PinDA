@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,14 +111,14 @@ Public Member Functions</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a1d678455708cddc708d36c099c107bce">init</a> (void)</td></tr>
 <tr class="memdesc:a1d678455708cddc708d36c099c107bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize bus <br/></td></tr>
 <tr class="separator:a1d678455708cddc708d36c099c107bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ce3eacf0455062630ba1c50ba65e07f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ce3eacf0455062630ba1c50ba65e07f"></a>
-virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a4ce3eacf0455062630ba1c50ba65e07f">read</a> (unsigned int address)</td></tr>
-<tr class="memdesc:a4ce3eacf0455062630ba1c50ba65e07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">read byte from bus <br/></td></tr>
-<tr class="separator:a4ce3eacf0455062630ba1c50ba65e07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5efa1c1e431706ce29f5adb803b0f3fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5efa1c1e431706ce29f5adb803b0f3fb"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a5efa1c1e431706ce29f5adb803b0f3fb">write</a> (unsigned int address, uint8_t data)</td></tr>
-<tr class="memdesc:a5efa1c1e431706ce29f5adb803b0f3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">write byte to bus <br/></td></tr>
-<tr class="separator:a5efa1c1e431706ce29f5adb803b0f3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f512da4c60e4159f58fb97920a7d1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07f512da4c60e4159f58fb97920a7d1a"></a>
+virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a07f512da4c60e4159f58fb97920a7d1a">read</a> (const unsigned int address)</td></tr>
+<tr class="memdesc:a07f512da4c60e4159f58fb97920a7d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">read byte from bus <br/></td></tr>
+<tr class="separator:a07f512da4c60e4159f58fb97920a7d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebdf14315ed88c6764a9a7c8be3e6fcf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebdf14315ed88c6764a9a7c8be3e6fcf"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#aebdf14315ed88c6764a9a7c8be3e6fcf">write</a> (const unsigned int address, const uint8_t data)</td></tr>
+<tr class="memdesc:aebdf14315ed88c6764a9a7c8be3e6fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">write byte to bus <br/></td></tr>
+<tr class="separator:aebdf14315ed88c6764a9a7c8be3e6fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29a5a3436fbd75622cedd84df601dae0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29a5a3436fbd75622cedd84df601dae0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a29a5a3436fbd75622cedd84df601dae0">reset</a> (void)</td></tr>
 <tr class="memdesc:a29a5a3436fbd75622cedd84df601dae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggle reset port on 68xx bus low <br/></td></tr>
@@ -131,7 +132,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:04 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

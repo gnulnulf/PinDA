@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,17 +92,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ROM Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for ROM:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classROM.png" usemap="#ROM_map" alt=""/>
+  <map id="ROM_map" name="ROM_map">
+<area href="classPindaObj.html" alt="PindaObj" shape="rect" coords="0,0,64,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f8bc890526621a5fbd7aa48fbf5337f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a5f8bc890526621a5fbd7aa48fbf5337f">init</a> (<a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr, unsigned int addr, unsigned int size)</td></tr>
-<tr class="separator:a5f8bc890526621a5fbd7aa48fbf5337f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c182f836a6c92032dd83ef007d7b13c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a3c182f836a6c92032dd83ef007d7b13c">ROM</a> (<a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr, unsigned int addr, unsigned int size, String <a class="el" href="classPindaObj.html#a1b1e0977f4649a9f275b64c51b534e5f">name</a>)</td></tr>
+<tr class="separator:a3c182f836a6c92032dd83ef007d7b13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3698532ceef0725a688701cb2f87cf98"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a3698532ceef0725a688701cb2f87cf98">read</a> (unsigned int address)</td></tr>
 <tr class="separator:a3698532ceef0725a688701cb2f87cf98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77e69479f22c916c54bd23b7d7be06f4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a77e69479f22c916c54bd23b7d7be06f4">read_offset</a> (unsigned int offset)</td></tr>
 <tr class="separator:a77e69479f22c916c54bd23b7d7be06f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afccfd3650bbd6ed1637f5ead844e86a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#afccfd3650bbd6ed1637f5ead844e86a1">dump</a> ()</td></tr>
 <tr class="separator:afccfd3650bbd6ed1637f5ead844e86a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classPindaObj"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPindaObj')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPindaObj.html">PindaObj</a></td></tr>
+<tr class="memitem:a909285ddfa11cdc29746face9794e8f8 inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a909285ddfa11cdc29746face9794e8f8">getName</a> (void)</td></tr>
+<tr class="separator:a909285ddfa11cdc29746face9794e8f8 inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a93cbdf3f1f9c24798dd7213e626ff inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81a93cbdf3f1f9c24798dd7213e626ff"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a81a93cbdf3f1f9c24798dd7213e626ff">interrupt</a> (void)</td></tr>
+<tr class="memdesc:a81a93cbdf3f1f9c24798dd7213e626ff inherit pub_methods_classPindaObj"><td class="mdescLeft">&#160;</td><td class="mdescRight">placeholder for interrupts <br/></td></tr>
+<tr class="separator:a81a93cbdf3f1f9c24798dd7213e626ff inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5acbf0a23fde4dd880c0572dba96d1fb inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5acbf0a23fde4dd880c0572dba96d1fb"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a5acbf0a23fde4dd880c0572dba96d1fb">serviceLoop</a> (void)</td></tr>
+<tr class="memdesc:a5acbf0a23fde4dd880c0572dba96d1fb inherit pub_methods_classPindaObj"><td class="mdescLeft">&#160;</td><td class="mdescRight">placeholder for untimed serviceLoop <br/></td></tr>
+<tr class="separator:a5acbf0a23fde4dd880c0572dba96d1fb inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -117,7 +138,56 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classROM.html#a0c6d70cf17445b718bc232b4ce64e5bb">rom_size</a></td></tr>
 <tr class="memdesc:a0c6d70cf17445b718bc232b4ce64e5bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of <a class="el" href="classROM.html">ROM</a> <br/></td></tr>
 <tr class="separator:a0c6d70cf17445b718bc232b4ce64e5bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classPindaObj"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classPindaObj')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classPindaObj.html">PindaObj</a></td></tr>
+<tr class="memitem:a65a217f418ed0ef2d35a0e31f31640a7 inherit pub_attribs_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65a217f418ed0ef2d35a0e31f31640a7"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a65a217f418ed0ef2d35a0e31f31640a7">objName</a></td></tr>
+<tr class="memdesc:a65a217f418ed0ef2d35a0e31f31640a7 inherit pub_attribs_classPindaObj"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object name. <br/></td></tr>
+<tr class="separator:a65a217f418ed0ef2d35a0e31f31640a7 inherit pub_attribs_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b1e0977f4649a9f275b64c51b534e5f inherit pub_attribs_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b1e0977f4649a9f275b64c51b534e5f"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a1b1e0977f4649a9f275b64c51b534e5f">name</a></td></tr>
+<tr class="memdesc:a1b1e0977f4649a9f275b64c51b534e5f inherit pub_attribs_classPindaObj"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object name. <br/></td></tr>
+<tr class="separator:a1b1e0977f4649a9f275b64c51b534e5f inherit pub_attribs_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3c182f836a6c92032dd83ef007d7b13c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROM::ROM </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *&#160;</td>
+          <td class="paramname"><em>busptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;ROM&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>initialize <a class="el" href="classROM.html">ROM</a> </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="afccfd3650bbd6ed1637f5ead844e86a1"></a>
 <div class="memitem">
@@ -133,39 +203,6 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 <p>Dump content of <a class="el" href="classROM.html">ROM</a> </p>
-
-</div>
-</div>
-<a class="anchor" id="a5f8bc890526621a5fbd7aa48fbf5337f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ROM::init </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classCPUBUSClass.html">CPUBUSClass</a> *&#160;</td>
-          <td class="paramname"><em>busptr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>initialize <a class="el" href="classROM.html">ROM</a> </p>
 
 </div>
 </div>
@@ -219,12 +256,12 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="rom_8h_source.html">rom.h</a></li>
-<li>rom.cpp</li>
+<li><a class="el" href="rom_8cpp.html">rom.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:04 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 22:26:50 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

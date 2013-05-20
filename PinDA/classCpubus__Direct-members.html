@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,13 +94,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Cpubus_Direct</b>(void) (defined in <a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a>)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>getStatus</b>(void) (defined in <a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a>)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classCpubus__Direct.html#ac00959b9e99bacd23e89c1dbfc6d09a1">init</a>(void)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classCpubus__Direct.html#ac0d4adc82fffc75f4f912e1739f2ea7c">read</a>(unsigned int address)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classCpubus__Direct.html#a7be2589d95fd0246528d8d1e39f929c0">read</a>(const unsigned int address)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>reset</b>(void) (defined in <a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a>)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classCpubus__Direct.html#a67a0d10018b7edad1273ff21bc6d7b6f">write</a>(unsigned int address, uint8_t data)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classCpubus__Direct.html#acc2e8839c8bb6d47db5da14e4aa2f621">write</a>(const unsigned int address, const uint8_t data)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>writeref</b>(const unsigned int &amp;address, const uint8_t &amp;dataref) (defined in <a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a>)</td><td class="entry"><a class="el" href="classCpubus__Direct.html">Cpubus_Direct</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 9 2013 21:56:04 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
