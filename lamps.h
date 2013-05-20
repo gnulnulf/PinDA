@@ -5,17 +5,17 @@
 
 //extern MC6821 PIAU54;
 
-class lamps {
+class lamps : public PindaObj {
 	public:
 		lamps(void);
 		/**
 		* Interrupt is used for timed actions from the pinda interrupt timer
 		*/
-		void interrupt(void); 
+		virtual void interrupt(void); 
 		/*
 		* the serviceLoop is for maintenance tasks which are not time critical and should be in the main loop.
 		*/
-		void serviceLoop(void);
+		virtual void serviceLoop(void);
 		/**
 		* show the current state of the lamps as text
 		*/
@@ -46,7 +46,8 @@ class lamps {
 
 class  lamps_demo : public lamps {
 	public:
-		void init(void);
+		lamps_demo(void);
+		//void init(void);
 		void interrupt(void);
 	private:
 	
@@ -54,10 +55,13 @@ class  lamps_demo : public lamps {
 };
 
 
-//http://stackoverflow.com/questions/8819580/callback-function-pointers-c-with-without-classes
+/**
+Driver class for Williams System 11a
 
-//lamps_williams11a
-// blanking is needed for output
+The Williams System 11 lamps are multiplexed by one MC6821.
+When no system11a display is used no lamps will light.
+Then a blanking interrupt is needed to enable output.
+*/
 class  lamps_williams11a : public lamps {
 	public:
 //	method intfunc;

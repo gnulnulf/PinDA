@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,16 +91,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classLATCH8.html">LATCH8</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>all</b>(uint8_t data) (defined in <a class="el" href="classLATCH8.html">LATCH8</a>)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>isOn</b>(uint8_t bit) (defined in <a class="el" href="classLATCH8.html">LATCH8</a>)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>LATCH8</b>(CPUBUSClass *_bus, unsigned int address, String _name=&quot;LATCH&quot;) (defined in <a class="el" href="classLATCH8.html">LATCH8</a>)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>off</b>(uint8_t bit) (defined in <a class="el" href="classLATCH8.html">LATCH8</a>)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>on</b>(uint8_t bit) (defined in <a class="el" href="classLATCH8.html">LATCH8</a>)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>toggle</b>(uint8_t bit) (defined in <a class="el" href="classLATCH8.html">LATCH8</a>)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classLATCH8.html#ab5a28769ed557a14e98fb0e51af58a64">all</a>(uint8_t data)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classPindaObj.html#a909285ddfa11cdc29746face9794e8f8">getName</a>(void)</td><td class="entry"><a class="el" href="classPindaObj.html">PindaObj</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classPindaObj.html#a81a93cbdf3f1f9c24798dd7213e626ff">interrupt</a>(void)</td><td class="entry"><a class="el" href="classPindaObj.html">PindaObj</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classLATCH8.html#a20ebf6d63dd9b3f38059b2068c87ccd3">isOn</a>(uint8_t bit)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classLATCH8.html#a25971e5093a20de3e5d7b5201d90090b">LATCH8</a>(CPUBUSClass *_bus, unsigned int address, String _name=&quot;LATCH8&quot;)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classPindaObj.html#a1b1e0977f4649a9f275b64c51b534e5f">name</a></td><td class="entry"><a class="el" href="classPindaObj.html">PindaObj</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classPindaObj.html#a65a217f418ed0ef2d35a0e31f31640a7">objName</a></td><td class="entry"><a class="el" href="classPindaObj.html">PindaObj</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classLATCH8.html#a24991b81f489afd598235815b7b8079e">off</a>(uint8_t bit)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classLATCH8.html#ac0abc8a6c4c4a9ceb1cca9625d9aefef">on</a>(uint8_t bit)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classPindaObj.html#a5acbf0a23fde4dd880c0572dba96d1fb">serviceLoop</a>(void)</td><td class="entry"><a class="el" href="classPindaObj.html">PindaObj</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classLATCH8.html#a072679ff42575403365d85d274cde495">toggle</a>(uint8_t bit)</td><td class="entry"><a class="el" href="classLATCH8.html">LATCH8</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 19 2013 17:35:57 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

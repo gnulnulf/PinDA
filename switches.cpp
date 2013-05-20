@@ -1,95 +1,120 @@
+/**
+ @file 
+
+ @see template.h for details
+ @version 1.0
+ @author Arco van Geest <arco@appeltaart.mine.nu>
+ @copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
+
+	This file is part of PinDA.
+
+	PinDA is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	PinDA is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with PinDA.  If not, see <http://www.gnu.org/licenses/>.
+
+ @date       20130520 Initial documented version
+
+ @brief The code part of template
  
-#include "pinda.h"
-#include "lamps.h"
+*/ 
+//#include "lamps.h"
 
 #include "switches.h"
-#include "mc6821.h"
+
 
 #ifdef ARDUINO
 #include "Arduino.h"
 #define println(line) Serial.println(line)
 #define print(line) Serial.print(line)
-
 #else
 #include "arduino_compat.h"
-
-
 #endif
 
+SWITCHES::SWITCHES(void) {
+}
 
-switches::switches(void) {
+void SWITCHES::clear(void) {
+	currentRow=0;
 	for (uint8_t i=0;i<8;i++) {
 		switchdata[i]=0;
 		switchdatalast[i]=0;
+		flankupdata[i]=0;
+		flankdowndata[i]=0;
 	}
-} //switches::switches
+} //SWITCHES::switches
 
-void switches::interrupt( void ) {
-	static uint8_t row=0;
-	print("S");
-	print(row);
-	row++;
-	if ( row>7) row=0;
-} //switch::interrupt
+void SWITCHES::interrupt( void ) {
+	currentRow++;
+	if ( currentRow>7) currentRow=0;
+} //SWITCHES::interrupt
 
-void switches::serviceLoop(void){
+void SWITCHES::serviceLoop(void){
 	println("SwitchServiceLoop");
-} //switches::serviceLoop
+} //SWITCHES::serviceLoop
 
-void switches::show(void){
+void SWITCHES::show(void){
 	for (uint8_t i=0;i<8;i++) {
 		printf("%02X ",switchdata[i]);
 	}
 	println();
-} //switches::show
+} //SWITCHES::show
 
-uint8_t switches::getRow(uint8_t row){
+uint8_t SWITCHES::getRow(uint8_t row){
 	return switchdata[ row & 0x7 ];
-}
+} //SWITCHES::getRow
 
 
-bool switches::isOn( uint8_t number ){
+bool SWITCHES::isOn( uint8_t number ){
 	return ( switchdata[ number >>3 ] & ( 1<< (number & 0x7) ) );
+} //SWITCHES::isOn
 
-}
-
-bool switches::flankup( uint8_t number) {
+bool SWITCHES::flankup( uint8_t number) {
 	if ( flankupdata[ number >>3 ] & ( 1<< (number & 0x7) ) ) {
 		flankupdata[ number >>3 ] &= ~( 1<< (number & 0x7)) ;
 		return true;
 	}
 	return false;
-}
+} // SWITCHES::flankup
 
-bool switches::flankdown( uint8_t number) {
+bool SWITCHES::flankdown( uint8_t number) {
 	if ( flankdowndata[ number >>3 ] & ( 1<< (number & 0x7) ) ) {
 		flankdowndata[ number >>3 ] &= ~( 1<< (number & 0x7)) ;
 		return true;
 	}
 	return false;
-}
+} // SWITCHES::flankdown
 
 
 
-void switches_demo::init(void) {
-	println("switches_demo_init");
-//demo switches met pullup
-pinMode( SW1, INPUT);
-digitalWrite( SW1,HIGH);
-pinMode( SW2, INPUT);
-digitalWrite( SW2,HIGH);
-pinMode( SW3, INPUT);
-digitalWrite( SW3,HIGH);
-pinMode( SW4, INPUT);
-digitalWrite( SW4,HIGH);
-pinMode( SW5, INPUT);
-digitalWrite( SW5,HIGH);
-pinMode( SW6, INPUT);
-digitalWrite( SW6,HIGH);
-pinMode( SW7, INPUT);
-digitalWrite( SW7,HIGH);
-pinMode( SW8, INPUT);
-digitalWrite( SW8,HIGH);
+SWITCHES_demo::SWITCHES_demo(void) {
+	//demo switches met pullup
+	clear();
+	pinMode( sw1_pin, INPUT);
+	digitalWrite( sw1_pin,HIGH);
+	pinMode( sw2_pin, INPUT);
+	digitalWrite( sw2_pin,HIGH);
+	pinMode( sw3_pin, INPUT);
+	digitalWrite( sw3_pin,HIGH);
+	pinMode( sw4_pin, INPUT);
+	digitalWrite( sw4_pin,HIGH);
+	pinMode( sw5_pin, INPUT);
+	digitalWrite( sw5_pin,HIGH);
+	pinMode( sw6_pin, INPUT);
+	digitalWrite( sw6_pin,HIGH);
+	pinMode( sw7_pin, INPUT);
+	digitalWrite( sw7_pin,HIGH);
+	pinMode( sw8_pin, INPUT);
+	digitalWrite( sw8_pin,HIGH);
+		pinda.AddInterrupt ( this , 1);
 } // switches_demo::init
 
 /* a bit silly matrix subset
@@ -105,58 +130,61 @@ row87_______
 
 
 */
-void switches_demo::interrupt(void) {
-	static uint8_t row=0;
-	uint8_t number=row * 9;
-	uint8_t index[8] = { SW1,SW2,SW3,SW4,SW5,SW6,SW7,SW8};
-	switchdatalast[ row ] = switchdata[ row ] ;
+void SWITCHES_demo::interrupt(void) {
+	uint8_t number=currentRow * 9;
+	uint8_t index[8] = { 
+		sw1_pin,
+		sw2_pin,
+		sw3_pin,
+		sw4_pin,
+		sw5_pin,
+		sw6_pin,
+		sw7_pin,
+		sw8_pin
+	};
+	switchdatalast[ currentRow ] = switchdata[ currentRow ] ;
 
-	if ( digitalRead( index[row]) == 0 ) {
-		switchdata[ row ] |= ( 1<< row);
+	if ( digitalRead( index[currentRow]) == 0 ) {
+		switchdata[ currentRow ] |= ( 1<< currentRow);
 	} else {
-		switchdata[ row ] &= ~( 1<< row);
+		switchdata[ currentRow ] &= ~( 1<< currentRow);
 	}
 
 	// XOR the data to get the changes and only for the flank direction
-	flankupdata[ row ] |= ( switchdatalast[ row ] ^ switchdata[ row ] ) & switchdata[ row ] ;
-	flankdowndata[ row ] |= ( switchdatalast[ row ] ^ switchdata[ row ] ) & switchdatalast[ row ] ;
+	flankupdata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdata[ currentRow ] ;
+	flankdowndata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdatalast[ currentRow ] ;
 	
-
-	
-	row++;
-	if ( row>7) row=0;
+	currentRow++;
+	if ( currentRow>7) currentRow=0;
 } // switches_demo::interrupt
 
 
-void switches_williams11a::init( MC6821 * piaptr ) {
-	println("switches_williams11a_init ");
+SWITCHES_williams11a::SWITCHES_williams11a( MC6821 * piaptr ) {
 	pia=piaptr;
-	
+	clear();
 	pia->write_ddra(0); // A ingang  
 	pia->write_ddrb(255);  //B uitgang
 	pia->write_pdra(0x00); 
 	pia->write_pdrb(0x00); 
-
-//	pia->write_pdrb(0x01); 
-//	pia->write_pdra(0x55); 
+		pinda.AddInterrupt ( this , 1);
 }
 
-void switches_williams11a::interrupt( void ) {
-	static uint8_t row=0;
+void SWITCHES_williams11a::interrupt( void ) {
+
 //	print("L");
 //	print(row);
-	switchdatalast[ row ] = switchdata[ row ] ;
-	switchdata[ row ] =  pia->read_pdra() ;
-    pia->write_pdrb( ( 1 << row ) );  // set row
+	switchdatalast[ currentRow ] = switchdata[ currentRow ] ;
+	switchdata[ currentRow ] =  pia->read_pdra() ;
+    pia->write_pdrb( ( 1 << currentRow ) );  // set row
 
 	// XOR the data to get the changes and only for the flank direction
-	flankupdata[ row ] |= ( switchdatalast[ row ] ^ switchdata[ row ] ) & switchdata[ row ] ;
-	flankdowndata[ row ] |= ( switchdatalast[ row ] ^ switchdata[ row ] ) & switchdatalast[ row ] ;
+	flankupdata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdata[ currentRow ] ;
+	flankdowndata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdatalast[ currentRow ] ;
 	
 	
 
-	row++;
-	if ( row>7) row=0;
+	currentRow++;
+	if ( currentRow>7) currentRow=0;
 }
 
   

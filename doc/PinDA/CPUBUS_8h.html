@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -155,20 +155,30 @@ Macros</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>interface to the 8bit 68xx memory bus </p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Arco van Geest <a href="#" onclick="location.href='mai'+'lto:'+'arc'+'o@'+'app'+'el'+'taa'+'rt'+'.mi'+'ne'+'.nu'; return false;">arco@<span style="display: none;">.nosp@m.</span>appe<span style="display: none;">.nosp@m.</span>ltaar<span style="display: none;">.nosp@m.</span>t.mi<span style="display: none;">.nosp@m.</span>ne.nu</a> </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>2013 Arco van Geest <a href="#" onclick="location.href='mai'+'lto:'+'arc'+'o@'+'app'+'el'+'taa'+'rt'+'.mi'+'ne'+'.nu'; return false;">arco@<span style="display: none;">.nosp@m.</span>appe<span style="display: none;">.nosp@m.</span>ltaar<span style="display: none;">.nosp@m.</span>t.mi<span style="display: none;">.nosp@m.</span>ne.nu</a> All right reserved. </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
-<h1><a class="anchor" id="LICENSE"></a>
-LICENSE</h1>
-<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details at <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a></p>
-<h1><a class="anchor" id="DESCRIPTION"></a>
-DESCRIPTION</h1>
-<p>several methods to access the 680x memory bus. This is no emulator, just a way to access the periperials on the memory bus. </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>2013 Arco van Geest <a href="#" onclick="location.href='mai'+'lto:'+'arc'+'o@'+'app'+'el'+'taa'+'rt'+'.mi'+'ne'+'.nu'; return false;">arco@<span style="display: none;">.nosp@m.</span>appe<span style="display: none;">.nosp@m.</span>ltaar<span style="display: none;">.nosp@m.</span>t.mi<span style="display: none;">.nosp@m.</span>ne.nu</a> All right reserved. <pre class="fragment">   This file is part of PinDA.
+
+   PinDA is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   PinDA is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with PinDA.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</pre></dd></dl>
+<dl class="section date"><dt>Date</dt><dd>20130520 Initial version</dd></dl>
+<p>several methods to access the 680x memory bus.</p>
+<p>This is no emulator, just a way to access the periperials on the memory bus. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 19 2013 17:35:56 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

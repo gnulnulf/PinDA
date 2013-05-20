@@ -1,5 +1,7 @@
 var searchData=
 [
   ['init',['init',['../classCPUBUSClass.html#a1d678455708cddc708d36c099c107bce',1,'CPUBUSClass::init()'],['../classCpubus__Direct.html#ac00959b9e99bacd23e89c1dbfc6d09a1',1,'Cpubus_Direct::init()'],['../classCpubus__SPI.html#a0d95def08507883f4592f9ca96644263',1,'Cpubus_SPI::init()']]],
-  ['interrupt',['interrupt',['../classlamps.html#a71768e24d11d4af621bd622be9ac1485',1,'lamps::interrupt()'],['../classswitches.html#ae8d830d917aec8eb0c7c05a1f2b6c972',1,'switches::interrupt()']]]
+  ['interrupt',['interrupt',['../classDISPLAY__WIL11A.html#ad3ed022b5a916837e6b896c1ec3a6746',1,'DISPLAY_WIL11A::interrupt()'],['../classlamps.html#a71768e24d11d4af621bd622be9ac1485',1,'lamps::interrupt()'],['../classlamps__demo.html#a9aa750cee05fc8fa11a1c1d0ab4d30dc',1,'lamps_demo::interrupt()'],['../classlamps__williams11a.html#a1547b1367b89e06d01bc8fb5261bd0a6',1,'lamps_williams11a::interrupt()'],['../classPindaObj.html#a81a93cbdf3f1f9c24798dd7213e626ff',1,'PindaObj::interrupt()'],['../classSOLENOID.html#a06cce4382aca327ef77f61e2c5ff63e1',1,'SOLENOID::interrupt()'],['../classSWITCHES.html#a8b10a4cb8ffdae4dfe8e971017fef868',1,'SWITCHES::interrupt()'],['../classSWITCHES__demo.html#ac9d8a306ed44cd6b634bd35df55c7f0e',1,'SWITCHES_demo::interrupt()'],['../classSWITCHES__williams11a.html#a1f85c4aafb4f153d3ba3f7f3c252c4c9',1,'SWITCHES_williams11a::interrupt()']]],
+  ['ison',['isOn',['../classLATCH8.html#a20ebf6d63dd9b3f38059b2068c87ccd3',1,'LATCH8::isOn()'],['../classSWITCHES.html#a72f5289e2d31f72385f5868cdaa7a0f3',1,'SWITCHES::isOn()']]],
+  ['information_20sources',['Information sources',['../sources.html',1,'']]]
 ];

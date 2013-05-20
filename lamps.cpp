@@ -1,4 +1,31 @@
+/**
+ @file 
 
+ @see lamps.h for details
+ @version 1.0
+ @author Arco van Geest <arco@appeltaart.mine.nu>
+ @copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
+
+	This file is part of PinDA.
+
+	PinDA is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	PinDA is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with PinDA.  If not, see <http://www.gnu.org/licenses/>.
+
+ @date       20130520 Initial documented version
+
+ @brief Control lamps
+ 
+*/ 
 #include "pinda.h"
 # include "CPUBUS.h"
 #include "lamps.h"
@@ -119,13 +146,14 @@ void lamps::rowSet( const uint8_t row, const uint8_t  data) {
 
 
 
-void lamps_demo::init(void) {
+lamps_demo::lamps_demo(void) {
 	println("lamps_demo_init");
 //	LAMPSDEMO_DDR = 0xff;
 	DDRK = 0xff;
 	// low is on...
 	PORTK = 0xff;
-	PORTK=0;
+	PORTK=0x55;
+	pinda.AddInterrupt ( this , 1);
 } // lamps_demo::init
 
 /* a bit silly matrix subset
@@ -177,6 +205,8 @@ lamps_williams11a::lamps_williams11a( MC6821 * piaptr ) {
 
 //void (lamps_williams11a:: *f)();
 //f=((lamps_williams11a *)interrupt_williams11a_ptr)->interrupt;
+
+	pinda.AddInterrupt ( this , 1);
 }
 
 /*

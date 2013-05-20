@@ -1,41 +1,42 @@
-/*
-  CPUBUS.h - interface to the 8bit 68xx memory bus
-*/
-
 /**
-* @file
-*
-* @brief interface to the 8bit 68xx memory bus
-*
-* @author Arco van Geest <arco@appeltaart.mine.nu>
-* @copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
-* @version 1.0
-* 
-* @section LICENSE
-*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License as
- * published by the Free Software Foundation; either version 2 of
- * the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details at
- * http://www.gnu.org/copyleft/gpl.html
- *
- * @section DESCRIPTION
- *
-* several methods to access the 680x memory bus.
-* This is no emulator, just a way to access the periperials on the memory bus.
+ @file 
+
+
+ @version 1.0
+ @author Arco van Geest <arco@appeltaart.mine.nu>
+ @copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
+
+	This file is part of PinDA.
+
+	PinDA is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	PinDA is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with PinDA.  If not, see <http://www.gnu.org/licenses/>.
+
+ @date       20130520 Initial version
+
+ @brief interface to the 8bit 68xx memory bus
+
+several methods to access the 680x memory bus.
+
+This is no emulator, just a way to access the periperials on the memory bus.
+
 */
 #ifndef CPUBUS_h
 #define CPUBUS_h
 
 
-/* ****************************************************************************
-* Includes
-******************************************************************************/
+// --------------------------------------------------------
+// Includes
+// --------------------------------------------------------
 #include <inttypes.h>
 #include <string.h>
 
@@ -50,13 +51,9 @@
 //#endif
 #endif
 
-/* *****************************************************************************
-* Definitions
-******************************************************************************/
-// #define CPUBUS_DIRECT 0
-// #define CPUBUS_SPI 1
-// #define CPUBUS_I2C 2
-
+// --------------------------------------------------------
+// Definitions
+// --------------------------------------------------------
 
 
 #define CPUBUS_SPI_SS 53

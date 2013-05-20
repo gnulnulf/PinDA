@@ -70,6 +70,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li class="current"><a href="globals.html"><span>All</span></a></li>
       <li><a href="globals_func.html"><span>Functions</span></a></li>
+      <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -78,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,17 +91,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented file members with links to the documentation:</div><ul>
-<li>pindaAddLoop()
-: <a class="el" href="pinda_8h.html#a3f2f184c65e8efc552a7c83eaf426826">pinda.h</a>
-</li>
 <li>pindaLoop()
 : <a class="el" href="pinda_8h.html#a46935ab739effd953cc01617805b2fa1">pinda.h</a>
+</li>
+<li>SOL_DELAY_ON
+: <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722fa79e288588008a4d1c79d83368262c277">solenoids.h</a>
+</li>
+<li>SOL_OFF
+: <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722fa9a9120a4ed4c1244aa804b9c5a8631e2">solenoids.h</a>
+</li>
+<li>SOL_OFF_TIMER
+: <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722fa38b893af220c5b6e9376b82702528b6b">solenoids.h</a>
+</li>
+<li>SOL_ON_TIMER
+: <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722fac3bc22c708ec67fb6c5a8514b8ae1029">solenoids.h</a>
+</li>
+<li>sol_state
+: <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722f">solenoids.h</a>
+</li>
+<li>SOLENOID_CONT
+: <a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261af47647621bafba703d6bb3bf6b7e0f4b">solenoids.h</a>
+</li>
+<li>SOLENOID_PULSE
+: <a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a48da83321525e9dd9a92613aebaf3e9f">solenoids.h</a>
+</li>
+<li>solenoid_type
+: <a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261">solenoids.h</a>
+</li>
+<li>SOLENOID_UNUSED
+: <a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a37f3f9fe1996248ab105cce4e49b6f34">solenoids.h</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 19 2013 17:35:58 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 22:26:50 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

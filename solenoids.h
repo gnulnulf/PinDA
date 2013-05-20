@@ -1,34 +1,70 @@
- //solenoids.h
+/**
+ @file
+
+ @brief solenoid drivers and solenoid functions 
+
+ @version 1.0
+ @author Arco van Geest <arco@appeltaart.mine.nu>
+ @copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
+
+	This file is part of PinDA.
+
+	PinDA is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	PinDA is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with PinDA.  If not, see <http://www.gnu.org/licenses/>.
+
+ @date       20130520 Initial documented version
+
+Solenoids are quite fragile. 
+Turning on too many or turning on too long would hopefully burn switches.
+Because of the nature of these coils the timers are in the drivers.
+there are three timer states:
+- delayed on timer
+- maximum on timer
+- minimum off timer 
+
+*/ 
+
 #ifndef SOLENOIDS_h
 #define SOLENOIDS_h
  
- #include "pinda.h"
- #include "mc6821.h"
- /*enum sol_nr { 
-	PIA_PA0=0,PIA_PA1,PIA_PA2,PIA_PA3,PIA_PA4,PIA_PA5,PIA_PA6,PIA_PA7,
-	PIA_PB0=8,PIA_PB1,PIA_PB2,PIA_PB3,PIA_PB4,PIA_PB5,PIA_PB6,PIA_PB7,
-	PIA_CA1=17,PIA_CA2=18,
-	PIA_CB1=19,PIA_CB2=20
-	};
- */
- enum solenoid_type { SOLENOID_UNUSED, SOLENOID_PULSE,SOLENOID_CONT }; 
-  
- class LATCH8 {
-	public:
-		LATCH8( CPUBUSClass * _bus, unsigned int address, String _name="LATCH");
-		void on( uint8_t bit);
-		void off( uint8_t bit);
-		void toggle( uint8_t bit);
-		void all(uint8_t data);
-		bool isOn(uint8_t bit);
-		
-	private:
-		CPUBUSClass * bus;
-		uint8_t state;
-		String name;
-		unsigned int address;
+#include "pinda.h"
+#include "mc6821.h"
+
+// --------------------------------------------------------
+// Enumerations
+// --------------------------------------------------------
+
+//! a solenoid can enter several states.
+enum sol_state {
+	SOL_OFF=0,		//!< just off
+	SOL_DELAY_ON=1,	//!< waiting to be turned on
+//	SOL_TURN_ON=2,	
+//	SOL_ON=3,
+	SOL_ON_TIMER=4,	//!< on or waiting to let the max on timer end
+//	SOL_TURN_OFF=5, 
+	SOL_OFF_TIMER=6	//!< leaving the solenoid off for a minimal time
+};
+
+
+//! solenoids can be pulsed or continious. 	
+enum solenoid_type { 
+	SOLENOID_UNUSED, 	//!< placeholder for undefined solenoids 
+	SOLENOID_PULSE,		//!< solenoid may only be pulsed
+	SOLENOID_CONT 		//!< solenoid may be on long and has no on timer
 }; 
-  
+
+
+
  class SOLENOID : public PindaObj {
 	protected:
  		uint8_t timer;
@@ -43,22 +79,24 @@
 		uint16_t delay_timer;
 		uint8_t off_timer;
 		
-		
+		volatile sol_state current_state;
 	public:
 		SOLENOID ( void );
-		void test(void);
-		//String getName(void);
-		//void on(void);
+		virtual void real_on(void);
+		virtual void real_off(void);
+		void on(uint16_t delay=0);
 		void off( void);
-		//void toggle(void);
-		//bool isOn(void);
+		void toggle(void);
+		bool isOn(void);
 		void serviceTimer(void);
+		virtual void interrupt(void);
  };
 
  
- 
+/** 
+* uses direct attached solenoids to the arduino pin.
+*/ 
 class SOLENOID_demo : public SOLENOID {
-//		uint8_t timer;
 	public:
 		SOLENOID_demo( 
 			uint8_t _port,
@@ -68,19 +106,10 @@ class SOLENOID_demo : public SOLENOID {
 			uint8_t _min_off=10,
 			String _name="SOLENOIDDEMO"
 		);
-		void on(void);
-		void off(void);
-		void toggle(void);
-		bool isOn(void);
-				void serviceTimer(void);
-	//private:
+		virtual void real_on(void);
+		virtual void real_off(void);
+	private:
 		uint8_t port;
-//		String name;
-//		solenoid_type type;
-//		uint8_t max_on;
-//		bool active;
-//		bool state;
-
 };
 
  
@@ -96,22 +125,12 @@ class SOLENOID_latch : public SOLENOID {
 			uint8_t _min_off=10,
 			String _name="SOLENOIDLATCH"
 		);
-		void on(void);
-		void off(void);
-		void toggle(void);
-		bool isOn(void);
-		void serviceTimer(void);
+		virtual void real_on(void);
+		virtual void real_off(void);
+
 	private:
 		LATCH8 * latch;
 		uint8_t bitnr;
-
-//		String name;
-//		solenoid_type type;
-//		uint8_t max_on;
-//		bool active;
-	//	bool state;
-//		uint8_t timer;
-
 };
 
 class SOLENOID_pia : public SOLENOID {
@@ -125,25 +144,12 @@ class SOLENOID_pia : public SOLENOID {
 			uint8_t _min_off=10,
 			String _name="SOLENOIDPIA"
 		);
-		void on(void);
-		void onDelay(uint16_t delay=0);
-		void off(void);
-		void toggle(void);
-		bool isOn(void);
-				void serviceTimer(void);
-	
+		void real_on(void);
+		void real_off(void);
+
 	private:
 		MC6821 * pia;
 		pia_io index;
-
-		String name;
-//		solenoid_type type;
-//		uint8_t max_on;
-//		bool active;
-//		bool state;
-//		uint16_t delay_timer;
-//		uint8_t off_timer;
-//		uint8_t timer;
 }; 
 
 

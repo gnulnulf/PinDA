@@ -1,26 +1,36 @@
-/*
-  CPUBUS.cpp - interface to the 8bit 68xx memory bus
+/**
+ @file 
 
-  (C) Copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
+ @see cpubus.h for details
+ @version 1.0
+ @author Arco van Geest <arco@appeltaart.mine.nu>
+ @copyright 2013 Arco van Geest <arco@appeltaart.mine.nu> All right reserved.
 
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
+	This file is part of PinDA.
 
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License for more details.
+	PinDA is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+	PinDA is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with PinDA.  If not, see <http://www.gnu.org/licenses/>.
+
+ @date 20130520 Initial documented version
+
+ @brief interface to the 8bit 68xx memory bus
+
 */
 
 /******************************************************************************
  * Includes
  ******************************************************************************/
+#include "pinda.h"
 #include <inttypes.h>
 #include <stdio.h>
 
