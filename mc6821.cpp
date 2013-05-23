@@ -58,15 +58,8 @@
 /******************************************************************************
  * Base class
  ******************************************************************************/
-MC6821::MC6821(void) {
-
-}
-MC6821::MC6821(  CPUBUSClass *busptr ,int addr, String _name ){
-	init ( busptr , addr );
-
-}
-
-void MC6821::init(  CPUBUSClass *busptr ,int addr ) {
+MC6821::MC6821(  CPUBUSClass *busptr ,int addr , String _name) {
+	objName=_name;
 	pia_addr = addr; 
 	cra=addr+1;
 	crb=addr+3;
@@ -82,21 +75,21 @@ void MC6821::init(  CPUBUSClass *busptr ,int addr ) {
 	write_ddrb(0); 	//inputs
 	
    
-  } //init
+} //MC6821::MC6821
   
 void MC6821::outputA( void) {
 	ddra_sv=255;
 	write_ddra(ddra_sv); 
-}
+} //MC6821::outputA
 
 void MC6821::outputB( void) {
 	ddrb_sv=255;
 	write_ddrb(255); 
-}
+} //MC6821::outputB
 
 void MC6821::inputA( void) {
   write_ddra(0); 
-}
+} //MC6821::inputA
 
 void MC6821::inputB( void) {
   write_ddrb(0); 
@@ -104,19 +97,19 @@ void MC6821::inputB( void) {
 
 void MC6821::allOnA( void) {
   write_pdra(255); 
-}
+} //MC6821::allOnA
 
 void MC6821::allOnB( void) {
   write_pdrb(255); 
-}
+} // MC6821::allOnB
 
 void MC6821::allOffA( void) {
   write_pdra(0); 
-}
+}  // MC6821::allOffA
 
 void MC6821::allOffB( void) {
   write_pdrb(0); 
-}
+} // MC6821::allOffB
 
 void MC6821::on ( uint8_t pin ) {
 	if ( pin < 8) {
@@ -137,7 +130,7 @@ void MC6821::on ( uint8_t pin ) {
 		write_crb( crb_sv);
 	}
 	
-}
+} //MC6821::on
 
 void MC6821::off ( uint8_t pin ) {
 	if ( pin < 8) {
@@ -157,8 +150,11 @@ void MC6821::off ( uint8_t pin ) {
 		crb_sv &= ~(1<<3);
 		write_crb( crb_sv);
 	}
-}
+} //MC6821::off 
 
+
+
+// turn pin into output
 void MC6821::output ( uint8_t pin ) {
 	if ( pin < 8) {
 		ddra_sv |= (1<<pin);
@@ -177,8 +173,28 @@ void MC6821::output ( uint8_t pin ) {
 		crb_sv |= (1<<4)|(1<<5);
 		write_crb( crb_sv);
 	}
-}
+} //MC6821::output
 
+// turn pin into input
+void MC6821::input ( uint8_t pin ) {
+	if ( pin < 8) {
+		ddra_sv &= ~(1<<pin);
+		write_ddra( pdra_sv);
+	} else {
+		if ( pin < 16 ) {
+			ddrb_sv &= ~(1<<(pin-8));
+			write_ddrb( pdrb_sv);
+		}
+	}
+	if ( pin == 18 ) {
+		cra_sv &= ~((1<<4)|(1<<5));
+		write_cra( cra_sv);
+	}
+	if ( pin == 20 ) {
+		crb_sv &= ~((1<<4)|(1<<5));
+		write_crb( crb_sv);
+	}
+} //  MC6821::input
 
 
 
@@ -201,46 +217,41 @@ void MC6821::toggle ( uint8_t pin ) {
 		crb_sv ^= ~(1<<3);
 		write_crb( crb_sv );
 	}
-}
-
+} //MC6821::toggle 
 
 bool MC6821::isOn( uint8_t pin) {
-if (pin<8) {
-	// when defined as output, see cache 
-	if (ddra_sv & (1<<pin) ) {
-		return ( pdra_sv & (1<pin) )?true:false;
+	if (pin<8) {
+		// when defined as output, see cache 
+		if (ddra_sv & (1<<pin) ) {
+			return ( pdra_sv & (1<pin) )?true:false;
+		} else {
+			return ( read_pdra() & (1<pin) )?true:false;
+			
+		}
 	} else {
-		return ( read_pdra() & (1<pin) )?true:false;
-		
+		if (pin<16) {
+			// when defined as output, see cache 
+			if (ddrb_sv & (1<<pin-8) ) {
+				return ( pdrb_sv & (1<<(pin-8) ))?true:false;
+			} else {
+				return ( read_pdrb() & (1<<(pin-8)) )?true:false;
+			}
+		}
 	}
-} else {
-if (pin<16) {
-	// when defined as output, see cache 
-	if (ddrb_sv & (1<<pin-8) ) {
-		return ( pdrb_sv & (1<<(pin-8) ))?true:false;
-	} else {
-		return ( read_pdrb() & (1<<(pin-8)) )?true:false;
+	if (pin==17) {
+			return ( read_cra() & (1<<6) )?true:false;
 	}
-}
-}
-if (pin==17) {
-		return ( read_cra() & (1<<6) )?true:false;
-}
-
-if (pin==18) {
-		return ( read_cra() & (1<<7) )?true:false;
-}
-
-if (pin==17) {
-		return ( read_crb() & (1<<6) )?true:false;
-}
-if (pin==17) {
-		return ( read_crb() & (1<<7) )?true:false;
-}
-
-
-return false;
-}
+	if (pin==18) {
+			return ( read_cra() & (1<<7) )?true:false;
+	}
+	if (pin==19) {
+			return ( read_crb() & (1<<6) )?true:false;
+	}
+	if (pin==20) {
+			return ( read_crb() & (1<<7) )?true:false;
+	}
+	return false;
+} //MC6821::isOn
 
 
 
@@ -304,8 +315,6 @@ uint8_t  MC6821::read_crb(){
 	return bus->read( crb );
 }
 
-
-
 void MC6821::select_ddra(){
 	cra_sv &= ~(1<<DDRA_XS);
 	bus->write( cra ,cra_sv);
@@ -325,13 +334,13 @@ void MC6821::select_pdrb(){
 }  
 
 
-
+/*
 uint8_t MC6821::read( const int & address ){
 	return 0;
 }
 
 void MC6821::write ( const int & address,  const uint8_t & data){
 
-
 }
+*/
 

@@ -19,7 +19,7 @@
        See the C include lcdchars.h file for a description of each function
 */
 #ifndef LCDCHARS_C
-#define LCDCHARS_C 1
+#define LCDCHARS_C
 
 
 #include <stdint.h>
@@ -45,7 +45,7 @@
 * 
 */
 
-/* 7 segment font */
+/** 7 segment font */
 const int8_t lcdFont7[] PROGMEM =
 {
 //    Pgfedcba
@@ -122,7 +122,7 @@ const int8_t lcdFont7[] PROGMEM =
 
 	
 };
-
+/*
 const int8_t lcdFont7org[] PROGMEM =
 {
 //    Pgfedcba
@@ -146,8 +146,9 @@ const int8_t lcdFont7org[] PROGMEM =
 	0b10000000,     //.
 	
 };
+*/
 
-/*
+/**
  @brief    Get 8bit character data
  @param    index hex value
  @return  byte containing display data 0b0Pgfedcda
@@ -184,7 +185,7 @@ uint8_t lcd7Char( uint8_t karakter) {
 * Font and character definition based on MAX8650 datasheet
 *
 */
-/* 14 segment font */
+/** 14 segment font */
 const int16_t lcdFont14[159] PROGMEM =
 {
 //    KPmlkjihGgfedcba
@@ -206,11 +207,6 @@ const int16_t lcdFont14[159] PROGMEM =
 	0b0000000000000000, 	// -
 	0b0100000000000000, 	// .
 	0b0000000000000000, 	// /
-
-//    KPmlkjihGgfedcba
-//    PmlkGjihKgfedcba
-
-
 	0b0100010000111111, 	// 0
 	0b0000000000000110, 	// 1
 	0b0000100001011011, 	// 2
@@ -257,6 +253,7 @@ const int16_t lcdFont14[159] PROGMEM =
 	0b0010010100000000, 	// Y
 	0b0100010000001001, 	// Z
 };
+/*
 const int16_t lcdFont14wms[59] PROGMEM =
 {
 //    KPmlkjihGgfedcba
@@ -320,8 +317,8 @@ const int16_t lcdFont14wms[59] PROGMEM =
 	0b0001010100000000, 	// Y
 	0b0000110000001001, 	// Z
 };
-
-/*
+*/
+/**
  @brief    Get 16bit character data
  @param    character ( ascii value )
  @return  word containing display data 0b0Pmlkjih(g2)(g1)fedcda
@@ -337,7 +334,7 @@ uint16_t lcd14Char( uint8_t karakter) {
 	// return the lcd data in max8650 14 segement order abcdefg1g2hijklmP
 	return (uint16_t)pgm_read_word(&lcdFont14[ karakter ]);
 } //lcd14Char
-#endif //LCDCHARS_ENABLE_SEG16
+#endif //LCDCHARS_ENABLE_SEG14
 
 #if LCDCHARS_ENABLE_SEG16 ==1
 /* Font 16-Segment LCD/LED

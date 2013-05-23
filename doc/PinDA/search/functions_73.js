@@ -1,9 +1,21 @@
 var searchData=
 [
-  ['serviceloop',['serviceLoop',['../classlamps.html#af7760d11422deb14d6174275b5deeda7',1,'lamps::serviceLoop()'],['../classPindaObj.html#a5acbf0a23fde4dd880c0572dba96d1fb',1,'PindaObj::serviceLoop()'],['../classSWITCHES.html#a0c06a4a29526e0e97e161ce50cdeb1a3',1,'SWITCHES::serviceLoop()']]],
+  ['select_5fddra',['select_ddra',['../classMC6821.html#a31a191a457f5de80cc172d89b50075c8',1,'MC6821']]],
+  ['select_5fddrb',['select_ddrb',['../classMC6821.html#ae25d9cc7e1962fe822cfeef81df6d130',1,'MC6821']]],
+  ['select_5fpdra',['select_pdra',['../classMC6821.html#a2ffcdbd5b7756dd85c3eb09d5947391c',1,'MC6821']]],
+  ['select_5fpdrb',['select_pdrb',['../classMC6821.html#a49928ce4a11ce0438545cb2e9d8aecc4',1,'MC6821']]],
+  ['serialin',['serialIn',['../classPindaCom.html#ae37e4540c33db30f8c6b66272b439782',1,'PindaCom']]],
+  ['serviceloop',['serviceLoop',['../classCPUBUSClass.html#a999fe13fef7a19020e79b35178b61283',1,'CPUBUSClass::serviceLoop()'],['../classlamps.html#af7760d11422deb14d6174275b5deeda7',1,'lamps::serviceLoop()'],['../classPindaObj.html#a5acbf0a23fde4dd880c0572dba96d1fb',1,'PindaObj::serviceLoop()'],['../classSWITCHES.html#a0c06a4a29526e0e97e161ce50cdeb1a3',1,'SWITCHES::serviceLoop()']]],
+  ['setlampbank',['setLampBank',['../classPindaCom.html#a3da2c20fbba4ef862345feb2fdb6340c',1,'PindaCom']]],
+  ['setsolenoid',['setSolenoid',['../classPindaCom.html#a037c996b8907842b373934bde37d612b',1,'PindaCom']]],
+  ['setswitchbank',['setSwitchBank',['../classPindaCom.html#a10e6db2ad1e3cd6728cfe303f70a3257',1,'PindaCom']]],
   ['show',['show',['../classlamps.html#a9db2202f4a95fbbe1364a0a01b347661',1,'lamps::show()'],['../classSWITCHES.html#af8d7c8e653cf6a5c7651881d494d84f7',1,'SWITCHES::show()']]],
+  ['solenoid',['SOLENOID',['../classSOLENOID.html#ad4cb26d275db1859b8d5f2caabb9408b',1,'SOLENOID']]],
+  ['solenoid_5fdemo',['SOLENOID_demo',['../classSOLENOID__demo.html#a989d6637e9ecc181dedd378a1b38e17b',1,'SOLENOID_demo']]],
+  ['solenoid_5flatch',['SOLENOID_latch',['../classSOLENOID__latch.html#a30da6cd4023c1d9e22ae7950353bc9af',1,'SOLENOID_latch']]],
+  ['solenoid_5fpia',['SOLENOID_pia',['../classSOLENOID__pia.html#a1f723346a4d80c351b204d10f013b774',1,'SOLENOID_pia']]],
   ['starttimer',['StartTimer',['../classPinda.html#a8f516be2cb6178caa066f3af63b5c790',1,'Pinda']]],
-  ['status',['status',['../classPinda.html#a430aae7375ee5adcf4d323fd0651d629',1,'Pinda']]],
-  ['switches_5fdemo',['SWITCHES_demo',['../classSWITCHES__demo.html#a18049259f29a520f01f7f1efb50ca0e7',1,'SWITCHES_demo']]],
-  ['switches_5fwilliams11a',['SWITCHES_williams11a',['../classSWITCHES__williams11a.html#aa912be7c6eb03e7f204c8385156ce93c',1,'SWITCHES_williams11a']]]
+  ['status',['status',['../classPinda.html#a430aae7375ee5adcf4d323fd0651d629',1,'Pinda::status()'],['../classPindaCom.html#a60235e14baec5fced08f95b7b1527956',1,'PindaCom::status()']]],
+  ['switches_5fdemo',['SWITCHES_demo',['../classSWITCHES__demo.html#a9341d6dcaa46088cffa54f39add30b0e',1,'SWITCHES_demo']]],
+  ['switches_5fwilliams11a',['SWITCHES_williams11a',['../classSWITCHES__williams11a.html#a2ffcc1dd453aec28e0ac508566f35268',1,'SWITCHES_williams11a']]]
 ];

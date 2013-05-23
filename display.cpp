@@ -29,16 +29,11 @@
 #include "display.h"
 #include "lcdchars.h"
 
-void DISPLAYCLASS::test(void){
-	Serial.print ("DISPLAYtest");
-}
 
  DISPLAY_WIL11A::DISPLAY_WIL11A ( MC6821 * _piaalfa, MC6821 * _pia7seg, MC6821 * _piawidget ) {
 	piaalfa = _piaalfa;
 	pia7seg = _pia7seg;
 	piawidget = _piawidget;
-//	stext1="";
-	//stext1a="";
 	index=0;
 	blink=false;
 	blinktime=100;
@@ -67,8 +62,6 @@ void DISPLAYCLASS::test(void){
  }
  
  void DISPLAY_WIL11A::interrupt ( void ) {
-	//Serial.print( index );
-
 	pia7seg->write_pdrb(0x00 ); 
 	piaalfa->write_pdra(0x00); 
 	piaalfa->write_pdrb(0x00); 

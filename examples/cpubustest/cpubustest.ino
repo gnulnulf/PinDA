@@ -31,6 +31,8 @@
 #include <SPI.h>
 
 Pinda pinda;
+const bool slave=true;
+
 
 // ----------------------------------------------------------------------------
 // Initialize Hardware
@@ -40,7 +42,7 @@ Pinda pinda;
 
 //CPUBUSClass *Cpubus = new Cpubus_Direct ;
 //Cpubus_Direct Cpubus("Tomcat");
-Cpubus_Direct Cpubus;
+Cpubus_Direct Cpubus("Williams System 11A F14-Tomcat");
 //Cpubus_SPI Cpubus;
 
 // ram
@@ -106,8 +108,8 @@ SOLENOID & sol_beacon = solenoid16;
 //Flashers
 //FLASHER_williams11a flasher1(1,"Flasher 1"); 
 
-lamps_williams11a lamps1(&PIAU54);
-lamps_demo lampsdemo;
+lamps_williams11a lamps1(&PIAU54,"sys11a lamps");
+lamps_demo lampsdemo("demo lamps");
 
 SWITCHES_demo switchesdemo;
 SWITCHES_williams11a switches1(&PIAU38);
@@ -115,6 +117,13 @@ SWITCHES_williams11a switches1(&PIAU38);
 
 LAMP lamp1( &lamps1 , 0 , "LAMP1");
 LAMP lamp2( &lamps1 , 1 , "LAMP2");
+
+// ----------------------------------------------------------------------------
+// End Initialize Hardware
+// ----------------------------------------------------------------------------
+
+// serial listener
+PindaCom com;
 
 uint8_t val=0;
 uint8_t switchrow = 0;
@@ -137,17 +146,17 @@ void blanking_int(void) {
 /*---------------------------------------------------------------------------------------
 *  Setup
 *-------------------------------------------------------------------------------------*/ 
-
 void setup()
 {
   // initialize serial and wait for port to open:
-  Serial.begin(115200);
+  //Serial.begin(115200);
+  Serial.begin(19200);
+  
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo only
   }
   Serial.println("\n");
-  
-  
+    
   // start printf to make it usefull
   printf_begin();
   
@@ -174,28 +183,15 @@ void setup()
 //pindaAddInterrupt(fnled,20);
 //pindaAddInterrupt(intled,1);
 
-    // dump the rom to screen
-//    rom_all.init(&Cpubus, 0x0000,65535);
- //   rom_u26.init(&Cpubus, 0x4000,0x4000);
- //   rom_u27.init(&Cpubus, 0x8000,0x8000);
- // Cpubus.read(0x20);
- // Cpubus.write(0x3000,128);
+// dump the rom to screen
+// Cpubus.read(0x20);
+// Cpubus.write(0x3000,128);
  
-  // show 256 bytes
-//  read256();
-// rom_all.dump();
- //   Serial.println("\n[memCheck]");
-  //  Serial.println(freeRam());
-//lamps1.init(&PIAU54);
-//lamps1.init();
-//lamps1.show();
-
 lampsdemo.on(0);
 lampsdemo.on(51);
 lampsdemo.on(16);
 lampsdemo.on(48);
 //lampsdemo.show();
-
 
 //pinda.AddInterrupt(blanking_int,5);
 
@@ -210,9 +206,7 @@ display1.text2(" ARDUINO PINDA");
 
 //PIAU51.output(4);
 
-
 lamptime=millis();
-
 
 solenoid17.off();
 solenoid18.off();
@@ -221,14 +215,47 @@ solenoid20.off();
 solenoid21.off();
 solenoid22.off();
 
-
-
-
-
-
-
-
 Serial.print(pinda.status() );
+
+
+// map functions to the serial slave handler
+com.setLampBank( 0, &lamps1);
+com.setLampBank( 1, &lampsdemo);
+com.setSwitchBank( 0, &switches1);
+com.setSwitchBank( 1, &switchesdemo);
+com.setSolenoid( 0, &solenoid1);
+com.setSolenoid( 1, &solenoid2);
+com.setSolenoid( 2, &solenoid3);
+com.setSolenoid( 3, &solenoid4);
+com.setSolenoid( 4, &solenoid5);
+com.setSolenoid( 5, &solenoid6);
+com.setSolenoid( 6, &solenoid7);
+com.setSolenoid( 7, &solenoid8);
+com.setSolenoid( 8, &solenoid9);
+com.setSolenoid( 9, &solenoid10);
+com.setSolenoid( 10, &solenoid11);
+com.setSolenoid( 11, &solenoid12);
+com.setSolenoid( 12, &solenoid13);
+com.setSolenoid( 13, &solenoid14);
+com.setSolenoid( 14, &solenoid15);
+com.setSolenoid( 15, &solenoid16);
+com.setSolenoid( 16, &solenoid17);
+com.setSolenoid( 17, &solenoid18);
+com.setSolenoid( 18, &solenoid19);
+com.setSolenoid( 19, &solenoid20);
+com.setSolenoid( 20, &solenoid21);
+com.setSolenoid( 21, &solenoid22);
+
+com.setSolenoid( 26, &soldemo1);
+com.setSolenoid( 27, &soldemo2);
+com.setSolenoid( 28, &soldemo3);
+com.setSolenoid( 29, &soldemo4);
+
+
+pinda.AddInterrupt ( &com , 1);
+com.enableInterrupt();
+
+
 } // Setup ------------------------------------------------------------------------------
 
 
@@ -237,10 +264,9 @@ Serial.print(pinda.status() );
 *  Loop
 *-------------------------------------------------------------------------------------*/ 
 void loop() {
-   // PIAU10.write_crb( 1<<5 | 1<<4   ); //enable solenoids U10-CB2
- //  PIAU51.toggle(4);
+    pinda.loop();
 
-  pinda.loop();
+    // loop 0-255 on the lamps
     time=millis();
     if ( time > lamptime ) {
       val++;
@@ -249,10 +275,27 @@ void loop() {
           lampsdemo.rowSet( r ,val );
       }
       lamptime+=1000;
-
-//  switches1.show();  
-switchesdemo.show();      
     }
+    
+  // parse a message when ready
+  if (com.isReady() ) {
+    com.parseMsg();
+    com.listen();    // enable next message
+  } 
+  
+  
+  // 
+  if (slave) {
+     // send flank changes to serial
+    com.flank();
+    
+    
+//  } else {
+    
+   // PIAU10.write_crb( 1<<5 | 1<<4   ); //enable solenoids U10-CB2
+ //  PIAU51.toggle(4);
+
+
     
     
     
@@ -286,15 +329,13 @@ if ( switchesdemo.flankdown( 27 )) {
 
 if ( switchesdemo.flankup( 36 )) { 
   Serial.println( "SWICTCH5");
+  Serial.print(pinda.status() );
+  Serial.print(Cpubus.status() );
+  Serial.print(com.status() );
+  
   sol_test.toggle(); 
 }
-
-
-
-    
-
-
-   
+  
   
    
    /*
@@ -463,7 +504,7 @@ if ( switches1.flankup( 4*8+1)) {
 display1.setScore4("M "+ String( pinda.freeRam() ) );
   
 delay(10);
-
+  }
   //delay(200);
 
 }
@@ -697,3 +738,4 @@ Serial.println("");
  delay(5000);
 // * /
 }
+

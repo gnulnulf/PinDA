@@ -54,13 +54,7 @@ void SOLENOID::real_on(void){};
 void SOLENOID::real_off(void){};
 
 
-void SOLENOID::interrupt(void){
-	serviceTimer();
-}
-
-
-void SOLENOID::serviceTimer( void ){
-	//Serial.print( current_state );  
+void SOLENOID::interrupt( void ){
 	switch ( current_state ) {
 		// just off
 		case SOL_OFF: 
@@ -68,8 +62,6 @@ void SOLENOID::serviceTimer( void ){
 			
 		// timer before solenoid is activated
 		case SOL_DELAY_ON:
-			//Serial.print( " D");
-			//Serial.print( timer );
 			if ( timer > 0 ) {
 				timer--;
 			} else { 
@@ -84,10 +76,7 @@ void SOLENOID::serviceTimer( void ){
 		// for pulse type the timer will turn off the solenoid
 		case SOL_ON_TIMER:
 			state=true;
-			//Serial.print( " O");
-			//Serial.print( timer );
 			if ( type == SOLENOID_PULSE ) {
-
 					if ( timer > 0 ) {
 					timer--;
 				} else {
@@ -103,9 +92,6 @@ void SOLENOID::serviceTimer( void ){
 		case SOL_OFF_TIMER:
 			state=false;
 				if ( timer > 0 ) {
-					//Serial.print( " T");
-					//Serial.print( timer );
-					
 					timer--;
 				} else {
 					current_state = SOL_OFF;
@@ -114,7 +100,7 @@ void SOLENOID::serviceTimer( void ){
 		default:
 				break;;
 	} //switch
-}
+} // SOLENOID::interrupt
 
 // ------------------------------------------------------
 // demo
@@ -201,7 +187,7 @@ SOLENOID_pia::SOLENOID_pia(
 	objName=_name;
 	active=_active;
 	timer=0;
-	delay_timer=0;
+	//delay_timer=0;
 	type=_type;
 	if ( index <17 ){
 		pia->output(index);
@@ -217,8 +203,6 @@ SOLENOID_pia::SOLENOID_pia(
 		pia->output(20);
 	}
 
-	//set pin as output
-//set off state
 	pinda.AddInterrupt ( this , 5);
 
 }		

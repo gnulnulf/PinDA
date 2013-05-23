@@ -49,6 +49,7 @@ void SWITCHES::clear(void) {
 		switchdatalast[i]=0;
 		flankupdata[i]=0;
 		flankdowndata[i]=0;
+		changed=false;
 	}
 } //SWITCHES::switches
 
@@ -67,6 +68,37 @@ void SWITCHES::show(void){
 	}
 	println();
 } //SWITCHES::show
+
+String SWITCHES::getString(void){
+	String s;
+	for (uint8_t i=0;i<8;i++) {
+		s+= String( switchdata[i], HEX )+" ";
+	}
+	return s;
+} //SWITCHES::getString
+
+String SWITCHES::getFlank(void){
+	String s,t;
+	for (uint8_t i=0;i<8;i++) {
+		t="0"+String( flankupdata[i], HEX );
+		s+= t.substring(t.length()-2);
+		t="0"+String( flankdowndata[i], HEX );
+		s+= t.substring(t.length()-2);
+		flankupdata[i]=0;
+		flankdowndata[i]=0;
+	}
+	return s;
+} //SWITCHES::getFlank
+
+bool SWITCHES::hasFlank(void) {
+	uint8_t c=0;
+	for (uint8_t i=0;i<8;i++) {
+		c |= flankupdata[i] | flankdowndata[i];
+//		flankupdata[i]=0;
+//		flankdowndata[i]=0;
+	}
+		return ( c )?true:false;
+}
 
 uint8_t SWITCHES::getRow(uint8_t row){
 	return switchdata[ row & 0x7 ];
@@ -93,10 +125,17 @@ bool SWITCHES::flankdown( uint8_t number) {
 	return false;
 } // SWITCHES::flankdown
 
+bool SWITCHES::isChanged( void ) {
+	if ( changed == false ) return false;
+	changed=false;
+	return true;
+}
 
 
-SWITCHES_demo::SWITCHES_demo(void) {
-	//demo switches met pullup
+
+SWITCHES_demo::SWITCHES_demo(String _name) {
+	objName=_name;
+	//demo switches with pullup
 	clear();
 	pinMode( sw1_pin, INPUT);
 	digitalWrite( sw1_pin,HIGH);
@@ -114,6 +153,7 @@ SWITCHES_demo::SWITCHES_demo(void) {
 	digitalWrite( sw7_pin,HIGH);
 	pinMode( sw8_pin, INPUT);
 	digitalWrite( sw8_pin,HIGH);
+
 		pinda.AddInterrupt ( this , 1);
 } // switches_demo::init
 
@@ -149,7 +189,8 @@ void SWITCHES_demo::interrupt(void) {
 	} else {
 		switchdata[ currentRow ] &= ~( 1<< currentRow);
 	}
-
+	if ( switchdatalast[ currentRow ] != switchdata[ currentRow ] )  changed=true;
+	
 	// XOR the data to get the changes and only for the flank direction
 	flankupdata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdata[ currentRow ] ;
 	flankdowndata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdatalast[ currentRow ] ;
@@ -159,7 +200,9 @@ void SWITCHES_demo::interrupt(void) {
 } // switches_demo::interrupt
 
 
-SWITCHES_williams11a::SWITCHES_williams11a( MC6821 * piaptr ) {
+SWITCHES_williams11a::SWITCHES_williams11a( MC6821 * piaptr, String _name ) {
+	objName=_name;
+
 	pia=piaptr;
 	clear();
 	pia->write_ddra(0); // A ingang  
@@ -177,12 +220,12 @@ void SWITCHES_williams11a::interrupt( void ) {
 	switchdata[ currentRow ] =  pia->read_pdra() ;
     pia->write_pdrb( ( 1 << currentRow ) );  // set row
 
+	if ( switchdatalast[ currentRow ] != switchdata[ currentRow ] )  changed=true;
+
 	// XOR the data to get the changes and only for the flank direction
 	flankupdata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdata[ currentRow ] ;
 	flankdowndata[ currentRow ] |= ( switchdatalast[ currentRow ] ^ switchdata[ currentRow ] ) & switchdatalast[ currentRow ] ;
 	
-	
-
 	currentRow++;
 	if ( currentRow>7) currentRow=0;
 }

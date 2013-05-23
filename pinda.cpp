@@ -54,11 +54,16 @@ String PindaObj::getName(void){
 	return objName;
 }
 
-void PindaObj::interrupt(void){
-}
-
-void PindaObj::serviceLoop(void){
-}
+void PindaObj::interrupt(void){}
+void PindaObj::serviceLoop(void){}
+//void PindaObj::on(void){}
+void PindaObj::on(uint16_t delay){}
+void PindaObj::off(void){}
+void PindaObj::toggle(void){}
+String PindaObj::getString(void){}
+String PindaObj::getFlank(void){}
+bool PindaObj::isChanged(void){}
+bool PindaObj::hasFlank(void){}
 
 voidFunction interruptFunctions[ maxInterrupts ];
 unsigned int interruptInterval[maxInterrupts];
@@ -67,24 +72,24 @@ voidFunction loopFunctions[maxLoop];
 
 //pinda timer(s)
 void Pinda::StartTimer(void){
-  // initialize timer1 
+  // initialize timer5
   noInterrupts();           // disable all interrupts
-  TCCR1A = 0;
-  TCCR1B = 0;
-  TCNT1  = 0;
+  TCCR5A = 0;
+  TCCR5B = 0;
+  TCNT5  = 0;
 
  // OCR1A = 31250;            // compare match register 16MHz/256/2Hz
-  OCR1A = 62;  	// 16Mhz/256=62500 -> every ms..
- //OCR1A = 31;	
+  OCR5A = 62;  	// 16Mhz/256=62500 -> every ms..
+ //OCR5A = 125;	
   //  OCR1A = 6200;  	// 16Mhz/256=62500 -> every 100ms..
-  TCCR1B |= (1 << WGM12);   // CTC mode
-  TCCR1B |= (1 << CS12);    // 256 prescaler 
-  TIMSK1 |= (1 << OCIE1A);  // enable timer compare interrupt
+  TCCR5B |= (1 << WGM12);   // CTC mode
+  TCCR5B |= (1 << CS12);    // 256 prescaler 
+  TIMSK5 |= (1 << OCIE1A);  // enable timer compare interrupt
   interrupts();    
 }
 
 // timer compare interrupt service routine
-ISR(TIMER1_COMPA_vect)          
+ISR(TIMER5_COMPA_vect)          
 {
 	pinda.mainInterrupt();
 } //ISR pindaInterrupt

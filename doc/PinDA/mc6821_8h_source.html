@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,120 +86,121 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">mc6821.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  mc6821.h - interface to the 8bit 68xx memory bus</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  (C) Copyright 2013 Arco van Geest &lt;arco@appeltaart.mine.nu&gt; All right reserved.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  This library is free software; you can redistribute it and/or</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  modify it under the terms of the GNU Lesser General Public</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">  License as published by the Free Software Foundation; either</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  version 2.1 of the License, or (at your option) any later version.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  This library is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  Lesser General Public License for more details.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">  You should have received a copy of the GNU Lesser General Public</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  License along with this library; if not, write to the Free Software</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef MC6821_h</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MC6821_h</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*****************************************************************************</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">* Includes</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">******************************************************************************/</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CPUBUS_8h.html" title="interface to the 8bit 68xx memory bus">CPUBUS.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; <span class="keyword">enum</span> pia_io { </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        PIA_PA0=0,PIA_PA1,PIA_PA2,PIA_PA3,PIA_PA4,PIA_PA5,PIA_PA6,PIA_PA7,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        PIA_PB0=8,PIA_PB1,PIA_PB2,PIA_PB3,PIA_PB4,PIA_PB5,PIA_PB6,PIA_PB7,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        PIA_CA1=17,PIA_CA2=18,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        PIA_CB1=19,PIA_CB2=20</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classMC6821.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMC6821.html">MC6821</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classMC6821.html">MC6821</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classMC6821.html">MC6821</a>(  <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr ,<span class="keywordtype">int</span> addr , String _name=<span class="stringliteral">&quot;UNNAMED&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> outputA(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> outputB(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> allOnA(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> allOnB(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> allOffA(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> allOffB(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> inputA(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> inputB(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> outputCRA2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> outputCRB2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> inputCRA2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> inputCRB2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> onCRA2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> offCRA2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> onCRB2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> offCRB2(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">//get int</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">//get CRA1/2  CRB1/2</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">//0-7=A 8-15=B 16=CRA1 17=CRA2 18=CRB1 19=CRB2</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> on( uint8_t number);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> off( uint8_t number);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> toggle(uint8_t number);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">bool</span> isOn( uint8_t pin) ;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> output(uint8_t number);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> init(  <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr ,<span class="keywordtype">int</span> addr );</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        uint8_t read( <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; address );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">void</span> write (<span class="keyword">const</span> <span class="keywordtype">int</span> &amp; address, <span class="keyword">const</span> uint8_t &amp; data);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> write_cra( <span class="keyword">const</span> uint8_t &amp; data );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> write_crb( <span class="keyword">const</span> uint8_t &amp; data );</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> write_ddra(<span class="keyword">const</span> uint8_t &amp; data);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> write_ddrb(<span class="keyword">const</span> uint8_t &amp; data);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> write_pdra(<span class="keyword">const</span> uint8_t &amp; data);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> write_pdrb(<span class="keyword">const</span> uint8_t &amp; data);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        uint8_t read_pdra();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        uint8_t read_pdrb();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        uint8_t read_cra();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        uint8_t read_crb();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> select_ddra();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> select_ddrb();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> select_pdra();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> select_pdrb();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">//  protected:</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> * bus;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> pia_addr;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        String name;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">int</span> cra;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">int</span> crb;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">int</span> ddra;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">int</span> ddrb;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">int</span> pdra;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">int</span> pdrb;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        uint8_t cra_sv;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        uint8_t crb_sv;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        uint8_t ddra_sv;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        uint8_t ddrb_sv;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        uint8_t pdra_sv;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        uint8_t pdrb_sv;</div>
+<a href="mc6821_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef MC6821_h</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MC6821_h</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// --------------------------------------------------------</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Includes</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// --------------------------------------------------------</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CPUBUS_8h.html" title="interface to the 8bit 68xx memory bus">CPUBUS.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="mc6821_8h.html#a0a3fe5c50108a1bb2b929d008bff4aa2">   42</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="mc6821_8h.html#a0a3fe5c50108a1bb2b929d008bff4aa2">pia_io</a> { </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        PIA_PA0=0,PIA_PA1,PIA_PA2,PIA_PA3,PIA_PA4,PIA_PA5,PIA_PA6,PIA_PA7,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        PIA_PB0=8,PIA_PB1,PIA_PB2,PIA_PB3,PIA_PB4,PIA_PB5,PIA_PB6,PIA_PB7,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        PIA_CA1=17,PIA_CA2=18,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        PIA_CB1=19,PIA_CB2=20</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//get int</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classMC6821.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMC6821.html">MC6821</a> : <span class="keyword">public</span> <a class="code" href="classPindaObj.html">PindaObj</a>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classMC6821.html#a4661dc4a21ba7a97ca3a9464158e52df" title="constructor">MC6821</a>(  </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> *busptr,                    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">int</span> addr ,                                              </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                String _name=<span class="stringliteral">&quot;MC6821 UNNAMED&quot;</span>   </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> outputA(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> outputB(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> allOnA(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> allOnB(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> allOffA(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> allOffB(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> inputA(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> inputB(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//      void outputCRA2(void);</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//      void outputCRB2(void);</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">//      void inputCRA2(void);</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//      void inputCRB2(void);</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//      void onCRA2(void);</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//      void offCRA2(void);</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">//      void onCRB2(void);</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">//      void offCRB2(void);</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a4c1e8f5817ed657818a09d1f59223e97">on</a>( uint8_t number);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#ab75ee12318726358028dd1df091a949e">off</a>( uint8_t number);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#ac0c58e160ad9e2fe3abef61d77f0d6b5">toggle</a>(uint8_t number);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classMC6821.html#aaec08c3378917998db64c66058f44d5e">isOn</a>( uint8_t pin) ;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a2e3bb80eeb7c59df77e110e731901678">input</a>(uint8_t number);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a8c3a518e14e5546a8f4717349c507845">output</a>(uint8_t number);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MC6821_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">//void init(  CPUBUSClass *busptr ,int addr );</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//      uint8_t read( const int &amp; address );</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">//      void write (const int &amp; address, const uint8_t &amp; data);</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#aedaf7a8b5ab9317ce8472ce0074e474e">write_cra</a>( <span class="keyword">const</span> uint8_t &amp; data );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a2ebad9f73a5412ba3ffe2bc46ca93231">write_crb</a>( <span class="keyword">const</span> uint8_t &amp; data );</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a7bf8a2a6bac0e8b88ababaa66fa7d558">write_ddra</a>(<span class="keyword">const</span> uint8_t &amp; data);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#af0453e26d8ad0e44cd3d622a67f17f14">write_ddrb</a>(<span class="keyword">const</span> uint8_t &amp; data);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#ac7dcc2ba23b0320accf928acd651fc36">write_pdra</a>(<span class="keyword">const</span> uint8_t &amp; data);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#ab2a586950cf92c742fdb90eef5537b45">write_pdrb</a>(<span class="keyword">const</span> uint8_t &amp; data);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        uint8_t <a class="code" href="classMC6821.html#a17a8fd2101c222e02c56a23c11f192ad">read_pdra</a>();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        uint8_t <a class="code" href="classMC6821.html#a4eb19034d534c7aa8b7d547234d1d8aa">read_pdrb</a>();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        uint8_t <a class="code" href="classMC6821.html#a0e175c66f8a21c54bf2f1fa33ec1abf0">read_cra</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        uint8_t <a class="code" href="classMC6821.html#a0a03d067395eb7aa3a96fedc53fdc016">read_crb</a>();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a31a191a457f5de80cc172d89b50075c8" title="set the ddra active">select_ddra</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#ae25d9cc7e1962fe822cfeef81df6d130" title="set the ddrb active">select_ddrb</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a2ffcdbd5b7756dd85c3eb09d5947391c" title="set the pdra active">select_pdra</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMC6821.html#a49928ce4a11ce0438545cb2e9d8aecc4" title="set the pdrb active">select_pdrb</a>();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="code" href="classMC6821.html#afc584e97eabf81051680b9a174bbce27">  160</a></span>&#160;    <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> * <a class="code" href="classMC6821.html#afc584e97eabf81051680b9a174bbce27" title="pointer to the cpubus object">bus</a>;          </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="classMC6821.html#afd059b6e851834c09f687e704f13c291">  161</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMC6821.html#afd059b6e851834c09f687e704f13c291" title="address of the mc6821 on the cpubus">pia_addr</a>;                       </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">//      String name;</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="code" href="classMC6821.html#a620a47d50bb48aa7d3e1b7fc06606eb8">  163</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classMC6821.html#a620a47d50bb48aa7d3e1b7fc06606eb8" title="address of the CRA">cra</a>;                                </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="classMC6821.html#a3b3c1610c32fc9c30cea82305bda9877">  164</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classMC6821.html#a3b3c1610c32fc9c30cea82305bda9877" title="address of the CRB">crb</a>;                                </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="classMC6821.html#a9e4c3b0a432332a3171b7a64db5c9e2c">  165</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classMC6821.html#a9e4c3b0a432332a3171b7a64db5c9e2c" title="address of the DDRA">ddra</a>;                               </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="code" href="classMC6821.html#a3e4d74ba5f7a53d4df771a31153697f8">  166</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classMC6821.html#a3e4d74ba5f7a53d4df771a31153697f8" title="address of the DDRB">ddrb</a>;                               </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="classMC6821.html#abee44252a30363d98b5abcdd5745f9c0">  167</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classMC6821.html#abee44252a30363d98b5abcdd5745f9c0" title="address of the PDRA">pdra</a>;                               </div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="code" href="classMC6821.html#ab8b937f3d2a6d17ae491261943376bd1">  168</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classMC6821.html#ab8b937f3d2a6d17ae491261943376bd1" title="address of the PDRB">pdrb</a>;                               </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="classMC6821.html#ad0dd3c7d0134188d0289b5df6223efce">  169</a></span>&#160;        uint8_t <a class="code" href="classMC6821.html#ad0dd3c7d0134188d0289b5df6223efce" title="cache for the CRA register">cra_sv</a>;                 </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="code" href="classMC6821.html#a93a9efc2dc448b508e944f4534565b53">  170</a></span>&#160;        uint8_t <a class="code" href="classMC6821.html#a93a9efc2dc448b508e944f4534565b53" title="cache for the CRB register">crb_sv</a>;                 </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="code" href="classMC6821.html#a1cf9d17cbc77627cc6610f72c0eb404b">  172</a></span>&#160;        uint8_t <a class="code" href="classMC6821.html#a1cf9d17cbc77627cc6610f72c0eb404b" title="cache for the DDRA register">ddra_sv</a>;                </div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="code" href="classMC6821.html#a4d2ff521e77c816523f5a49d11a016bc">  173</a></span>&#160;        uint8_t <a class="code" href="classMC6821.html#a4d2ff521e77c816523f5a49d11a016bc" title="cache for the DDRB register">ddrb_sv</a>;                </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="classMC6821.html#ac85538eaa73e200b018baa5a12f5925e">  175</a></span>&#160;        uint8_t <a class="code" href="classMC6821.html#ac85538eaa73e200b018baa5a12f5925e" title="cache for the PDRA register">pdra_sv</a>;                </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="code" href="classMC6821.html#a3c588f5962575cb9ea95995aa770b7e3">  176</a></span>&#160;        uint8_t <a class="code" href="classMC6821.html#a3c588f5962575cb9ea95995aa770b7e3" title="cache for the PDRB register">pdrb_sv</a>;                </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MC6821_h */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:14 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

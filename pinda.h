@@ -32,7 +32,8 @@ just use \#include pinda.h
 // --------------------------------------------------------
 // Typedefs
 // --------------------------------------------------------
-typedef int (*IntFunctionWithOneParameter) (int a);
+//typedef int (*IntFunctionWithOneParameter) (int a);
+//! void pointer definition
 typedef void (*voidFunction) (void);
 // --------------------------------------------------------
 // Standard Includes
@@ -68,6 +69,15 @@ class PindaObj {
 		//! placeholder for untimed serviceLoop
 		virtual void serviceLoop(void);
 		
+		virtual void on(uint16_t delay=0);
+		//virtual void on(void);
+		virtual void off(void);
+		virtual void toggle(void);
+		virtual bool isChanged(void);
+		virtual String getString(void);
+		virtual String getFlank(void);
+		virtual bool hasFlank(void);
+		
 	//protected:
 		String objName;	//!< Object name 
 		String name;	//!< Object name 
@@ -75,8 +85,9 @@ class PindaObj {
 //typedef void (PindaObj::*PindaFunc)(void);  
 //typedef void (*PindaObj::*PindaFuncPtr)(void);  
 
-typedef void (PindaObj::*PindaInterrupt)(void) ; //= &PindaObj::interrupt;
-typedef void (PindaObj::*PindaServiceLoop)(void) ; //= &PindaObj::serviceLoop;
+
+//typedef void (PindaObj::*PindaInterrupt)(void) ; //= &PindaObj::interrupt;
+//typedef void (PindaObj::*PindaServiceLoop)(void) ; //= &PindaObj::serviceLoop;
 
 
 
@@ -123,12 +134,21 @@ class Pinda {
 		//! start the interrupt timer
 		void StartTimer(void);
 
-		// ! this is the interrupt routine initiated by the pindaTimer
+		//! this is the interrupt routine initiated by the pindaTimer
+		//! the main interrupt starts the PindaObj and function interrupt from the interruptPointers 
+		//! and interruptFNPointers arrays.
 		void mainInterrupt(void);
 
+		//! Pinda Main non-timed service loop
+		//! this starts all attached functions @see pindaAddLoop 
+		//! it should be placed in the arduino "loop" section
 		void loop(void);
 
+		//! Add function to the non timed service loop
+		//! @param fun Function to add
+		//! @returns slot used in the function store or -1 if no empty slot was found.
 		int AddLoop ( voidFunction fun );
+
 		//! add PindaObj to the interrupt service table
 		int AddInterrupt ( 
 			PindaObj * obj, 		//!< pointer to PinDA object
@@ -141,52 +161,34 @@ class Pinda {
 			unsigned int interval 	//!< interval in timerhits
 		);
 		
+		//! get the amount of free ram (estimate)
+		//! @returns amount of free ram 
 		int freeRam(void);
 
 	protected:
-		void (PindaObj::*PindaInterrupt)(void) ;// = &PindaObj::interrupt;
-		void (PindaObj::*PindaServiceLoop)(void); // = &PindaObj::serviceLoop;
-		const static int maxInterrupts=100;
-		const static int maxFNInterrupts=32;
-		const static int maxPindaService=100;
-		const static int maxServiceFunctions=32;
-		unsigned int interruptCounter;
-		uint8_t interruptTop;
-		uint8_t interruptFNTop;
+//		void (PindaObj::*PindaInterrupt)(void) ;	// = &PindaObj::interrupt;
+//		void (PindaObj::*PindaServiceLoop)(void); 	// = &PindaObj::serviceLoop;
+		const static int maxInterrupts=100;			//!< amount of Pinda interrupt slots
+		const static int maxFNInterrupts=32;		//!< amount of function interrupt slots
+		const static int maxPindaService=100;		//!< amount of Pinda service slots
+		const static int maxServiceFunctions=32;	//!< amount of function service slots
+		unsigned int interruptCounter;				//!< internal interrupt counter
+		uint8_t interruptTop;						//!< highest used Pinda interrupt slot
+		uint8_t interruptFNTop;						//!< highest used function interrupt slot
 
-		PindaObj * interruptPointers[100];
-		uint8_t	intteruptInterval[100];
-		PindaObj * servicePointers[100];
+		//! array of PinDA object which has interrupt functions that need to run during the PinDA interrupt
+		PindaObj * interruptPointers[100];			
+		uint8_t	intteruptInterval[100];				//!< array of intervals for the PindaObj interrupts 
 
-		voidFunction serviceFunctions[32];
+		//! array of PinDA object which has interrupt functions that need to run during the PinDA interrupt
 		voidFunction interruptFunctions[32];
-		uint8_t	intteruptFNInterval[32];	
+		uint8_t	intteruptFNInterval[32];			//!< array of intervals for the interrupt functions
+
+		PindaObj * servicePointers[100];			//!< array of objects which have an untimed loop function
+		voidFunction serviceFunctions[32];			//!< array of functionpointerswhich need to be executed within the untimed loop
 }; //Pinda
+//! external definition of pinda.
 extern Pinda pinda;
-
-
-
-//!
-//int pindaAddInterrupt ( 
-//	voidFunction fun, 		//!< voidpointer to the interrupt function
-//	unsigned int interval 	//!< interval in timerhits
-//);
-
-
-//service loop
-/** Pinda Main non-timed service loop
-* this starts all attached functions @see pindaAddLoop 
-* it should be placed in the arduino "loop" section
-*/
-void pindaLoop(void);
-
-/** Add function to the non timed service loop
-* @param fun Function to add
-* @returns slot used in the function store or -1 if no empty slot was found.
-*/
-//int pindaAddLoop ( voidFunction fun );
-// service hooks
-
 
 // --------------------------------------------------------
 // Framework Includes
@@ -213,24 +215,15 @@ void pindaLoop(void);
 #include "solenoids.h"
 
 //protocol master-slave
-#include "cpubuscom.h"
+#include "pindacom.h"
 
 //display
 //#include "lcdchars.h"
 #include "display.h"
 
-
-
-
-
-
-
-
-
-
-
-
-
+// --------------------------------------------------------
+// Framework Documentation
+// --------------------------------------------------------
 
 /**
 @mainpage
@@ -250,6 +243,8 @@ The framework will be used to access:
 
 Due to speed concerns on the arduino, the arduino is only used to interface with the IO.
 The rest of the controls are done on a seperate platform like raspberry pi or PC.
+
+The latest version of the framework should be at https://github.com/gnulnulf/PinDA
 
 @section Targets
 As this is a framework several targets are planned or optional.

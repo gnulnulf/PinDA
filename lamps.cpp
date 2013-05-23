@@ -146,14 +146,13 @@ void lamps::rowSet( const uint8_t row, const uint8_t  data) {
 
 
 
-lamps_demo::lamps_demo(void) {
-	println("lamps_demo_init");
-//	LAMPSDEMO_DDR = 0xff;
+lamps_demo::lamps_demo(String _name) {
+	objName=_name;
 	DDRK = 0xff;
 	// low is on...
 	PORTK = 0xff;
 	PORTK=0x55;
-	pinda.AddInterrupt ( this , 1);
+	pinda.AddInterrupt ( this , 2);
 } // lamps_demo::init
 
 /* a bit silly matrix subset
@@ -180,8 +179,8 @@ void lamps_demo::interrupt(void) {
 
 
 
-lamps_williams11a::lamps_williams11a( MC6821 * piaptr ) {
-	println("lamps_williams11a_init ");
+lamps_williams11a::lamps_williams11a( MC6821 * piaptr ,String _name) {
+	objName=_name;
 	pia=piaptr;
 	
 	pia->write_ddra(255); // A uitgang  
@@ -221,18 +220,10 @@ void Invoke(SomeClass *pClass, SomeClassFunction funcptr) {
 */
 void lamps_williams11a::interrupt( void ) {
 	static uint8_t row=0;
-	//print("L");
-	//print(row);
-	
-//    pia->write_pdra( 0xff  );  // clear lamps
-//    pia->write_pdrb( ( 1 << row ) );  // set row
-//    pia->write_pdra( ~ lampdata[ row ]  );  // set inverted output
 
     pia->write_pdra( 0xff  );  // clear lamps
     pia->write_pdrb( ( 1 << row ) );  // set row
     pia->write_pdra( ~ lampdata[ row ]  );  // set inverted output
-
-
 
 	row++;
 	if ( row>7) row=0;

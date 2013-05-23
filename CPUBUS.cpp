@@ -36,7 +36,7 @@
 
 
 #include <SPI.h>
-#include "Mcp23s17.h"
+#include "mcp23s17.h"
 
 #ifdef ARDUINO
 #include "Arduino.h"
@@ -59,34 +59,44 @@
 /******************************************************************************
  * Base class
  ******************************************************************************/
-//	CPUBUSClass::CPUBUSClass();
+void CPUBUSClass::interrupt(void ){};
+void CPUBUSClass::serviceLoop(void ){};
+CPUBUSClass::CPUBUSClass(void){};
 //	 void CPUBUSClass::init(void);
-//     uint8_t CPUBUSClass::read(int address);
-//     void CPUBUSClass::write(int address, uint8_t data);
+//uint8_t CPUBUSClass::read(int address);
+//void CPUBUSClass::write(int address, uint8_t data);
 //	 void CPUBUSClass::e_low();
 //	 void CPUBUSClass::e_high();
 //	 void CPUBUSClass::set_read();
 //	 void CPUBUSClass::set_write();
 
+void CPUBUSClass::reset(void ){};
+
+uint8_t CPUBUSClass::read(const unsigned int address){};
+
+void CPUBUSClass::write(const unsigned int address, const uint8_t data){};
+
+
+String CPUBUSClass::status(void) {
+	String status="###CPUBUS STATUS###";
+	status += "\nSystem type   : " + system;
+	status += "\nName          : " + objName;
+	status += "\nCPUBUS reads  : " + String( reads );
+	status += "\nCPUBUS writes : " + String( writes );
+	status += "\n"; 
+	return status;
+} //getStatus
+
+
 /******************************************************************************
  * CPUBUS_Direct
  ******************************************************************************/
 
-Cpubus_Direct::Cpubus_Direct(void) {
+Cpubus_Direct::Cpubus_Direct(String _name) {
 	writes=0;
 	reads=0;
-	Cpubus_Direct::init();
-}
-/*
-Cpubus_Direct::Cpubus_Direct( String _name ) {
-	writes=0;
-	reads=0;
-	name=_name;
-	Cpubus_Direct::init();
-}
-*/
-
-void Cpubus_Direct::init(void) {
+	objName=_name;
+	system="Cpubus direct";
 	//println("CPUBUS init DIRECT_ADDR_DIRECT");
 	//println("CPUBUS init DIRECT_DATA_CTRL");
 	CPUBUS_ADDRL_DDR =0xff;
@@ -107,22 +117,8 @@ void Cpubus_Direct::init(void) {
 
 //	Cpubus_Direct::reset();
 
-} //init
+} //Cpubus_Direct::Cpubus_Direct
 
-String Cpubus_Direct::getStatus(void) {
-	String status="CPUBUS_DIRECT\n";
-	status += "Name   :";
-	status += name;
-	status += "\n";
-	status += "reads  : ";
-	status += reads;
-	status += "\n";
-	status += "writes : ";
-	status += writes;
-	status += "\n";
-	return status;
-	
-} //getStatus
 void Cpubus_Direct::reset(void) {
 	pinMode( CPUBUS_RESET_PIN ,OUTPUT );
 	digitalWrite(CPUBUS_RESET_PIN, LOW);   // Pull reset low
@@ -133,7 +129,7 @@ void Cpubus_Direct::reset(void) {
 } //reset
 
 uint8_t Cpubus_Direct::read(const unsigned int  address) {
-	//reads++; //debug read count
+	reads++; //debug read count
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
 	CPUBUS_CTL_PORT |= ( 1<<CPUBUS_RW); 	//READ
 	CPUBUS_ADDRL_PORT = address&0xFF;		//Address Low
@@ -152,7 +148,7 @@ uint8_t Cpubus_Direct::read(const unsigned int  address) {
 } //read
 
 void Cpubus_Direct::write(const unsigned int address, const uint8_t  value) {
-	//writes++; //debug write count
+	writes++; //debug write count
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_RW);	//Write
 	CPUBUS_ADDRL_PORT = address&0xFF;		//Address Low
@@ -228,7 +224,18 @@ void Cpubus_Direct::writeref(const unsigned int & address, const uint8_t & value
 #define	INTCAPB	0x11
 #define HAEN (0b00001000)
 
-void Cpubus_SPI::init(void) {
+/*
+Cpubus_SPI::Cpubus_SPI(
+	MCP23S17 * _mcp_addr , 
+	MCP23S17 * _mcp_data ,
+	String _name
+) {
+
+	writes=0;
+	reads=0;
+	objName=_name;
+	system="Cpubus spi";
+	
 	pinMode (CPUBUS_SPI_SS, OUTPUT);
 	SPI.begin();
 	SPI.setClockDivider(SPI_CLOCK_DIV2); //16MHz / 2 = 8MHz
@@ -254,6 +261,7 @@ void Cpubus_SPI::init(void) {
   delay(300);
   
 	} //init
+*/
 
 uint8_t Cpubus_SPI::read(unsigned int address) {
   //digitalWrite(CPUBUS_SPI_SS,LOW);

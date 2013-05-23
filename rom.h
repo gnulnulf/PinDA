@@ -26,17 +26,18 @@
 
 Access ram and rom on the cpu bus.
 This is not needed in games but could be usefull for diagnostics
+
+@todo ram test and rom intel hex dump
 */ 
 #ifndef rom_h
 #define rom_h
 
+//! class to access roms on the cpubus
+//! only needed for diagnostics
 class ROM : public PindaObj {
 public:
-	/** initialize ROM 
-	*
-	*/
+	//! initialize ROM 
 	ROM(CPUBUSClass *busptr ,unsigned int addr, unsigned int size ,String name );
-	//void init(  CPUBUSClass *busptr ,unsigned int addr, unsigned int size );
 
 	/** read byte from ROM, using real CPUBUS address 
 	* @param address real CPUBUS address
@@ -61,8 +62,9 @@ public:
 	unsigned int rom_size;		//!< size of ROM
 	//String name;
 };
+
 /*
-class RAM: public ROM {
+class RAM : public ROM {
 	public:
 		RAM(CPUBUSClass *busptr ,unsigned int addr, unsigned int size ,String name );
 

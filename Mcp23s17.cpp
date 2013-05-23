@@ -12,7 +12,7 @@
 // sample on leading edge of clk,system clock/4 rate (fastest).
 // Enable the digital pins 11-13 for SPI (the MOSI,MISO,SPICLK)
 #include <SPI.h>
-#include "Mcp23s17.h"
+#include "mcp23s17.h"
 
 
 // Note: You may need to take _RESET_ on the MCP23S17 low

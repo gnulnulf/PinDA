@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,20 +100,16 @@ Inheritance diagram for PindaObj:</div>
  <div class="center">
   <img src="classPindaObj.png" usemap="#PindaObj_map" alt=""/>
   <map id="PindaObj_map" name="PindaObj_map">
-<area href="classDISPLAYCLASS.html" alt="DISPLAYCLASS" shape="rect" coords="0,56,146,80"/>
-<area href="classlamps.html" alt="lamps" shape="rect" coords="156,56,302,80"/>
-<area href="classLATCH8.html" alt="LATCH8" shape="rect" coords="312,56,458,80"/>
-<area href="classROM.html" alt="ROM" shape="rect" coords="468,56,614,80"/>
-<area href="classSOLENOID.html" alt="SOLENOID" shape="rect" coords="624,56,770,80"/>
-<area href="classSWITCHES.html" alt="SWITCHES" shape="rect" coords="936,56,1082,80"/>
-<area href="classDISPLAY__WIL11A.html" alt="DISPLAY_WIL11A" shape="rect" coords="0,112,146,136"/>
-<area href="classlamps__demo.html" alt="lamps_demo" shape="rect" coords="312,112,458,136"/>
-<area href="classlamps__williams11a.html" alt="lamps_williams11a" shape="rect" coords="312,168,458,192"/>
-<area href="classSOLENOID__demo.html" alt="SOLENOID_demo" shape="rect" coords="780,112,926,136"/>
-<area href="classSOLENOID__latch.html" alt="SOLENOID_latch" shape="rect" coords="780,168,926,192"/>
-<area href="classSOLENOID__pia.html" alt="SOLENOID_pia" shape="rect" coords="780,224,926,248"/>
-<area href="classSWITCHES__demo.html" alt="SWITCHES_demo" shape="rect" coords="1092,112,1238,136"/>
-<area href="classSWITCHES__williams11a.html" alt="SWITCHES_williams11a" shape="rect" coords="1092,168,1238,192"/>
+<area href="classCPUBUSClass.html" alt="CPUBUSClass" shape="rect" coords="116,56,222,80"/>
+<area href="classDISPLAYCLASS.html" title="base class for displays" alt="DISPLAYCLASS" shape="rect" coords="116,112,222,136"/>
+<area href="classLAMP.html" alt="LAMP" shape="rect" coords="116,168,222,192"/>
+<area href="classlamps.html" title="baseclass to control lamps" alt="lamps" shape="rect" coords="116,224,222,248"/>
+<area href="classLATCH8.html" alt="LATCH8" shape="rect" coords="116,280,222,304"/>
+<area href="classMC6821.html" alt="MC6821" shape="rect" coords="116,336,222,360"/>
+<area href="classPindaCom.html" alt="PindaCom" shape="rect" coords="116,392,222,416"/>
+<area href="classROM.html" alt="ROM" shape="rect" coords="116,448,222,472"/>
+<area href="classSOLENOID.html" title="solenoid base class" alt="SOLENOID" shape="rect" coords="116,504,222,528"/>
+<area href="classSWITCHES.html" title="base class for switches" alt="SWITCHES" shape="rect" coords="116,560,222,584"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -129,6 +125,27 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a5acbf0a23fde4dd880c0572dba96d1fb">serviceLoop</a> (void)</td></tr>
 <tr class="memdesc:a5acbf0a23fde4dd880c0572dba96d1fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">placeholder for untimed serviceLoop <br/></td></tr>
 <tr class="separator:a5acbf0a23fde4dd880c0572dba96d1fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c75d553b859c6e0d7f0722aca2a85a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c75d553b859c6e0d7f0722aca2a85a8"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>on</b> (uint16_t delay=0)</td></tr>
+<tr class="separator:a4c75d553b859c6e0d7f0722aca2a85a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d0816bdd86d95751f9d10c9c7de2b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0d0816bdd86d95751f9d10c9c7de2b3"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>off</b> (void)</td></tr>
+<tr class="separator:ad0d0816bdd86d95751f9d10c9c7de2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae7071422a8338cddbe8710a0ce8a58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ae7071422a8338cddbe8710a0ce8a58"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>toggle</b> (void)</td></tr>
+<tr class="separator:a6ae7071422a8338cddbe8710a0ce8a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac6690d5d019283e005403491ecfdf5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ac6690d5d019283e005403491ecfdf5"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isChanged</b> (void)</td></tr>
+<tr class="separator:a9ac6690d5d019283e005403491ecfdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfe80ed8bd04b06f352d33148791e1e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedfe80ed8bd04b06f352d33148791e1e"></a>
+virtual String&#160;</td><td class="memItemRight" valign="bottom"><b>getString</b> (void)</td></tr>
+<tr class="separator:aedfe80ed8bd04b06f352d33148791e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1224150e994b5cdca514e312b177b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b1224150e994b5cdca514e312b177b4"></a>
+virtual String&#160;</td><td class="memItemRight" valign="bottom"><b>getFlank</b> (void)</td></tr>
+<tr class="separator:a9b1224150e994b5cdca514e312b177b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d4ffa523d2b964c44f1c5b6c4a6120"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9d4ffa523d2b964c44f1c5b6c4a6120"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFlank</b> (void)</td></tr>
+<tr class="separator:ab9d4ffa523d2b964c44f1c5b6c4a6120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -170,7 +187,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:50 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:15 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

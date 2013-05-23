@@ -22,7 +22,7 @@
 	
 	@author Arco van Geest
 */
-/*@{*/
+/* @ { */
 #ifndef LCDCHARS_INCLUDE
 #define LCDCHARS_INCLUDE
 
@@ -136,4 +136,4 @@ uint32_t lcd16Char( uint8_t character);
 
 
 #endif //LCDCHARS_INCLUDE
-/*@}*/
+/* @ } */

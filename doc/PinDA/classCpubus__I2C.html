@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,22 +105,37 @@ Inheritance diagram for Cpubus_I2C:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_classCPUBUSClass"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCPUBUSClass')"><img src="closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="classCPUBUSClass.html">CPUBUSClass</a></td></tr>
-<tr class="memitem:a1d678455708cddc708d36c099c107bce inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d678455708cddc708d36c099c107bce"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a1d678455708cddc708d36c099c107bce">init</a> (void)</td></tr>
-<tr class="memdesc:a1d678455708cddc708d36c099c107bce inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize bus <br/></td></tr>
-<tr class="separator:a1d678455708cddc708d36c099c107bce inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07f512da4c60e4159f58fb97920a7d1a inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07f512da4c60e4159f58fb97920a7d1a"></a>
-virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a07f512da4c60e4159f58fb97920a7d1a">read</a> (const unsigned int address)</td></tr>
-<tr class="memdesc:a07f512da4c60e4159f58fb97920a7d1a inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">read byte from bus <br/></td></tr>
-<tr class="separator:a07f512da4c60e4159f58fb97920a7d1a inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebdf14315ed88c6764a9a7c8be3e6fcf inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebdf14315ed88c6764a9a7c8be3e6fcf"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#aebdf14315ed88c6764a9a7c8be3e6fcf">write</a> (const unsigned int address, const uint8_t data)</td></tr>
-<tr class="memdesc:aebdf14315ed88c6764a9a7c8be3e6fcf inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">write byte to bus <br/></td></tr>
-<tr class="separator:aebdf14315ed88c6764a9a7c8be3e6fcf inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59cd645ec921258c61deac4e96068d07 inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a59cd645ec921258c61deac4e96068d07">interrupt</a> (void)</td></tr>
+<tr class="memdesc:a59cd645ec921258c61deac4e96068d07 inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize bus  <a href="#a59cd645ec921258c61deac4e96068d07">More...</a><br/></td></tr>
+<tr class="separator:a59cd645ec921258c61deac4e96068d07 inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999fe13fef7a19020e79b35178b61283 inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a999fe13fef7a19020e79b35178b61283"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a999fe13fef7a19020e79b35178b61283">serviceLoop</a> (void)</td></tr>
+<tr class="memdesc:a999fe13fef7a19020e79b35178b61283 inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">placeholder for untimed serviceLoop <br/></td></tr>
+<tr class="separator:a999fe13fef7a19020e79b35178b61283 inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85460788cf313181a99724e98fa556fe inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85460788cf313181a99724e98fa556fe"></a>
+virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a85460788cf313181a99724e98fa556fe">read</a> (const unsigned int address)</td></tr>
+<tr class="memdesc:a85460788cf313181a99724e98fa556fe inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">read byte from bus <br/></td></tr>
+<tr class="separator:a85460788cf313181a99724e98fa556fe inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8c21706c536a56b0582464a7d199da inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf8c21706c536a56b0582464a7d199da"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#abf8c21706c536a56b0582464a7d199da">write</a> (const unsigned int address, const uint8_t data)</td></tr>
+<tr class="memdesc:abf8c21706c536a56b0582464a7d199da inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">write byte to bus <br/></td></tr>
+<tr class="separator:abf8c21706c536a56b0582464a7d199da inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29a5a3436fbd75622cedd84df601dae0 inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29a5a3436fbd75622cedd84df601dae0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a29a5a3436fbd75622cedd84df601dae0">reset</a> (void)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCPUBUSClass.html#a29a5a3436fbd75622cedd84df601dae0">reset</a> (void)</td></tr>
 <tr class="memdesc:a29a5a3436fbd75622cedd84df601dae0 inherit pub_methods_classCPUBUSClass"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggle reset port on 68xx bus low <br/></td></tr>
 <tr class="separator:a29a5a3436fbd75622cedd84df601dae0 inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae040394bd814b5b19982f10ed761a46b inherit pub_methods_classCPUBUSClass"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae040394bd814b5b19982f10ed761a46b"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>status</b> (void)</td></tr>
+<tr class="separator:ae040394bd814b5b19982f10ed761a46b inherit pub_methods_classCPUBUSClass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classPindaObj"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classPindaObj')"><img src="closed.png" alt="-"/>&#160;Private Attributes inherited from <a class="el" href="classPindaObj.html">PindaObj</a></td></tr>
+<tr class="memitem:a65a217f418ed0ef2d35a0e31f31640a7 inherit pub_attribs_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65a217f418ed0ef2d35a0e31f31640a7"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a65a217f418ed0ef2d35a0e31f31640a7">objName</a></td></tr>
+<tr class="memdesc:a65a217f418ed0ef2d35a0e31f31640a7 inherit pub_attribs_classPindaObj"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object name. <br/></td></tr>
+<tr class="separator:a65a217f418ed0ef2d35a0e31f31640a7 inherit pub_attribs_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b1e0977f4649a9f275b64c51b534e5f inherit pub_attribs_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b1e0977f4649a9f275b64c51b534e5f"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a1b1e0977f4649a9f275b64c51b534e5f">name</a></td></tr>
+<tr class="memdesc:a1b1e0977f4649a9f275b64c51b534e5f inherit pub_attribs_classPindaObj"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object name. <br/></td></tr>
+<tr class="separator:a1b1e0977f4649a9f275b64c51b534e5f inherit pub_attribs_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>CPUBUS using I2C MCP23017 io extenders </p>
@@ -130,7 +145,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:14 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

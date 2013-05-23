@@ -24,6 +24,10 @@
 
  @date       20130520 Initial documented version
 
+Switches are a core item on pinball machines.
+
+@todo direct pia switches
+  
 
 */ 
 #ifndef SWITCHES_h
@@ -34,6 +38,7 @@
 // will be needed for bally mpu35 switches
 #include "lamps.h" 
 
+//! base class for switches
 class SWITCHES : public PindaObj{
 	public:
 		SWITCHES(void);
@@ -43,15 +48,14 @@ class SWITCHES : public PindaObj{
 		//! the serviceLoop is for maintenance tasks which are not time critical and should be in the main loop.
 		virtual void serviceLoop(void);
 		
-		
 		//! clear switch arrays and counters
 		void clear(void);
-		
 		
 		//! show the state in hex on the serial link.
 		//! probably debugging uses only
 		void show(void);
-		
+		String getString(void);
+		String getFlank(void);	
 		//! get all switches in a row
 		//! @param row is the row from 0-7
 		//! @returns a byte with 8 state bits
@@ -62,7 +66,6 @@ class SWITCHES : public PindaObj{
 		//! @param number is the switchnumber 0-63
 		//! @returns a byte with the switch state
 		uint8_t get(uint8_t number);
-
 
 		//! get single switch
 		//! @param number is the switchnumber 0-63
@@ -85,12 +88,21 @@ class SWITCHES : public PindaObj{
 		//! @returns true/false for the flank down flag
 		bool flankdown( uint8_t number);
 		
+		
+		//! get changed flag
+		//! this query will clear the flag and returns the state
+		//! @returns true/false for the change flag
+		bool isChanged(void);
+		bool hasFlank(void);
+		
 	protected:
 		uint8_t switchdata[8]; 		//!< the standard lamp container
 		uint8_t switchdatalast[8]; 	//!< the standard lamp container
 		uint8_t currentRow;			//!< row inside interrupt
 		uint8_t flankupdata[8]; 	//!< store flank up events
 		uint8_t flankdowndata[8]; 	//!< store flank down events
+		
+		bool changed;				//!< is anything changed
 }; //SWITCHES
 
 /** 
@@ -118,7 +130,7 @@ This results in switches 0,9,18,27,36,45,54,63
 class  SWITCHES_demo : public SWITCHES {
 	public:
 		//! constructor
-		SWITCHES_demo(void);
+		SWITCHES_demo(String _name="SWITCHES DEMO");
 		void interrupt(void);
 	private:
 		const static uint8_t sw1_pin = 41; 	//!< switch 0 pin
@@ -143,7 +155,7 @@ class  SWITCHES_williams11a : public SWITCHES {
 		//! constructor 
 		//! the PIA needs to be defined and will be setup by the constructor.
 		//! @param _pia is the reference to MC6821
-		SWITCHES_williams11a( MC6821 * _pia);
+		SWITCHES_williams11a( MC6821 * _pia,String _name="SWITCHES SYS11A");
 		//! interrupt to poll the switches
 		void interrupt();
 	private:

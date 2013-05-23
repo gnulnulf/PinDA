@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,14 +95,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">MCP23S17 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>class to control the SPI <a class="el" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> IO expander  
+ <a href="classMCP23S17.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mcp23s17_8h_source.html">mcp23s17.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a47e81be4746f042f8cf3e8c6c58ad9f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47e81be4746f042f8cf3e8c6c58ad9f8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MCP23S17</b> (uint8_t slave_select)</td></tr>
+<tr class="memitem:a47e81be4746f042f8cf3e8c6c58ad9f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23S17.html#a47e81be4746f042f8cf3e8c6c58ad9f8">MCP23S17</a> (uint8_t slave_select)</td></tr>
+<tr class="memdesc:a47e81be4746f042f8cf3e8c6c58ad9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for single expander  <a href="#a47e81be4746f042f8cf3e8c6c58ad9f8">More...</a><br/></td></tr>
 <tr class="separator:a47e81be4746f042f8cf3e8c6c58ad9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9c8589b93f55157d435265225adec41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9c8589b93f55157d435265225adec41"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MCP23S17</b> (uint8_t slave_select, byte aaa_hw_addr)</td></tr>
+<tr class="memitem:ab9c8589b93f55157d435265225adec41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23S17.html#ab9c8589b93f55157d435265225adec41">MCP23S17</a> (uint8_t slave_select, byte aaa_hw_addr)</td></tr>
+<tr class="memdesc:ab9c8589b93f55157d435265225adec41"><td class="mdescLeft">&#160;</td><td class="mdescRight">up to 8 expanders can be shared  <a href="#ab9c8589b93f55157d435265225adec41">More...</a><br/></td></tr>
 <tr class="separator:ab9c8589b93f55157d435265225adec41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ee683f0730a23417ecee5bf9c812ea1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ee683f0730a23417ecee5bf9c812ea1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>pinMode</b> (bool mode)</td></tr>
@@ -258,14 +263,77 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>GPIOB
 static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO</b> = GPIOA</td></tr>
 <tr class="separator:ab9813abef800a5f2c1b9acb74ef56c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>class to control the SPI <a class="el" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> IO expander </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a47e81be4746f042f8cf3e8c6c58ad9f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MCP23S17::MCP23S17 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_select</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>constructor for single expander </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slave_select</td><td>arduino pin for the slave select </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab9c8589b93f55157d435265225adec41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MCP23S17::MCP23S17 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_select</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>aaa_hw_addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>up to 8 expanders can be shared </p>
+<p>constructor for an expander on a shared bus </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slave_select</td><td>arduino pin for the slave select </td></tr>
+    <tr><td class="paramname">aaa_hw_addr</td><td>share index (0-7) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="Mcp23s17_8h_source.html">Mcp23s17.h</a></li>
-<li>Mcp23s17.cpp</li>
+<li><a class="el" href="mcp23s17_8h_source.html">mcp23s17.h</a></li>
+<li>mcp23s17.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:50 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:15 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

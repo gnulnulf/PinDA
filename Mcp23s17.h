@@ -1,20 +1,55 @@
+/**
+ @file
 
-// MCP23S17 SPI 16-bit IO expander
-// http://ww1.microchip.com/downloads/en/DeviceDoc/21952b.pdf
+ @brief interface to the MCP23S17 SPI 16-bit IO expander
 
-#ifndef Mcp23s17_h
-#define Mcp23s17_h
+ @version 1.0
+ @author others
+ @author Arco van Geest <arco@appeltaart.mine.nu>
+ 
+	This file is part of PinDA.
+
+	PinDA is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	PinDA is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with PinDA.  If not, see <http://www.gnu.org/licenses/>.
+
+ @date       20130520 Initial documented version
+
+the datasheet can be found at // http://ww1.microchip.com/downloads/en/DeviceDoc/21952b.pdf
+based on https://github.com/thejpster/Mcp23s17
+
+
+*/
+#ifndef MCP23S17_h
+#define MCP23S17_h
 
 #include "Arduino.h"
 #include <SPI.h>
 
+
+//! class to control the SPI MCP23S17 IO expander
 class MCP23S17
 {
   public:
-    // You must set specify the slave select pin
-    MCP23S17(uint8_t slave_select);
-    // Optionally, up to 8 devices can share the same slave select pin
-    MCP23S17(uint8_t slave_select, byte aaa_hw_addr);
+    //! constructor for single expander
+    MCP23S17(
+		uint8_t slave_select	//!< arduino pin for the slave select
+	);
+    //! constructor for an expander on a shared bus
+	//! up to 8 expanders can be shared
+    MCP23S17(
+		uint8_t slave_select, 	//!< arduino pin for the slave select
+		byte aaa_hw_addr		//!< share index (0-7)
+	);
 
     // GPIO 16-bit Combined Port (GPIO A0-A7 + GPIO B0-B7)
     void pinMode(bool mode);
@@ -110,7 +145,7 @@ class MCP23S17
     byte uint16_low_byte(uint16_t uint16);
 };
 
-#endif // Mcp23s17_h
+#endif // MCP23S17_h
 
 
 
