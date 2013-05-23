@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +85,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">pinda.h File Reference</div>  </div>
@@ -100,14 +99,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;String&gt;</code><br/>
 <code>#include &quot;arduino_compat.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="CPUBUS_8h_source.html">CPUBUS.h</a>&quot;</code><br/>
-<code>#include &quot;mc6821.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="mc6821_8h_source.html">mc6821.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="latch_8h_source.html">latch.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="rom_8h_source.html">rom.h</a>&quot;</code><br/>
-<code>#include &quot;lamps.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="lamps_8h_source.html">lamps.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="switches_8h_source.html">switches.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="solenoids_8h_source.html">solenoids.h</a>&quot;</code><br/>
-<code>#include &quot;cpubuscom.h&quot;</code><br/>
-<code>#include &quot;display.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="pindacom_8h_source.html">pindacom.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="display_8h_source.html">display.h</a>&quot;</code><br/>
 </div>
 <p><a href="pinda_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -120,28 +119,16 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a5a9def591b47e76b498ad664d6c74f9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a9def591b47e76b498ad664d6c74f9b"></a>
-typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><b>IntFunctionWithOneParameter</b> )(int a)</td></tr>
-<tr class="separator:a5a9def591b47e76b498ad664d6c74f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdb086e78380c2c1c5f8c3f53c799009"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acdb086e78380c2c1c5f8c3f53c799009"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>voidFunction</b> )(void)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pinda_8h.html#acdb086e78380c2c1c5f8c3f53c799009">voidFunction</a> )(void)</td></tr>
+<tr class="memdesc:acdb086e78380c2c1c5f8c3f53c799009"><td class="mdescLeft">&#160;</td><td class="mdescRight">void pointer definition <br/></td></tr>
 <tr class="separator:acdb086e78380c2c1c5f8c3f53c799009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e2ecb730f5afae64b85f611d0851300"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e2ecb730f5afae64b85f611d0851300"></a>
-typedef void(PindaObj::*&#160;</td><td class="memItemRight" valign="bottom"><b>PindaInterrupt</b> )(void)</td></tr>
-<tr class="separator:a1e2ecb730f5afae64b85f611d0851300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56c2f4e3e89f10999f2883679f0d94af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56c2f4e3e89f10999f2883679f0d94af"></a>
-typedef void(PindaObj::*&#160;</td><td class="memItemRight" valign="bottom"><b>PindaServiceLoop</b> )(void)</td></tr>
-<tr class="separator:a56c2f4e3e89f10999f2883679f0d94af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a46935ab739effd953cc01617805b2fa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pinda_8h.html#a46935ab739effd953cc01617805b2fa1">pindaLoop</a> (void)</td></tr>
-<tr class="separator:a46935ab739effd953cc01617805b2fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:acabe7efa500636b30ca3c99c110f5f17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acabe7efa500636b30ca3c99c110f5f17"></a>
-<a class="el" href="classPinda.html">Pinda</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pinda</b></td></tr>
+<a class="el" href="classPinda.html">Pinda</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pinda_8h.html#acabe7efa500636b30ca3c99c110f5f17">pinda</a></td></tr>
+<tr class="memdesc:acabe7efa500636b30ca3c99c110f5f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">external definition of pinda. <br/></td></tr>
 <tr class="separator:acabe7efa500636b30ca3c99c110f5f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -165,29 +152,10 @@ Variables</h2></td></tr>
 </pre></dd></dl>
 <dl class="section date"><dt>Date</dt><dd>20130520 Initial version</dd></dl>
 <p>This framework controls pinball machine based on mc680x cpu's This file is a placeholder to include all seperate classes into a game. just use #include <a class="el" href="pinda_8h.html" title="Framework for controlling pinball hardware.">pinda.h</a> </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a46935ab739effd953cc01617805b2fa1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pindaLoop </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="classPinda.html">Pinda</a> Main non-timed service loop this starts all attached functions</p>
-<dl class="section see"><dt>See Also</dt><dd>pindaAddLoop it should be placed in the arduino "loop" section </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:14 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

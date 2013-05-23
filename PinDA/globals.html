@@ -69,9 +69,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow3" class="tabs2">
     <ul class="tablist">
       <li class="current"><a href="globals.html"><span>All</span></a></li>
-      <li><a href="globals_func.html"><span>Functions</span></a></li>
+      <li><a href="globals_vars.html"><span>Variables</span></a></li>
+      <li><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
       <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
+      <li><a href="globals_defs.html"><span>Macros</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,8 +93,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented file members with links to the documentation:</div><ul>
-<li>pindaLoop()
-: <a class="el" href="pinda_8h.html#a46935ab739effd953cc01617805b2fa1">pinda.h</a>
+<li>CPUBUS_ADDRH_DDR
+: <a class="el" href="CPUBUS_8h.html#ac6b5dcd7b8a02585dc6c9db48effa6de">CPUBUS.h</a>
+</li>
+<li>CPUBUS_ADDRH_PINS
+: <a class="el" href="CPUBUS_8h.html#a173e4b6f334d48d1e0be40288c189792">CPUBUS.h</a>
+</li>
+<li>CPUBUS_ADDRH_PORT
+: <a class="el" href="CPUBUS_8h.html#aff0f1da72741651958286469ee31b586">CPUBUS.h</a>
+</li>
+<li>CPUBUS_ADDRL_DDR
+: <a class="el" href="CPUBUS_8h.html#ae3f4dd64ae2c9502e0e1dcbd39f52213">CPUBUS.h</a>
+</li>
+<li>CPUBUS_ADDRL_PINS
+: <a class="el" href="CPUBUS_8h.html#ac3e83440fa39ef12216c23a8c7898713">CPUBUS.h</a>
+</li>
+<li>CPUBUS_ADDRL_PORT
+: <a class="el" href="CPUBUS_8h.html#a7bfe5de717a3b1cee34159d48cd0173e">CPUBUS.h</a>
+</li>
+<li>CPUBUS_CTL_DDR
+: <a class="el" href="CPUBUS_8h.html#aadeba9b013b14630f94f3cc4404aff69">CPUBUS.h</a>
+</li>
+<li>CPUBUS_CTL_PINS
+: <a class="el" href="CPUBUS_8h.html#aaee9ce5f08890f61bb7dab948a3ae0f9">CPUBUS.h</a>
+</li>
+<li>CPUBUS_CTL_PORT
+: <a class="el" href="CPUBUS_8h.html#a7c8fe1bdcb8febd9808589f2f7436cd5">CPUBUS.h</a>
+</li>
+<li>CPUBUS_DATA_DDR
+: <a class="el" href="CPUBUS_8h.html#a53c0ae1c185f7724ff1d93019f684cb0">CPUBUS.h</a>
+</li>
+<li>CPUBUS_DATA_PINS
+: <a class="el" href="CPUBUS_8h.html#a32ac3149462201e445940fadcae025e3">CPUBUS.h</a>
+</li>
+<li>CPUBUS_DATA_PORT
+: <a class="el" href="CPUBUS_8h.html#ae6567cddde2bd0d56e67f39b014c0513">CPUBUS.h</a>
+</li>
+<li>CPUBUS_SPI_SS
+: <a class="el" href="CPUBUS_8h.html#a61e87b7fae8cc4f3252e0f1a7500dee6">CPUBUS.h</a>
+</li>
+<li>pia_io
+: <a class="el" href="mc6821_8h.html#a0a3fe5c50108a1bb2b929d008bff4aa2">mc6821.h</a>
+</li>
+<li>pinda
+: <a class="el" href="pinda_8h.html#acabe7efa500636b30ca3c99c110f5f17">pinda.h</a>
 </li>
 <li>SOL_DELAY_ON
 : <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722fa79e288588008a4d1c79d83368262c277">solenoids.h</a>
@@ -121,11 +165,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SOLENOID_UNUSED
 : <a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a37f3f9fe1996248ab105cce4e49b6f34">solenoids.h</a>
 </li>
+<li>voidFunction
+: <a class="el" href="pinda_8h.html#acdb086e78380c2c1c5f8c3f53c799009">pinda.h</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:50 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:15 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SOLENOIDS_h</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span> </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pinda_8h.html" title="Framework for controlling pinball hardware.">pinda.h</a>&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;mc6821.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mc6821_8h.html" title="interface to the mc6821 IO on the 8bit 68xx memory bus">mc6821.h</a>&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// --------------------------------------------------------</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Enumerations</span></div>
@@ -115,97 +115,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classSOLENOID.html">   68</a></span>&#160; <span class="keyword">class </span><a class="code" href="classSOLENOID.html">SOLENOID</a> : <span class="keyword">public</span> <a class="code" href="classPindaObj.html">PindaObj</a> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classSOLENOID.html">   68</a></span>&#160; <span class="keyword">class </span><a class="code" href="classSOLENOID.html" title="solenoid base class">SOLENOID</a> : <span class="keyword">public</span> <a class="code" href="classPindaObj.html">PindaObj</a> {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                uint8_t timer;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">bool</span> active;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordtype">bool</span> state;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                String name;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> type;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                uint8_t max_on;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                uint8_t min_off;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                uint16_t delay_timer;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                uint8_t off_timer;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">volatile</span> <a class="code" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722f" title="a solenoid can enter several states.">sol_state</a> current_state;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="classSOLENOID.html">SOLENOID</a> ( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> real_on(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> real_off(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordtype">void</span> on(uint16_t delay=0);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordtype">void</span> off( <span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordtype">void</span> toggle(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordtype">bool</span> isOn(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordtype">void</span> serviceTimer(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID.html#a06cce4382aca327ef77f61e2c5ff63e1" title="placeholder for interrupts">interrupt</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; };</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="classSOLENOID__demo.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSOLENOID__demo.html">SOLENOID_demo</a> : <span class="keyword">public</span> <a class="code" href="classSOLENOID.html">SOLENOID</a> {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <a class="code" href="classSOLENOID__demo.html">SOLENOID_demo</a>( </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        uint8_t _port,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        <span class="keywordtype">bool</span> _active=<span class="keyword">true</span>,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> _type=<a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a48da83321525e9dd9a92613aebaf3e9f" title="solenoid may only be pulsed">SOLENOID_PULSE</a>,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        uint8_t _max_on=10,</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        uint8_t _min_off=10,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        String _name=<span class="stringliteral">&quot;SOLENOIDDEMO&quot;</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                );</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> real_on(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> real_off(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                uint8_t port;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="classSOLENOID__latch.html">  117</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSOLENOID__latch.html">SOLENOID_latch</a> : <span class="keyword">public</span> <a class="code" href="classSOLENOID.html">SOLENOID</a> {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="classSOLENOID__latch.html">SOLENOID_latch</a>( </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                        <a class="code" href="classLATCH8.html">LATCH8</a> * _latch, </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                        uint8_t _bit,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                        <span class="keywordtype">bool</span> _active,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> _type=<a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a37f3f9fe1996248ab105cce4e49b6f34" title="placeholder for undefined solenoids">SOLENOID_UNUSED</a>,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        uint8_t _max_on=10,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        uint8_t _min_off=10,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        String _name=<span class="stringliteral">&quot;SOLENOIDLATCH&quot;</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                );</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> real_on(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> real_off(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="classLATCH8.html">LATCH8</a> * latch;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                uint8_t bitnr;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="code" href="classSOLENOID__pia.html">  136</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSOLENOID__pia.html">SOLENOID_pia</a> : <span class="keyword">public</span> <a class="code" href="classSOLENOID.html">SOLENOID</a> {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <a class="code" href="classSOLENOID__pia.html">SOLENOID_pia</a>( </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        <a class="code" href="classMC6821.html">MC6821</a> * _pia,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        pia_io _index,</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        <span class="keywordtype">bool</span> _active=<span class="keyword">true</span>,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> _type=<a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a37f3f9fe1996248ab105cce4e49b6f34" title="placeholder for undefined solenoids">SOLENOID_UNUSED</a>,</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        uint8_t _max_on=10,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        uint8_t _min_off=10,</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        String _name=<span class="stringliteral">&quot;SOLENOIDPIA&quot;</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                );</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <span class="keywordtype">void</span> real_on(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keywordtype">void</span> real_off(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <a class="code" href="classMC6821.html">MC6821</a> * pia;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                pia_io index;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classSOLENOID.html#afbb0aa88b624f012abf06a0734656d5b">   70</a></span>&#160;                uint8_t <a class="code" href="classSOLENOID.html#afbb0aa88b624f012abf06a0734656d5b" title="timer counter">timer</a>;                  </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="classSOLENOID.html#af1e9dd5581b1130cc03a40e6834e1912">   71</a></span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classSOLENOID.html#af1e9dd5581b1130cc03a40e6834e1912" title="is the soloid active high or low">active</a>;                    </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="classSOLENOID.html#a1672b0a87dc32f4a5fd615cc82265b52">   72</a></span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classSOLENOID.html#a1672b0a87dc32f4a5fd615cc82265b52" title="current state of the solenoid">state</a>;                             </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="classSOLENOID.html#a64d5fcbac8adf5fe45926f93fd32d7ef">   73</a></span>&#160;                <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> <a class="code" href="classSOLENOID.html#a64d5fcbac8adf5fe45926f93fd32d7ef" title="type of the solenoid (pulse/continious)">type</a>;             </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="classSOLENOID.html#ab305b9558da56bdb137183db8c580030">   74</a></span>&#160;                uint8_t <a class="code" href="classSOLENOID.html#ab305b9558da56bdb137183db8c580030" title="amount of Pinda interrupts the solenoid may be on">max_on</a>;                 </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="classSOLENOID.html#aed71d7ec3e89cde35d43a7f759728a2e">   75</a></span>&#160;                uint8_t <a class="code" href="classSOLENOID.html#aed71d7ec3e89cde35d43a7f759728a2e" title="amount of Pinda interrupts the solenoid should be off">min_off</a>;                </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="classSOLENOID.html#a4de2fbc92369cbfc636bf0cf5c0565e6">   78</a></span>&#160;                <span class="keyword">volatile</span> <a class="code" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722f" title="a solenoid can enter several states.">sol_state</a> <a class="code" href="classSOLENOID.html#a4de2fbc92369cbfc636bf0cf5c0565e6" title="the state the solenoid is in">current_state</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classSOLENOID.html#ad4cb26d275db1859b8d5f2caabb9408b" title="constructor">SOLENOID</a> ( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID.html#a4aacd3a55a0e130c56de2f12424e776c" title="this realy turns on the solenoid">real_on</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID.html#a5326d9ddd0fb6bd8a7c02ce2c1e06357" title="this realy turns off the solenoid">real_off</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID.html#a12adab545fd53d77ae5426799ac39982" title="turn on solenoid or start delay timer">on</a>(uint16_t delay=0);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID.html#a2b7400489d26a01d6e47c7ff6d793350" title="start turn off sequence">off</a>( <span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID.html#a9d80f253daf35ac9b96944c249e94ada" title="toggle the solenoid from on to off or otherwise">toggle</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classSOLENOID.html#abc3033734c0ecfe7ab0809a735a0d303">isOn</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID.html#a06cce4382aca327ef77f61e2c5ff63e1" title="interrupt function which will be started by the Pinda interrupt timer">interrupt</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; };</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="classSOLENOID__demo.html">  110</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSOLENOID__demo.html">SOLENOID_demo</a> : <span class="keyword">public</span> <a class="code" href="classSOLENOID.html" title="solenoid base class">SOLENOID</a> {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="classSOLENOID__demo.html#a989d6637e9ecc181dedd378a1b38e17b" title="constructor">SOLENOID_demo</a>( </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        uint8_t _port,                                          </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        <span class="keywordtype">bool</span> _active=<span class="keyword">true</span>,                                      </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> _type=<a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a48da83321525e9dd9a92613aebaf3e9f" title="solenoid may only be pulsed">SOLENOID_PULSE</a>,     </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        uint8_t _max_on=10,                                     </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        uint8_t _min_off=10,                            </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                        String _name=<span class="stringliteral">&quot;SOLENOIDDEMO&quot;</span>                     </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                );</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID__demo.html#ae5f900aacb30a606d2f55779fe96c29c" title="turn off solenoid, no other logic">real_on</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID__demo.html#aca2ea88016d4940319211059b1cca1f3" title="this realy turns off the solenoid">real_off</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                uint8_t port;                                                   </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}; <span class="comment">// SOLENOID_demo</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="classSOLENOID__latch.html">  134</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSOLENOID__latch.html">SOLENOID_latch</a> : <span class="keyword">public</span> <a class="code" href="classSOLENOID.html" title="solenoid base class">SOLENOID</a> {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <a class="code" href="classSOLENOID__latch.html#a30da6cd4023c1d9e22ae7950353bc9af" title="constructor">SOLENOID_latch</a>( </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        <a class="code" href="classLATCH8.html">LATCH8</a> * _latch,                                        </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        uint8_t _bit,                                           </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        <span class="keywordtype">bool</span> _active,                                           </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> _type=<a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a48da83321525e9dd9a92613aebaf3e9f" title="solenoid may only be pulsed">SOLENOID_PULSE</a>,     </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        uint8_t _max_on=10,                                     </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        uint8_t _min_off=10,                            </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        String _name=<span class="stringliteral">&quot;SOLENOIDLATCH&quot;</span>            </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID__latch.html#a21471db4e3deb4bc93fe02dd2ea99d7b" title="turn off solenoid, no other logic">real_on</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID__latch.html#a625994b80f610366948755bf29e66c5d" title="this realy turns off the solenoid">real_off</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <a class="code" href="classLATCH8.html">LATCH8</a> * latch;                                                 </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                uint8_t bitnr;                                                  </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}; <span class="comment">// SOLENOID_latch </span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif //SOLENOIDS</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="code" href="classSOLENOID__pia.html">  159</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSOLENOID__pia.html">SOLENOID_pia</a> : <span class="keyword">public</span> <a class="code" href="classSOLENOID.html" title="solenoid base class">SOLENOID</a> {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <a class="code" href="classSOLENOID__pia.html#a1f723346a4d80c351b204d10f013b774" title="constructor">SOLENOID_pia</a>( </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        <a class="code" href="classMC6821.html">MC6821</a> * _pia,                                                  </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                        <a class="code" href="mc6821_8h.html#a0a3fe5c50108a1bb2b929d008bff4aa2">pia_io</a> _index,                                                  </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        <span class="keywordtype">bool</span> _active=<span class="keyword">true</span>,                                              </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        <a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261" title="solenoids can be pulsed or continious.">solenoid_type</a> _type=<a class="code" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a48da83321525e9dd9a92613aebaf3e9f" title="solenoid may only be pulsed">SOLENOID_PULSE</a>,             </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        uint8_t _max_on=10,                                             </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                        uint8_t _min_off=10,                                    </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        String _name=<span class="stringliteral">&quot;SOLENOIDPIA&quot;</span>                              </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID__pia.html#ac4e1ad55e43dd87815aeb9b05fc37a6f" title="turn off solenoid, no other logic">real_on</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSOLENOID__pia.html#acd051539578a110dcb1b7bf4d4e7b8a6" title="this realy turns off the solenoid">real_off</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <a class="code" href="classMC6821.html">MC6821</a> * pia;                                                           </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <a class="code" href="mc6821_8h.html#a0a3fe5c50108a1bb2b929d008bff4aa2">pia_io</a> index;                                                           </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}; <span class="comment">// SOLENOID_pia</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif //SOLENOIDS</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:49 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:14 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

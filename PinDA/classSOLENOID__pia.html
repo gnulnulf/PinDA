@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,47 +91,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">SOLENOID_pia Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="solenoids_8h_source.html">solenoids.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SOLENOID_pia:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classSOLENOID__pia.png" usemap="#SOLENOID_pia_map" alt=""/>
   <map id="SOLENOID_pia_map" name="SOLENOID_pia_map">
-<area href="classSOLENOID.html" alt="SOLENOID" shape="rect" coords="0,56,100,80"/>
+<area href="classSOLENOID.html" title="solenoid base class" alt="SOLENOID" shape="rect" coords="0,56,100,80"/>
 <area href="classPindaObj.html" alt="PindaObj" shape="rect" coords="0,0,100,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afa7eb6003568499eb084b086efc868fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa7eb6003568499eb084b086efc868fb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SOLENOID_pia</b> (<a class="el" href="classMC6821.html">MC6821</a> *_pia, pia_io _index, bool _active=true, <a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261">solenoid_type</a> _type=<a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a37f3f9fe1996248ab105cce4e49b6f34">SOLENOID_UNUSED</a>, uint8_t _max_on=10, uint8_t _min_off=10, String _name=&quot;SOLENOIDPIA&quot;)</td></tr>
-<tr class="separator:afa7eb6003568499eb084b086efc868fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f723346a4d80c351b204d10f013b774"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID__pia.html#a1f723346a4d80c351b204d10f013b774">SOLENOID_pia</a> (<a class="el" href="classMC6821.html">MC6821</a> *_pia, <a class="el" href="mc6821_8h.html#a0a3fe5c50108a1bb2b929d008bff4aa2">pia_io</a> _index, bool _active=true, <a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261">solenoid_type</a> _type=<a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a48da83321525e9dd9a92613aebaf3e9f">SOLENOID_PULSE</a>, uint8_t _max_on=10, uint8_t _min_off=10, String _name=&quot;SOLENOIDPIA&quot;)</td></tr>
+<tr class="memdesc:a1f723346a4d80c351b204d10f013b774"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="#a1f723346a4d80c351b204d10f013b774">More...</a><br/></td></tr>
+<tr class="separator:a1f723346a4d80c351b204d10f013b774"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4e1ad55e43dd87815aeb9b05fc37a6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4e1ad55e43dd87815aeb9b05fc37a6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>real_on</b> (void)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID__pia.html#ac4e1ad55e43dd87815aeb9b05fc37a6f">real_on</a> (void)</td></tr>
+<tr class="memdesc:ac4e1ad55e43dd87815aeb9b05fc37a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">turn off solenoid, no other logic <br/></td></tr>
 <tr class="separator:ac4e1ad55e43dd87815aeb9b05fc37a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd051539578a110dcb1b7bf4d4e7b8a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd051539578a110dcb1b7bf4d4e7b8a6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>real_off</b> (void)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID__pia.html#acd051539578a110dcb1b7bf4d4e7b8a6">real_off</a> (void)</td></tr>
+<tr class="memdesc:acd051539578a110dcb1b7bf4d4e7b8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">this realy turns off the solenoid <br/></td></tr>
 <tr class="separator:acd051539578a110dcb1b7bf4d4e7b8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSOLENOID"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSOLENOID')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSOLENOID.html">SOLENOID</a></td></tr>
+<tr class="memitem:ad4cb26d275db1859b8d5f2caabb9408b inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4cb26d275db1859b8d5f2caabb9408b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#ad4cb26d275db1859b8d5f2caabb9408b">SOLENOID</a> (void)</td></tr>
+<tr class="memdesc:ad4cb26d275db1859b8d5f2caabb9408b inherit pub_methods_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor <br/></td></tr>
+<tr class="separator:ad4cb26d275db1859b8d5f2caabb9408b inherit pub_methods_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12adab545fd53d77ae5426799ac39982 inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12adab545fd53d77ae5426799ac39982"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on</b> (uint16_t delay=0)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#a12adab545fd53d77ae5426799ac39982">on</a> (uint16_t delay=0)</td></tr>
+<tr class="memdesc:a12adab545fd53d77ae5426799ac39982 inherit pub_methods_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">turn on solenoid or start delay timer <br/></td></tr>
 <tr class="separator:a12adab545fd53d77ae5426799ac39982 inherit pub_methods_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b7400489d26a01d6e47c7ff6d793350 inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b7400489d26a01d6e47c7ff6d793350"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>off</b> (void)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#a2b7400489d26a01d6e47c7ff6d793350">off</a> (void)</td></tr>
+<tr class="memdesc:a2b7400489d26a01d6e47c7ff6d793350 inherit pub_methods_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">start turn off sequence <br/></td></tr>
 <tr class="separator:a2b7400489d26a01d6e47c7ff6d793350 inherit pub_methods_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d80f253daf35ac9b96944c249e94ada inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d80f253daf35ac9b96944c249e94ada"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>toggle</b> (void)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#a9d80f253daf35ac9b96944c249e94ada">toggle</a> (void)</td></tr>
+<tr class="memdesc:a9d80f253daf35ac9b96944c249e94ada inherit pub_methods_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggle the solenoid from on to off or otherwise <br/></td></tr>
 <tr class="separator:a9d80f253daf35ac9b96944c249e94ada inherit pub_methods_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc3033734c0ecfe7ab0809a735a0d303 inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc3033734c0ecfe7ab0809a735a0d303"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isOn</b> (void)</td></tr>
+<tr class="memitem:abc3033734c0ecfe7ab0809a735a0d303 inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#abc3033734c0ecfe7ab0809a735a0d303">isOn</a> (void)</td></tr>
 <tr class="separator:abc3033734c0ecfe7ab0809a735a0d303 inherit pub_methods_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3304a7f94f8a21651a717a41239064ef inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3304a7f94f8a21651a717a41239064ef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>serviceTimer</b> (void)</td></tr>
-<tr class="separator:a3304a7f94f8a21651a717a41239064ef inherit pub_methods_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06cce4382aca327ef77f61e2c5ff63e1 inherit pub_methods_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06cce4382aca327ef77f61e2c5ff63e1"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#a06cce4382aca327ef77f61e2c5ff63e1">interrupt</a> (void)</td></tr>
-<tr class="memdesc:a06cce4382aca327ef77f61e2c5ff63e1 inherit pub_methods_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">placeholder for interrupts <br/></td></tr>
+<tr class="memdesc:a06cce4382aca327ef77f61e2c5ff63e1 inherit pub_methods_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">interrupt function which will be started by the <a class="el" href="classPinda.html">Pinda</a> interrupt timer <br/></td></tr>
 <tr class="separator:a06cce4382aca327ef77f61e2c5ff63e1 inherit pub_methods_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPindaObj"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPindaObj')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPindaObj.html">PindaObj</a></td></tr>
 <tr class="memitem:a909285ddfa11cdc29746face9794e8f8 inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a909285ddfa11cdc29746face9794e8f8">getName</a> (void)</td></tr>
@@ -140,6 +147,18 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html#a5acbf0a23fde4dd880c0572dba96d1fb">serviceLoop</a> (void)</td></tr>
 <tr class="memdesc:a5acbf0a23fde4dd880c0572dba96d1fb inherit pub_methods_classPindaObj"><td class="mdescLeft">&#160;</td><td class="mdescRight">placeholder for untimed serviceLoop <br/></td></tr>
 <tr class="separator:a5acbf0a23fde4dd880c0572dba96d1fb inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac6690d5d019283e005403491ecfdf5 inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ac6690d5d019283e005403491ecfdf5"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isChanged</b> (void)</td></tr>
+<tr class="separator:a9ac6690d5d019283e005403491ecfdf5 inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfe80ed8bd04b06f352d33148791e1e inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedfe80ed8bd04b06f352d33148791e1e"></a>
+virtual String&#160;</td><td class="memItemRight" valign="bottom"><b>getString</b> (void)</td></tr>
+<tr class="separator:aedfe80ed8bd04b06f352d33148791e1e inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1224150e994b5cdca514e312b177b4 inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b1224150e994b5cdca514e312b177b4"></a>
+virtual String&#160;</td><td class="memItemRight" valign="bottom"><b>getFlank</b> (void)</td></tr>
+<tr class="separator:a9b1224150e994b5cdca514e312b177b4 inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d4ffa523d2b964c44f1c5b6c4a6120 inherit pub_methods_classPindaObj"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9d4ffa523d2b964c44f1c5b6c4a6120"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFlank</b> (void)</td></tr>
+<tr class="separator:ab9d4ffa523d2b964c44f1c5b6c4a6120 inherit pub_methods_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -154,36 +173,108 @@ String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a1b1e0977f4649a9f275b64c51b534e5f inherit pub_attribs_classPindaObj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classSOLENOID"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classSOLENOID')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classSOLENOID.html">SOLENOID</a></td></tr>
 <tr class="memitem:afbb0aa88b624f012abf06a0734656d5b inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbb0aa88b624f012abf06a0734656d5b"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timer</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#afbb0aa88b624f012abf06a0734656d5b">timer</a></td></tr>
+<tr class="memdesc:afbb0aa88b624f012abf06a0734656d5b inherit pro_attribs_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">timer counter <br/></td></tr>
 <tr class="separator:afbb0aa88b624f012abf06a0734656d5b inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1e9dd5581b1130cc03a40e6834e1912 inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1e9dd5581b1130cc03a40e6834e1912"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>active</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#af1e9dd5581b1130cc03a40e6834e1912">active</a></td></tr>
+<tr class="memdesc:af1e9dd5581b1130cc03a40e6834e1912 inherit pro_attribs_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">is the soloid active high or low <br/></td></tr>
 <tr class="separator:af1e9dd5581b1130cc03a40e6834e1912 inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1672b0a87dc32f4a5fd615cc82265b52 inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1672b0a87dc32f4a5fd615cc82265b52"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>state</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#a1672b0a87dc32f4a5fd615cc82265b52">state</a></td></tr>
+<tr class="memdesc:a1672b0a87dc32f4a5fd615cc82265b52 inherit pro_attribs_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">current state of the solenoid <br/></td></tr>
 <tr class="separator:a1672b0a87dc32f4a5fd615cc82265b52 inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44add26c8f999851449d819f586e5f01 inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44add26c8f999851449d819f586e5f01"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
-<tr class="separator:a44add26c8f999851449d819f586e5f01 inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64d5fcbac8adf5fe45926f93fd32d7ef inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64d5fcbac8adf5fe45926f93fd32d7ef"></a>
-<a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261">solenoid_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261">solenoid_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#a64d5fcbac8adf5fe45926f93fd32d7ef">type</a></td></tr>
+<tr class="memdesc:a64d5fcbac8adf5fe45926f93fd32d7ef inherit pro_attribs_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of the solenoid (pulse/continious) <br/></td></tr>
 <tr class="separator:a64d5fcbac8adf5fe45926f93fd32d7ef inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab305b9558da56bdb137183db8c580030 inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab305b9558da56bdb137183db8c580030"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>max_on</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#ab305b9558da56bdb137183db8c580030">max_on</a></td></tr>
+<tr class="memdesc:ab305b9558da56bdb137183db8c580030 inherit pro_attribs_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of <a class="el" href="classPinda.html">Pinda</a> interrupts the solenoid may be on <br/></td></tr>
 <tr class="separator:ab305b9558da56bdb137183db8c580030 inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed71d7ec3e89cde35d43a7f759728a2e inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed71d7ec3e89cde35d43a7f759728a2e"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>min_off</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#aed71d7ec3e89cde35d43a7f759728a2e">min_off</a></td></tr>
+<tr class="memdesc:aed71d7ec3e89cde35d43a7f759728a2e inherit pro_attribs_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of <a class="el" href="classPinda.html">Pinda</a> interrupts the solenoid should be off <br/></td></tr>
 <tr class="separator:aed71d7ec3e89cde35d43a7f759728a2e inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8db9987e578a102654719e429027d27f inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8db9987e578a102654719e429027d27f"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>delay_timer</b></td></tr>
-<tr class="separator:a8db9987e578a102654719e429027d27f inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8601a05cab19a8dc0c0f757dc23a97a7 inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8601a05cab19a8dc0c0f757dc23a97a7"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>off_timer</b></td></tr>
-<tr class="separator:a8601a05cab19a8dc0c0f757dc23a97a7 inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4de2fbc92369cbfc636bf0cf5c0565e6 inherit pro_attribs_classSOLENOID"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4de2fbc92369cbfc636bf0cf5c0565e6"></a>
-volatile <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722f">sol_state</a>&#160;</td><td class="memItemRight" valign="bottom"><b>current_state</b></td></tr>
+volatile <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722f">sol_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSOLENOID.html#a4de2fbc92369cbfc636bf0cf5c0565e6">current_state</a></td></tr>
+<tr class="memdesc:a4de2fbc92369cbfc636bf0cf5c0565e6 inherit pro_attribs_classSOLENOID"><td class="mdescLeft">&#160;</td><td class="mdescRight">the state the solenoid is in <br/></td></tr>
 <tr class="separator:a4de2fbc92369cbfc636bf0cf5c0565e6 inherit pro_attribs_classSOLENOID"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>solenoid which uses a io-bit on a <a class="el" href="classMC6821.html">MC6821</a> IC on the cpubus </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a1f723346a4d80c351b204d10f013b774"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOLENOID_pia::SOLENOID_pia </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMC6821.html">MC6821</a> *&#160;</td>
+          <td class="paramname"><em>_pia</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mc6821_8h.html#a0a3fe5c50108a1bb2b929d008bff4aa2">pia_io</a>&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_active</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261">solenoid_type</a>&#160;</td>
+          <td class="paramname"><em>_type</em> = <code><a class="el" href="solenoids_8h.html#af43e6890c4be8713972e6b9e5468d261a48da83321525e9dd9a92613aebaf3e9f">SOLENOID_PULSE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>_max_on</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>_min_off</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>_name</em> = <code>&quot;SOLENOIDPIA&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>constructor </p>
+<p>turn on solenoid, no other logic </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pia</td><td>pointer to mc6821 object </td></tr>
+    <tr><td class="paramname">_index</td><td>bit number on the pia ic (0-20) </td></tr>
+    <tr><td class="paramname">_active</td><td>active state on=true </td></tr>
+    <tr><td class="paramname">_type</td><td>solenoid type, default to pulse </td></tr>
+    <tr><td class="paramname">_max_on</td><td>solenoid may be on for this amount of pinda interrupts </td></tr>
+    <tr><td class="paramname">_min_off</td><td>solenoid should be off for this amount of pinda interrupts </td></tr>
+    <tr><td class="paramname">_name</td><td>name of the solenoid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="solenoids_8h_source.html">solenoids.h</a></li>
 <li><a class="el" href="solenoids_8cpp.html">solenoids.cpp</a></li>
@@ -191,7 +282,7 @@ volatile <a class="el" href="solenoids_8h.html#aba881a83423a828c893b79a833e3722f
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 22:26:50 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 23 2013 22:42:15 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
