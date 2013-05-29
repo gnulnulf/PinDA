@@ -43,6 +43,14 @@
 
 #endif
 
+
+
+void lamps::setProperties(  Property * _properties ){
+		properties=_properties;
+}
+		
+
+
 LAMP::LAMP( lamps * _lampptr , uint8_t _index, String _name) : 
 		lampptr(_lampptr),
 		name(_name),
@@ -225,6 +233,38 @@ void lamps_williams11a::interrupt( void ) {
     pia->write_pdrb( ( 1 << row ) );  // set row
     pia->write_pdra( ~ lampdata[ row ]  );  // set inverted output
 
+	row++;
+	if ( row>7) row=0;
+}
+
+lamps_spi_matrix::lamps_spi_matrix( MCP23S17 * _mcp ,String _name) {
+	objName=_name;
+	mcp=_mcp;
+	mcp->port(0x0000);
+	mcp->pinMode(true);
+//	mcp->ddrB(0xff);
+	mcp->port(0x0000);
+	
+	//	mcp->pinMode( true );
+		pinda.AddInterrupt ( this , 1);
+}
+
+
+
+
+void lamps_spi_matrix::interrupt( void ) {
+	static uint8_t row=0;
+	//mcp->portA(row);
+    //mcp->portB( 0xff  );  // clear lamps
+    //mcp->portA( ( 1 << row ) );  // set row
+    //mcp->portB( ~ lampdata[ row ]  );  // set inverted output
+	mcp->port(0x0000);
+	mcp->port(  ( ( 1 << row ) << 8 ) |   ~ lampdata[ row ] ); 
+//	mcp->portA( lampdata[0]);
+//	mcp->portB( lampdata[1]);
+	
+	
+	
 	row++;
 	if ( row>7) row=0;
 }

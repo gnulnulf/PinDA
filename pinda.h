@@ -29,6 +29,7 @@ just use \#include pinda.h
 #ifndef PINDA_h
 #define PINDA_h
 
+
 // --------------------------------------------------------
 // Typedefs
 // --------------------------------------------------------
@@ -43,6 +44,8 @@ typedef void (*voidFunction) (void);
 #include <inttypes.h>
 #include <String>
 
+#include <Wire.h>
+
 #ifdef ARDUINO 
 #include "Arduino.h"
 //#define println(line) Serial.println(line)
@@ -50,6 +53,42 @@ typedef void (*voidFunction) (void);
 #else
 #include "arduino_compat.h"
 #endif
+
+
+
+//! location of part
+enum Location {
+	loc_unknown, //!< location not known
+	loc_playfield,	//!< part is on playfield
+	loc_head,		//!< part is in head
+	loc_body,		//!< part is in body (non playfield)
+	loc_door,		//!< part is on coin door 
+	loc_top			//!< part is located on top of the head
+}; 
+
+enum LampColour { 
+	colour_unknown,
+	colour_white,
+	colour_yellow,
+	colour_orange,
+	colour_red,
+	colour_blue,
+	colour_green,
+	colour_purple
+};
+
+
+struct Property {
+	uint8_t index;
+	String name;
+	uint8_t x;
+	uint8_t y;
+	uint8_t count;
+	LampColour col;
+	Location loc;
+};
+
+
 
 //! Base class to unify all other classes
 //!

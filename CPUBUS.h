@@ -174,15 +174,25 @@ class Cpubus_Direct : public CPUBUSClass {
 */
 class Cpubus_SPI : public CPUBUSClass {
   public:
-	//Cpubus_SPI(MCP23S17 * _mcp_addr,MCP23S17 * _mcp_data ,String _name);
+	Cpubus_SPI(MCP23S17 * _mcpa , MCP23S17 * _mcpd ,  String _name="CPUBUS SPI");
+
 	//void init(void);
 	uint8_t read(unsigned int address);
     void write(unsigned int address, uint8_t data);
   private:
 //	SPI * spi;
-	
-    MCP23S17 * MCP_ADDR; 
-	MCP23S17 * MCP_DATA;
+	static const uint8_t CPUBUS_RW=0; //! RW bit on arduino port
+	static const uint8_t CPUBUS_E=1;	//! E bit on arduino port
+	static const uint8_t CPUBUS_VMA=2;
+	static const uint8_t CPUBUS_RESET=3;
+	static const uint8_t CPUBUS_HALT=4;
+	static const uint8_t CPUBUS_MR=5;
+	static const uint8_t CPUBUS_IRQ=6;
+	static const uint8_t CPUBUS_NMI=7;
+
+    MCP23S17 * mcpaddr; 
+	MCP23S17 * mcpdata;
+	uint8_t sv_cpureg;
 	
 	void writeData(uint8_t addr,uint8_t data);
 };

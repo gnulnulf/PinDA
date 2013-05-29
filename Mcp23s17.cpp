@@ -13,7 +13,7 @@
 // Enable the digital pins 11-13 for SPI (the MOSI,MISO,SPICLK)
 #include <SPI.h>
 #include "mcp23s17.h"
-
+#include <Wire.h>
 
 // Note: You may need to take _RESET_ on the MCP23S17 low
 // for a few hundred ms and then take (and hold) it high
@@ -28,7 +28,7 @@ MCP23S17::MCP23S17(uint8_t slave_select_pin)
   setup_device(0x00);
 }
 
-#define    ADDR_ENABLE   (0b00001000)  // Configuration register for MCP23S17, the only thing we change is enabling hardware addressing
+//#define    ADDR_ENABLE   (0b00001000)  // Configuration register for MCP23S17, the only thing we change is enabling hardware addressing
 
 MCP23S17::MCP23S17(uint8_t slave_select_pin, byte aaa_hw_addr)
 {
@@ -41,6 +41,7 @@ MCP23S17::MCP23S17(uint8_t slave_select_pin, byte aaa_hw_addr)
   SPI.setBitOrder(MSBFIRST);            // Sets SPI bus bit order (this is the default, setting it for good form!)
   SPI.setDataMode(SPI_MODE0);           // Sets the SPI bus timing mode (this is the default, setting it for good form!)
   
+  SPI.setClockDivider(0 );   // Sets the SPI bus speed
   
   ::digitalWrite(slave_select_pin, LOW);
   SPI.transfer(0b01000000);
@@ -69,17 +70,17 @@ MCP23S17::MCP23S17(uint8_t slave_select_pin, byte aaa_hw_addr)
 
 //------------------ protected -----------------------------------------------
 
-uint16_t MCP23S17::byte2uint16(byte high_byte, byte low_byte)
+uint16_t MCP23X17::byte2uint16(byte high_byte, byte low_byte)
 {
   return (uint16_t)high_byte<<8 | (uint16_t)low_byte;
 }
 
-byte MCP23S17::uint16_high_byte(uint16_t uint16)
+byte MCP23X17::uint16_high_byte(uint16_t uint16)
 {
   return (byte)(uint16>>8);
 }
 
-byte MCP23S17::uint16_low_byte(uint16_t uint16)
+byte MCP23X17::uint16_low_byte(uint16_t uint16)
 {
   return (byte)(uint16 & 0x00FF);
 }
@@ -113,6 +114,20 @@ uint16_t MCP23S17::read_addr(byte addr)
   return byte2uint16(high_byte,low_byte);
 }
 
+uint8_t MCP23S17::read_addr_byte(byte addr)
+{
+  byte low_byte;
+//  ::digitalWrite(slave_select_pin, LOW);
+	PORTB &= ~(1<<PB0);
+  SPI.transfer(read_cmd);
+  SPI.transfer(addr);
+  low_byte  = SPI.transfer(0x0/*dummy data for read*/);
+//  ::digitalWrite(slave_select_pin, HIGH);
+	PORTB |= (1<<PB0);
+  return low_byte;
+}
+
+
 void MCP23S17::write_addr(byte addr, uint16_t data)
 {
   ::digitalWrite(slave_select_pin, LOW);
@@ -125,17 +140,19 @@ void MCP23S17::write_addr(byte addr, uint16_t data)
 
 void MCP23S17::write_addr_byte(byte addr, uint8_t data)
 {
-  ::digitalWrite(slave_select_pin, LOW);
+	PORTB &= ~(1<<PB0);
+  //::digitalWrite(slave_select_pin, LOW);
   SPI.transfer(write_cmd);
   SPI.transfer(addr);
   SPI.transfer(data);
-  ::digitalWrite(slave_select_pin, HIGH);
+//  ::digitalWrite(slave_select_pin, HIGH);
+  	PORTB |= (1<<PB0);
 }
 
 
 //---------- public ----------------------------------------------------
 
-void MCP23S17::pinMode(bool mode)
+void MCP23X17::pinMode(bool mode)
 {
   uint16_t input_pins;
   if(mode == INPUT)
@@ -146,25 +163,93 @@ void MCP23S17::pinMode(bool mode)
   write_addr(IODIR, input_pins);
 }
 
-void MCP23S17::port(uint16_t value)
+void MCP23X17::portA(uint8_t value)
+{
+  write_addr_byte(GPIOA,value);
+}
+
+void MCP23X17::portB(uint8_t value)
+{
+  write_addr_byte(GPIOA,value);
+}
+
+uint8_t MCP23X17::portA(void)
+{
+  return read_addr_byte(GPIOA);
+}
+
+uint8_t MCP23X17::portB(void)
+{
+  return read_addr_byte(GPIOB);
+}
+
+
+void MCP23X17::port(uint16_t value)
 {
   write_addr(GPIO,value);
 }
 
-uint16_t MCP23S17::port()
+uint16_t MCP23X17::port()
 {
   return read_addr(GPIO);
 }
 
-void MCP23S17::pinMode(uint8_t pin, bool mode)
+void MCP23X17::ddrA(uint8_t val)
 {
-  if(mode == INPUT)
+  write_addr_byte(IODIRA,val);
+}
+
+void MCP23X17::ddrB(uint8_t val)
+{
+ write_addr_byte(IODIRB,val);
+}
+
+void MCP23X17::pinMode(uint8_t pin, bool mode)
+{
+  if(mode = INPUT)
     write_addr(IODIR, read_addr(IODIR) | 1<<pin );
   else
     write_addr(IODIR, read_addr(IODIR) & ~(1<<pin) );
 }
 
-void MCP23S17::digitalWrite(uint8_t pin, bool value)
+
+void MCP23X17::pinModeA(uint8_t pin, bool mode)
+{
+  if(mode)
+    write_addr_byte(IODIRA, read_addr_byte(IODIRA) | 1<<pin );
+  else
+    write_addr_byte(IODIRA, read_addr_byte(IODIRA) & ~(1<<pin) );
+}
+
+void MCP23X17::pinA(uint8_t pin, bool mode)
+{
+  if(mode)
+    write_addr_byte(GPIOA, read_addr_byte(GPIOA) | 1<<pin );
+  else
+    write_addr_byte(GPIOA, read_addr_byte(GPIOA) & ~(1<<pin) );
+}
+
+void MCP23X17::pinB(uint8_t pin, bool mode)
+{
+  if(mode)
+    write_addr_byte(GPIOB, read_addr_byte(GPIOB) | 1<<pin );
+  else
+    write_addr_byte(GPIOB, read_addr_byte(GPIOB) & ~(1<<pin) );
+}
+
+
+void MCP23X17::pinModeB(uint8_t pin, bool mode)
+{
+  if(mode)
+    write_addr_byte(IODIRB, read_addr_byte(IODIRB) | 1<<pin );
+  else
+    write_addr_byte(IODIRB, read_addr_byte(IODIRB) & ~(1<<pin) );
+}
+
+
+
+
+void MCP23X17::digitalWrite(uint8_t pin, bool value)
 {
   if(value)
     write_addr(GPIO, read_addr(GPIO) | 1<<pin );  
@@ -172,8 +257,75 @@ void MCP23S17::digitalWrite(uint8_t pin, bool value)
     write_addr(GPIO, read_addr(GPIO) & ~(1<<pin) );  
 }
 
-int MCP23S17::digitalRead(uint8_t pin)
+int MCP23X17::digitalRead(uint8_t pin)
 {
   (int)(read_addr(GPIO) & 1<<pin);
+}
+
+
+
+// ---------------------------------------------------------------
+// MCP23017 I2C
+// ---------------------------------------------------------------
+MCP23017::MCP23017( byte aaa_hw_addr)
+{
+	Wire.begin();	//start I2c as master
+
+  // We enable HAEN on all connected devices before we can address them individually
+ // setup_device(0x07);
+ // write_addr(IOCON, read_addr(IOCON)|HAEN);
+
+ // setup_device(0x00);
+ // write_addr(IOCON, read_addr(IOCON)|HAEN);
+
+  // Remember the hardware address for this chip
+  setup_device(aaa_hw_addr);
+}
+
+
+
+void MCP23017::setup_device(uint8_t aaa_hw_addr)
+{
+  this->aaa_hw_addr = aaa_hw_addr;
+  this->mcp_addr  = 0x20 | aaa_hw_addr; // MCP23017  = B0100AAA1, but shifted in wire 
+  //write_addr(IOCON, read_addr(IOCON)|SEQOP); // no need to enable SEQOP if BANK=0
+}
+
+uint16_t MCP23017::read_addr(byte addr)
+{
+	Wire.beginTransmission(mcp_addr); 
+	Wire.write((uint8_t)addr);	
+	Wire.endTransmission();
+	
+	Wire.requestFrom((uint8_t)mcp_addr ,(uint8_t) 2 );
+	return ( Wire.read() ) | ( Wire.read() << 8);
+}
+
+uint8_t MCP23017::read_addr_byte(byte addr)
+{
+	Wire.beginTransmission(mcp_addr); 
+	Wire.write((uint8_t)addr);	
+	Wire.endTransmission();
+	
+	Wire.requestFrom((uint8_t)mcp_addr ,(uint8_t) 1 );
+	return Wire.read();
+}
+
+
+void MCP23017::write_addr(byte addr, uint16_t data)
+{
+	Wire.beginTransmission(mcp_addr); 
+	Wire.write((uint8_t)addr);	
+	Wire.write((uint8_t)( data& 0xff));	
+	Wire.write((uint8_t)( (data>>8)& 0xff));	
+	Wire.endTransmission();
+}
+
+void MCP23017::write_addr_byte(byte addr, uint8_t data)
+{
+	Wire.beginTransmission(mcp_addr); 
+	Wire.write((uint8_t)addr);	
+	Wire.write((uint8_t)( data & 0xff));	
+	Wire.endTransmission();
 }
 

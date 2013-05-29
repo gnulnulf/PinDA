@@ -50,7 +50,7 @@ ROM::ROM(  CPUBUSClass *busptr ,unsigned int addr, unsigned int size, String _na
 	rom_address=addr; 
 	rom_size=size;
 	bus=busptr;
-	name=_name;
+	objName=_name;
 } //ROM::ROM
 
 /*
@@ -75,6 +75,7 @@ uint8_t ROM::read_offset( unsigned int offset ) {
 
 void ROM::dump(void) {
 	printf("\nDUMP rom at %04X size %d bytes\n", rom_address,rom_size );
+	Serial.println ( "# ROM Name: " + objName);
 	for(unsigned int i=0;i<rom_size;i++) {
 		if ( i%32 == 0 ) { 
 			printf("\n%04X: ",rom_address+i);
@@ -85,6 +86,69 @@ void ROM::dump(void) {
 	}
 	printf("\n");
 }
+
+
+void ROM::ihex16(void){
+	printf("\n#DUMP rom at %04X size %d bytes\n", rom_address,rom_size );
+	Serial.println ( "# ROM Name: " + objName);
+	for ( unsigned int lstart=0; lstart< rom_size;lstart+=16) {
+		uint16_t checksum=0;
+		// ;CCAAAATT 16 bytes, data=00
+		printf(":10%04X00",lstart);
+		checksum += (lstart>>8) &0xff;
+		checksum += lstart &0xff;
+		//16x DD
+		for(unsigned int i=0;i<16;i++) {
+			uint8_t val = bus->read( rom_address+ lstart + i );
+			printf("%02X",val);
+			checksum += val;
+		}
+		checksum = (0x100 - checksum);
+		//Checksum LF
+		printf("%02X\n",checksum);
+	}
+	printf(":00000001FF\n"); //end
+} //ROM::ihex16
+
+void ROM::ihex32(void){
+	printf("\n#DUMP rom at %04X size %d bytes\n", rom_address,rom_size );
+	Serial.println ( "# ROM Name: " + objName);
+	for ( unsigned int lstart=0; lstart< rom_size;lstart+=32) {
+		uint16_t checksum=0;
+		// ;CCAAAATT 32 bytes, data=00
+		printf(":20%04X00",lstart);
+		checksum += (lstart>>8) &0xff;
+		checksum += lstart &0xff;
+		//16x DD
+		for(unsigned int i=0;i<32;i++) {
+			uint8_t val = bus->read( rom_address+ lstart + i );
+			printf("%02X",val);
+			checksum += val;
+		}
+		checksum = (0x100 - checksum);
+		//Checksum LF
+		printf("%02X\n",checksum);
+	}
+	printf(":00000001FF\n"); //end
+} //ROM::ihex32
+
+void ROM::checksums(void){
+	printf("\n# Checksums for rom at %04X size %d bytes\n", rom_address,rom_size );
+	Serial.println ( "# ROM Name: " + objName);
+	uint16_t checksum8 = 0;
+	uint16_t checksum16 = 0;
+	for ( unsigned int lstart=0; lstart< rom_size;lstart+=2) {
+		uint8_t val1 = bus->read( rom_address+ lstart  );
+		uint8_t val2 = bus->read( rom_address+ lstart  +1);
+		checksum16 += (val1<<8) + val2;
+		checksum8 += val1 + val2;
+	}
+	printf("Checksum8 %04X - Checksum16 %04X\n",checksum8,checksum16);
+} //ROM::checksums
+
+
+
+
 
 /*
 void read256() {

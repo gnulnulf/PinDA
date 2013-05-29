@@ -212,34 +212,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
 <div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="classCpubus__SPI.html">  175</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCpubus__SPI.html">Cpubus_SPI</a> : <span class="keyword">public</span> <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> {</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">//Cpubus_SPI(MCP23S17 * _mcp_addr,MCP23S17 * _mcp_data ,String _name);</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">//void init(void);</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        uint8_t <a class="code" href="classCpubus__SPI.html#aca078ce47184aa534a13f6518041a35a" title="read byte from bus">read</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> address);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCpubus__SPI.html#a36f5cb7114cbb7499b8400cc69e1ea9a" title="write byte to bus">write</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> address, uint8_t data);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">//      SPI * spi;</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> * MCP_ADDR; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> * MCP_DATA;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordtype">void</span> writeData(uint8_t addr,uint8_t data);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;};</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno"><a class="code" href="classCpubus__I2C.html">  194</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCpubus__I2C.html">Cpubus_I2C</a> : <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;};</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//extern Cpubus_SPI Cpubus;</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">//extern Cpubus_I2C Cpubus;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="classCpubus__SPI.html">Cpubus_SPI</a>(<a class="code" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> * _mcpa , <a class="code" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> * _mcpd ,  String _name=<span class="stringliteral">&quot;CPUBUS SPI&quot;</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">//void init(void);</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        uint8_t <a class="code" href="classCpubus__SPI.html#aca078ce47184aa534a13f6518041a35a" title="read byte from bus">read</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> address);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCpubus__SPI.html#a36f5cb7114cbb7499b8400cc69e1ea9a" title="write byte to bus">write</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> address, uint8_t data);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">//      SPI * spi;</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_RW=0; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_E=1;        </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_VMA=2;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_RESET=3;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_HALT=4;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_MR=5;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_IRQ=6;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t CPUBUS_NMI=7;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> * mcpaddr; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> * mcpdata;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        uint8_t sv_cpureg;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">void</span> writeData(uint8_t addr,uint8_t data);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;};</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CPUBUS_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="code" href="classCpubus__I2C.html">  204</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCpubus__I2C.html">Cpubus_I2C</a> : <a class="code" href="classCPUBUSClass.html">CPUBUSClass</a> {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;};</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">//extern Cpubus_SPI Cpubus;</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">//extern Cpubus_I2C Cpubus;</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CPUBUS_h */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 23 2013 22:42:14 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 29 2013 20:51:24 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

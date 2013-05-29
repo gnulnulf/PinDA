@@ -174,7 +174,7 @@ void Cpubus_Direct::writeref(const unsigned int & address, const uint8_t & value
 	writes++; //debug write count
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_E); 	//e_low
 	CPUBUS_CTL_PORT &= ~( 1<< CPUBUS_RW);	//Write
-	CPUBUS_ADDRL_PORT = address&0xFF;		//Address Low
+	CPUBUS_ADDRL_PORT = address & 0xFF;		//Address Low
 	CPUBUS_ADDRH_PORT = (address>>8)&0xFF;	//Address High
 	CPUBUS_CTL_PORT |= ( 1<< CPUBUS_VMA);		//VMA high
 		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
@@ -198,117 +198,146 @@ void Cpubus_Direct::writeref(const unsigned int & address, const uint8_t & value
 /******************************************************************************
  * CPUBUS_SPI
  ******************************************************************************/
-#define	MCP23S17 B01000000  // MCP23017 SPI Address (Not used in this sketch)
-#define	MCPADDR B01000000  // MCP23017 SPI Address (Not used in this sketch)
-#define	MCPDATA B01000010  // MCP23017 SPI Address (Not used in this sketch)
-#define	IOCON	0x0A	    // MCP23017 Config Reg.
-#define	IODIRA	0x00	    // MCP23017 address of I/O direction
-#define	IODIRB	0x01	    // MCP23017 1=input
-#define	IPOLA	0x02  	    // MCP23017 address of I/O Polarity
-#define	IPOLB	0x03  	    // MCP23017 1= Inverted
-#define	GPIOA	0x12	    // MCP23017 address of GP Value
-#define	GPIOB	0x13	    // MCP23017 address of GP Value
-#define	GPINTENA  0x04	    // MCP23017 IOC Enable
-#define	GPINTENB  0x05	    // MCP23017 IOC Enable
-#define	INTCONA	0x08	    // MCP23017 Interrupt Cont 
-#define	INTCONB	0x09	    // MCP23017 1= compair to DEFVAL(A or B) 0= change
-#define	DEFVALA	0x06	    // MCP23017 IOC Default value
-#define	DEFVALB	0x07	    // MCP23017 if INTCONA set then INT. if diff. 
-#define	GPPUA	0x0C	    // MCP23017 Weak Pull-Ups
-#define	GPPUB	0x0D	    // MCP23017 1= Pulled HIgh via internal 100k
-#define	OLATA	0x14
-#define	OLATB	0x15
-#define	INTFA	0x0E
-#define	INTFB	0x0F
-#define	INTCAPA 0x10
-#define	INTCAPB	0x11
-#define HAEN (0b00001000)
 
-/*
-Cpubus_SPI::Cpubus_SPI(
-	MCP23S17 * _mcp_addr , 
-	MCP23S17 * _mcp_data ,
-	String _name
-) {
-
+ Cpubus_SPI::Cpubus_SPI(	
+MCP23S17 * _mcpaddr , MCP23S17 * _mcpdata , String _name 
+) 
+{
 	writes=0;
 	reads=0;
 	objName=_name;
 	system="Cpubus spi";
+	sv_cpureg=0;
 	
-	pinMode (CPUBUS_SPI_SS, OUTPUT);
-	SPI.begin();
-	SPI.setClockDivider(SPI_CLOCK_DIV2); //16MHz / 2 = 8MHz
-	//MCP_ADDR = new MCP23S17( CPUBUS_SPI_SS,0x0 );
-	//MCP_DATA = new MCP23S17( CPUBUS_SPI_SS,0x1 );
-  //IOCON設定(SEQOPのみDisable→0x20)
-	writeData(IOCON,0x20|HAEN);
-	writeData(IOCON+1,0x20|HAEN);
+	mcpdata=_mcpdata;
+	mcpaddr=_mcpaddr;
+	
+	mcpdata->pinMode(INPUT);
+	mcpaddr->pinMode(OUTPUT);
+	mcpdata->port( 0xffff); //pullup
+	mcpaddr->port( 0x0000); //addr 0
 
-  //IODIRA,B設定(0で出力,1で入力)
-  writeData(IODIRA,0x00);
-  writeData(IODIRB,0x00);
-	//MCP_DATA->pinMode(INPUT);
-    //MCP_DATA->port( 0xffff );
+	mcpdata->pinModeB( CPUBUS_E ,OUTPUT );
+	mcpdata->pinModeB( CPUBUS_VMA ,OUTPUT );
+	mcpdata->pinModeB( CPUBUS_RW ,OUTPUT );
 
-	//MCP_ADDR->pinMode(OUTPUT);
-	//MCP_ADDR->port( 0x0000 );
-  writeData(GPIOB,0xff);
-  writeData(GPIOA,0xaa);
-  delay(300);
-  writeData(GPIOB,0x00);
-  writeData(GPIOA,0x55);
-  delay(300);
-  
-	} //init
-*/
+} //init
 
 uint8_t Cpubus_SPI::read(unsigned int address) {
-  //digitalWrite(CPUBUS_SPI_SS,LOW);
-  	PORTB &= ~( 1<< PB0); 	//SS LOW
+	//return 0;
+	reads++; //debug read count
+	sv_cpureg &= ~( 1<< CPUBUS_E);
+	sv_cpureg |= ( 1<< CPUBUS_RW);
+	mcpdata->portB(sv_cpureg);
+//	mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+//	mcpdata->pinB( CPUBUS_RW, true ); //READ
+	mcpaddr->port( address ); //set address
 
-  SPI.transfer(MCPADDR);
-  SPI.transfer(GPIOA);
-  SPI.transfer(address&0xFF);
-  
-  SPI.transfer(MCPADDR);
-  SPI.transfer(GPIOB|1);
-  uint8_t data =SPI.transfer(0);
-  	PORTB |= ( 1<< PB0);		//SS high
-  //digitalWrite(CPUBUS_SPI_SS,HIGH);
+	sv_cpureg |= ( 1<< CPUBUS_VMA);
+		mcpdata->portB(sv_cpureg);
 
-  //delay(5);
-	return 0;
+//	mcpdata->pinB( CPUBUS_VMA, true ); //VMA_HIGH
+//			__asm__("nop\n\t"); 
+	sv_cpureg |= ( 1<< CPUBUS_E);
+	mcpdata->portB(sv_cpureg);
+	//mcpdata->pinB( CPUBUS_E, true ); //E_HIGH
+
+	uint8_t data= mcpdata->portA();			//get data from bus
+	sv_cpureg &= ~(( 1<< CPUBUS_E)|(1<<CPUBUS_VMA));
+	mcpdata->portB(sv_cpureg);
+//	mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+//	mcpdata->pinB( CPUBUS_VMA, false ); //VMA_LOW
+	return data;
 } //read
 
 void Cpubus_SPI::write(unsigned int address, uint8_t value) {
-  //digitalWrite(CPUBUS_SPI_SS,LOW);
-    	PORTB &= ~( 1<< PB0); 	//SS LOW
-  SPI.transfer(MCPADDR);
-  SPI.transfer(GPIOA);
-  SPI.transfer(address&0xFF);
-  
-  SPI.transfer(MCPADDR);
-  SPI.transfer(GPIOB);
-  SPI.transfer((address>>8)&0xFF);
-  //digitalWrite(CPUBUS_SPI_SS,HIGH);
-    	PORTB |= ( 1<< PB0);		//SS high
+//return;
+	writes++; //debug write count
+		sv_cpureg &= ~(( 1<< CPUBUS_E)|(1<<CPUBUS_RW));
+			mcpdata->portB(sv_cpureg);
+	//mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+	//mcpdata->pinB( CPUBUS_RW, false ); //WRITE
+	mcpaddr->port( address ); //set address
+	sv_cpureg |= ( 1<< CPUBUS_VMA);
+		mcpdata->portB(sv_cpureg);
 
- //delay(5);
+
+//	mcpdata->pinB( CPUBUS_VMA, true ); //VMA_HIGH
+//		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+	mcpdata->ddrA(0xFF);
+	mcpdata->portA(value);
+
+		sv_cpureg |= ( 1<< CPUBUS_E);
+	mcpdata->portB(sv_cpureg);
+
+//	mcpdata->pinB( CPUBUS_E, true ); //E_HIGH
+//	__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+//	mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+	sv_cpureg &= ~(( 1<< CPUBUS_E));
+	mcpdata->portB(sv_cpureg);
+	mcpdata->ddrA(0x00);
+	
+//	mcpdata->pinB( CPUBUS_RW, true ); //READ
+//	mcpdata->pinB( CPUBUS_VMA, false ); //VMA_LOW
+
+	sv_cpureg |= ( 1<< CPUBUS_RW);
+	sv_cpureg &= ~(( 1<< CPUBUS_E)|(1<<CPUBUS_VMA));
+	mcpdata->portB(sv_cpureg);
 } //write
 
 
-// obsolete?
-void Cpubus_SPI::writeData(uint8_t addr,uint8_t data)
-{
-  digitalWrite(CPUBUS_SPI_SS,LOW);
-  SPI.transfer(MCP23S17);
-  SPI.transfer(addr);
-  SPI.transfer(data);
-  digitalWrite(CPUBUS_SPI_SS,HIGH);
-} //writeData
+/*
+
+OLD
+
+uint8_t Cpubus_SPI::read(unsigned int address) {
+	//return 0;
+	reads++; //debug read count
+	sv_cpureg &= ~( 1<< CPUBUS_E);
+	sv_cpureg |= ( 1<< CPUBUS_RW);
+	mcpdata->portB(sv_cpureg);
+//	mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+//	mcpdata->pinB( CPUBUS_RW, true ); //READ
+	mcpaddr->port( address ); //set address
+
+	sv_cpureg |= ( 1<< CPUBUS_VMA);
+		mcpdata->portB(sv_cpureg);
+
+//	mcpdata->pinB( CPUBUS_VMA, true ); //VMA_HIGH
+//			__asm__("nop\n\t"); 
+	sv_cpureg |= ( 1<< CPUBUS_E);
+	mcpdata->portB(sv_cpureg);
+	//mcpdata->pinB( CPUBUS_E, true ); //E_HIGH
+
+	uint8_t data= mcpdata->portA();			//get data from bus
+	sv_cpureg &= ~(( 1<< CPUBUS_E)|(1<<CPUBUS_VMA));
+	mcpdata->portB(sv_cpureg);
+//	mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+//	mcpdata->pinB( CPUBUS_VMA, false ); //VMA_LOW
+	return data;
+} //read
+
+void Cpubus_SPI::write(unsigned int address, uint8_t value) {
+//return;
+	writes++; //debug write count
+	mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+	mcpdata->pinB( CPUBUS_RW, false ); //WRITE
+	mcpaddr->port( address ); //set address
+	mcpdata->pinB( CPUBUS_VMA, true ); //VMA_HIGH
+		__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+	mcpdata->ddrA(0xFF);
+	mcpdata->portA(value);
+	mcpdata->pinB( CPUBUS_E, true ); //E_HIGH
+	__asm__("nop\n\t"); 			// (62.5ns on a 16MHz Arduino) 
+	mcpdata->pinB( CPUBUS_E, false ); //E_LOW
+	mcpdata->ddrA(0x00);
+	mcpdata->pinB( CPUBUS_RW, true ); //READ
+	mcpdata->pinB( CPUBUS_VMA, false ); //VMA_LOW
+} //write
 
 
+
+*/
 
 
 

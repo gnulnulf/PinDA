@@ -31,9 +31,171 @@
 #include <SPI.h>
 
 Pinda pinda;
-const bool slave=true;
+const bool slave=false;
+/*
+
+	loc_unknown, //!< location not known
+	loc_playfield,	//!< part is on playfield
+	loc_head,		//!< part is in head
+	loc_body,		//!< part is in body (non playfield)
+	loc_door,		//!< part is on coin door 
+	loc_top			//!< part is located on top of the head
+
+	colour_unknown,
+	colour_white,
+	colour_yellow,
+	colour_orange,
+	colour_red,
+	colour_blue,
+	colour_green,
+	colour_purple
+*/
+
+const int tomcat_l[64][6]={
+  {57, 200, 1, colour_red,		loc_playfield  },
+  {61, 209, 1, colour_white,	loc_playfield  },
+  {67, 200, 1, colour_blue,  	loc_playfield  },
+  {58,  35, 1, colour_orange,  loc_playfield  },
+  {57, 120, 1, colour_orange,  loc_playfield  },
+  {61, 124, 1, colour_white,  	loc_playfield  },
+  {65, 120, 1, colour_orange,  loc_playfield  },
+  { 7,  66, 1, colour_white,  	loc_playfield  },
+  {43,  54, 1, colour_white,  	loc_playfield  },
+  {46,  60, 1, colour_white,  	loc_playfield  },
+  {52,  58, 1, colour_white,  	loc_playfield  },
+  {57,  62, 1, colour_white,  	loc_playfield  },
+  {61,  58, 1, colour_white,  	loc_playfield  },
+  {69,  60, 1, colour_white,  	loc_playfield  },
+  {71,  54, 1, colour_red,  	loc_playfield  },
+  {57,  48, 1, colour_blue,  	loc_playfield  },
+  {67,  77, 1, colour_blue,  	loc_playfield  },
+  {71,  87, 1, colour_blue,  	loc_playfield  },
+  {76,  98, 1, colour_blue,  	loc_playfield  },
+  {81, 109, 1, colour_blue,  	loc_playfield  },
+  {85, 118, 1, colour_blue,  	loc_playfield  },
+  {89, 128, 1, colour_blue,  	loc_playfield  },
+  {94, 139, 1, colour_blue,  	loc_playfield  },
+  {0, 81, 2, colour_red,  	loc_playfield  },
+  {  		47,  77,  1,  colour_red,  loc_playfield  },
+  {  44,  88,  1,  colour_red,  loc_playfield  },
+  {  40,  98,  1,  colour_red,  loc_playfield  },
+  {  37,  109,  1,  colour_red,  loc_playfield  },
+  {  33,  121,  1,  colour_red,  loc_playfield  },
+  {  29,  132,  1,  colour_red,  loc_playfield  },
+  {  26,  143,  1,  colour_red,  loc_playfield  },
+  {  27,  205,  1,  colour_orange,  loc_playfield  },
+  { 24,  106,  1,  colour_red,  loc_playfield  },
+  {24, 115,  1,  colour_red,  loc_playfield  },
+  {23, 125,  1,  colour_red,  loc_playfield  },
+  {93, 101,  1,  colour_blue,  loc_playfield  },
+  {95, 111,  1,  colour_blue,  loc_playfield  },
+  {97, 121,  1,  colour_blue,  loc_playfield  },
+  {0,  87,  2,  colour_white,  loc_playfield  },
+  {108,  177,  1,  colour_blue,  loc_playfield  },
+  {46, 136,  1,  colour_white,  loc_playfield  },
+  {43, 142,  1,  colour_white,  loc_playfield  },
+  {40, 148,  1,  colour_white,  loc_playfield  },
+  {76, 136,  1,  colour_white,  loc_playfield  },
+  {79, 142,  1,  colour_white,  loc_playfield  },
+  {82, 148,  1,  colour_white,  loc_playfield  },
+  {104,  164,  1,  colour_white,  loc_playfield  },
+  {98,  151,  1,  colour_orange,  loc_playfield  },
+  { 48,  204,  1,  colour_red,  loc_playfield  },
+  { 52,  210,  1,  colour_red,  loc_playfield  },
+  { 55,  216,  1,  colour_red,  loc_playfield  },
+  { 76,  204,  1,  colour_blue,  loc_playfield  },
+  { 72,  210,  1,  colour_blue,  loc_playfield  },
+  { 69,  216,  1,  colour_blue,  loc_playfield  },
+  { 95,  197,  1,  colour_blue,  loc_playfield  },
+  {  98,  210,  1,  colour_red,  loc_playfield  },
+  {  16,  206,  1,  colour_red,  loc_playfield  },
+  {  16,  195,  1,  colour_red,  loc_playfield  },
+  {  16,  176,  1,  colour_red,  loc_playfield  },
+  { 16,  222,  1,  colour_blue,  loc_playfield  },
+  {  16,  201,  1,  colour_blue,  loc_playfield  },
+  {  16,  181,  1,  colour_blue,  loc_playfield  },
+  {  167,  1,  colour_white,  loc_playfield  },
+  {  23,  153,  1,  colour_orange,  loc_playfield  }
+};
 
 
+/*
+PROGMEM Property tomcat_lamps[64]={
+  {0,  "LITES LOCK ON", 57, 200, 1, colour_red,		loc_playfield  },
+  {1,  "LITES RELEASE", 61, 209, 1, colour_white,	loc_playfield  },
+  {2,  "HOT STREAK",    67, 200, 1, colour_blue,  	loc_playfield  },
+  {3,  "FLY AGAIN",     58,  35, 1, colour_orange,  loc_playfield  },
+  {4,  "RESCUE (LC)",   57, 120, 1, colour_orange,  loc_playfield  },
+  {5,  "KILL (C)",      61, 124, 1, colour_white,  	loc_playfield  },
+  {6,  "RESCUE (RC)",   65, 120, 1, colour_orange,  loc_playfield  },
+  {7,  "RESCUE (L)",     7,  66, 1, colour_white,  	loc_playfield  },
+  {8,  "ALPHA KILL",    43,  54, 1, colour_white,  	loc_playfield  },
+  {9,  "BRAVO KILL",    46,  60, 1, colour_white,  	loc_playfield  },
+  {10,  "CHARLIE KILL", 52,  58, 1, colour_white,  	loc_playfield  },
+  {11,  "DELTA KILL",   57,  62, 1, colour_white,  	loc_playfield  },
+  {12,  "ECHO KILL",    61,  58, 1, colour_white,  	loc_playfield  },
+  {13,  "FOX KILL",     69,  60, 1, colour_white,  	loc_playfield  },
+  {14,  "GOLF KILL",    71,  54, 1, colour_red,  	loc_playfield  },
+  {15,  "FLIGHT INSURE",57,  48, 1, colour_blue,  	loc_playfield  },
+  {16,  "1K",           67,  77, 1, colour_blue,  	loc_playfield  },
+  {17,  "2K",           71,  87, 1, colour_blue,  	loc_playfield  },
+  {18,  "4K",           76,  98, 1, colour_blue,  	loc_playfield  },
+  {19,  "8K",           81, 109, 1, colour_blue,  	loc_playfield  },
+  {20,  "16K",          85, 118, 1, colour_blue,  	loc_playfield  },
+  {21,  "32K",          89, 128, 1, colour_blue,  	loc_playfield  },
+  {22,  "64K",          94, 139, 1, colour_blue,  	loc_playfield  },
+  {23,  "SPECIAL",      0, 81, 2, colour_red,  	loc_playfield  },
+  {24,  "2X",  		47,  77,  1,  colour_red,  loc_playfield  },
+  {25,  "3X",  44,  88,  1,  colour_red,  loc_playfield  },
+  {26,  "4X",  40,  98,  1,  colour_red,  loc_playfield  },
+  {27,  "5X",  37,  109,  1,  colour_red,  loc_playfield  },
+  {28,  "6X",  33,  121,  1,  colour_red,  loc_playfield  },
+  {29,  "7X",  29,  132,  1,  colour_red,  loc_playfield  },
+  {30,  "8X",  26,  143,  1,  colour_red,  loc_playfield  },
+  {31,  "BONUS X (LEFT)",  27,  205,  1,  colour_orange,  loc_playfield  },
+  {32,  "T (LOWER L)",  24,  106,  1,  colour_red,  loc_playfield  },
+  {33,  "O (LOWER L)", 24, 115,  1,  colour_red,  loc_playfield  },
+  {34,  "M (LOWER L)", 23, 125,  1,  colour_red,  loc_playfield  },
+  {35,  "T (LOWER R)", 93, 101,  1,  colour_blue,  loc_playfield  },
+  {36,  "A (LOWER R)", 95, 111,  1,  colour_blue,  loc_playfield  },
+  {37,  "C (LOWER R)", 97, 121,  1,  colour_blue,  loc_playfield  },
+  {38,  "LITES KILL",  0,  87,  2,  colour_white,  loc_playfield  },
+  {39,  "LANDING",     108,  177,  1,  colour_blue,  loc_playfield  },
+  {40,  "3 TARGET",    46, 136,  1,  colour_white,  loc_playfield  },
+  {41,  "2 TARGET",    43, 142,  1,  colour_white,  loc_playfield  },
+  {42,  "1 TARGET",    40, 148,  1,  colour_white,  loc_playfield  },
+  {43,  "4 TARGET",    76, 136,  1,  colour_white,  loc_playfield  },
+  {44,  "5 TARGET",    79, 142,  1,  colour_white,  loc_playfield  },
+  {45,  "6 TARGET",    82, 148,  1,  colour_white,  loc_playfield  },
+  {46,  "RELEASE",     104,  164,  1,  colour_white,  loc_playfield  },
+  {47,  "LOCK ON",     98,  151,  1,  colour_orange,  loc_playfield  },
+  {48,  "T (UPPER L)", 48,  204,  1,  colour_red,  loc_playfield  },
+  {49,  "O (UPPER L)", 52,  210,  1,  colour_red,  loc_playfield  },
+  {50,  "M (UPPER L)", 55,  216,  1,  colour_red,  loc_playfield  },
+  {51,  "T (UPPER R)", 76,  204,  1,  colour_blue,  loc_playfield  },
+  {52,  "A (UPPER R)", 72,  210,  1,  colour_blue,  loc_playfield  },
+  {53,  "C (UPPER R)", 69,  216,  1,  colour_blue,  loc_playfield  },
+  {54,  "BONUX X (RIGHT)",  95,  197,  1,  colour_blue,  loc_playfield  },
+  {55,  "2000 SPINNER",  98,  210,  1,  colour_red,  loc_playfield  },
+  {56,  "RED LOCK TOP",  16,  206,  1,  colour_red,  loc_playfield  },
+  {57,  "RED LOCK MID",  16,  195,  1,  colour_red,  loc_playfield  },
+  {58,  "RED LOCK LOW",  16,  176,  1,  colour_red,  loc_playfield  },
+  {59,  "BLUE LANDING TOP", 16,  222,  1,  colour_blue,  loc_playfield  },
+  {60,  "BLUE LANDING MID",  16,  201,  1,  colour_blue,  loc_playfield  },
+  {61,  "BLUE LANDING LOW",  16,  181,  1,  colour_blue,  loc_playfield  },
+  {62,  "RIPOFF",  19,  167,  1,  colour_white,  loc_playfield  },
+  {63,  "EXTRA BALL",  23,  153,  1,  colour_orange,  loc_playfield  }
+}; // tomcat_lamps
+*/
+//Propery tomcat_lamps[64] ;
+
+/*= {
+//index,name,x,y,count,col,loc
+{0,  "LITES LOCK ON",  0,  0,  1,  colour_white,  loc_unknown  }
+  
+  
+};
+*/
 // ----------------------------------------------------------------------------
 // Initialize Hardware
 // ----------------------------------------------------------------------------
@@ -43,7 +205,20 @@ const bool slave=true;
 //CPUBUSClass *Cpubus = new Cpubus_Direct ;
 //Cpubus_Direct Cpubus("Tomcat");
 Cpubus_Direct Cpubus("Williams System 11A F14-Tomcat");
-//Cpubus_SPI Cpubus;
+
+
+//MCP23S17 mcp0( 53, 0);
+//MCP23S17 mcp1( 53, 1);
+
+MCP23S17 mcpaddr( 53, 0);
+MCP23S17 mcpdata( 53, 1);
+//MCP23S17 mcpswitch( 53, 2);
+MCP23S17 mcplamps( 53, 2);
+
+//Cpubus_SPI Cpubus(&mcpaddr, &mcpdata, "CPUBUS SPI");
+
+
+
 
 // ram
 ROM ram_u25(&Cpubus, 0x00,0x800 , "U25 RAM");
@@ -110,13 +285,15 @@ SOLENOID & sol_beacon = solenoid16;
 
 lamps_williams11a lamps1(&PIAU54,"sys11a lamps");
 lamps_demo lampsdemo("demo lamps");
+lamps_spi_matrix lamps2(&mcplamps, "spi lamps");
+
 
 SWITCHES_demo switchesdemo;
 SWITCHES_williams11a switches1(&PIAU38);
 
 
-LAMP lamp1( &lamps1 , 0 , "LAMP1");
-LAMP lamp2( &lamps1 , 1 , "LAMP2");
+//LAMP lamp1( &lamps1 , 0 , "LAMP1");
+//LAMP lamp2( &lamps1 , 1 , "LAMP2");
 
 // ----------------------------------------------------------------------------
 // End Initialize Hardware
@@ -163,20 +340,20 @@ void setup()
   // Start the pinda Interrupt timer
   pinda.StartTimer();
 
-//  PIAU51.outputA();
-//  PIAU51.allOffA();
-//  PIAU51.outputB();
-//  PIAU51.allOffB();
+  PIAU51.outputA();
+  PIAU51.allOffA();
+  PIAU51.outputB();
+  PIAU51.allOffB();
 
-//  PIAU54.outputA();
-//  PIAU54.allOffA();
- // PIAU54.outputB();
-  //PIAU54.allOffB();
+  PIAU54.outputA();
+  PIAU54.allOffA();
+  PIAU54.outputB();
+  PIAU54.allOffB();
   
- // PIAU10.outputA();
-//  PIAU10.allOffA();
- // PIAU10.outputB();
- // PIAU10.allOffB();
+  PIAU10.outputA();
+  PIAU10.allOffA();
+  PIAU10.outputB();
+  PIAU10.allOffB();
 
 
 //pindaAddInterrupt(dotty,20);
@@ -251,11 +428,33 @@ com.setSolenoid( 27, &soldemo2);
 com.setSolenoid( 28, &soldemo3);
 com.setSolenoid( 29, &soldemo4);
 
+/*
+mcplamps.ddrA(0xff);
+mcplamps.ddrB(0xff);
+mcplamps.port(0x3333);
 
+
+  mcp0.pinMode(true);
+  mcplamps.pinMode(true);
+//  mcp1.pinMode(false);
+  mcp0.port(0x5555);
+ // mcp1.port(0xffff);  
+*/
 pinda.AddInterrupt ( &com , 1);
 com.enableInterrupt();
 
+//lamps1.setProperties( & tomcat_lamps[0] );
+//ram_u25.ihex32();
+//rom_u26.checksums();
 
+  Serial.print(pinda.status() );
+  Serial.print(Cpubus.status() );
+  Serial.print(com.status() );
+  
+  
+    PIAU10.write_crb( 1<<5 | 1<<4   ); //enable solenoids U10-CB2
+  
+  
 } // Setup ------------------------------------------------------------------------------
 
 
@@ -264,6 +463,7 @@ com.enableInterrupt();
 *  Loop
 *-------------------------------------------------------------------------------------*/ 
 void loop() {
+  //	pinda.mainInterrupt();
     pinda.loop();
 
     // loop 0-255 on the lamps
@@ -272,6 +472,7 @@ void loop() {
       val++;
       for (uint8_t r=0;r<8;r++){
           lamps1.rowSet( r ,val );
+          lamps2.rowSet( r ,~val );
           lampsdemo.rowSet( r ,val );
       }
       lamptime+=1000;
@@ -290,7 +491,7 @@ void loop() {
     com.flank();
     
     
-//  } else {
+  } else {
     
    // PIAU10.write_crb( 1<<5 | 1<<4   ); //enable solenoids U10-CB2
  //  PIAU51.toggle(4);
@@ -299,8 +500,8 @@ void loop() {
     
     
     
-  display1.setScore1( String(switchrow) );
-  display1.setScore2( String( switches1.getRow( switchrow ) ,BIN) );
+//  display1.setScore1( String(switchrow) );
+ // display1.setScore2( String( switches1.getRow( switchrow ) ,BIN) );
 
     
 if ( switchesdemo.flankup( 0 )) { 
@@ -455,6 +656,7 @@ if ( switchesdemo.flankup( 36 )) {
       }
     }
 */
+
 /*
 if ( switches1.isOn( 8+2 ) ) {
   if (sw_3==false) {
@@ -466,7 +668,7 @@ if ( switches1.isOn( 8+2 ) ) {
 } else {
     sw_3 = false;
 }
-    
+   */ 
 
 if ( switches1.flankup( 1*8+2)) { delay(100);solenoid2.on(); }
 
@@ -500,7 +702,7 @@ if ( switches1.flankup( 4*8+1)) {
 
 }
 
-*/
+
 display1.setScore4("M "+ String( pinda.freeRam() ) );
   
 delay(10);

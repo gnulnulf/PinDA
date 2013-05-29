@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">pinda.h File Reference</div>  </div>
@@ -97,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;avr/interrupt.h&gt;</code><br/>
 <code>#include &lt;inttypes.h&gt;</code><br/>
 <code>#include &lt;String&gt;</code><br/>
+<code>#include &lt;Wire.h&gt;</code><br/>
 <code>#include &quot;arduino_compat.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="CPUBUS_8h_source.html">CPUBUS.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="mc6821_8h_source.html">mc6821.h</a>&quot;</code><br/>
@@ -112,6 +114,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProperty.html">Property</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPindaObj.html">PindaObj</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPinda.html">Pinda</a></td></tr>
@@ -123,6 +127,34 @@ Typedefs</h2></td></tr>
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pinda_8h.html#acdb086e78380c2c1c5f8c3f53c799009">voidFunction</a> )(void)</td></tr>
 <tr class="memdesc:acdb086e78380c2c1c5f8c3f53c799009"><td class="mdescLeft">&#160;</td><td class="mdescRight">void pointer definition <br/></td></tr>
 <tr class="separator:acdb086e78380c2c1c5f8c3f53c799009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:aecaf6a9545fa815deb4b8e64e144ce43"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43">Location</a> { <br/>
+&#160;&#160;<a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43a33eb6eead20a0b2f3b379cb1a0b335e0">loc_unknown</a>, 
+<a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43a866b6c488299dd5e3ed11ef12b2980b1">loc_playfield</a>, 
+<a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43a6957ad869921250ed36ed6bd18031f0b">loc_head</a>, 
+<a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43ad5daafa3dfecaad02408e01d2e2fb081">loc_body</a>, 
+<br/>
+&#160;&#160;<a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43aaeabac5c351d10d060f876e4f278df1d">loc_door</a>, 
+<a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43aa3c31ba683a0560dff29f242f971a154">loc_top</a>
+<br/>
+ }</td></tr>
+<tr class="memdesc:aecaf6a9545fa815deb4b8e64e144ce43"><td class="mdescLeft">&#160;</td><td class="mdescRight">location of part  <a href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43">More...</a><br/></td></tr>
+<tr class="separator:aecaf6a9545fa815deb4b8e64e144ce43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a073aa4d0d1568bd95e563e702fb2368c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>LampColour</b> { <br/>
+&#160;&#160;<b>colour_unknown</b>, 
+<b>colour_white</b>, 
+<b>colour_yellow</b>, 
+<b>colour_orange</b>, 
+<br/>
+&#160;&#160;<b>colour_red</b>, 
+<b>colour_blue</b>, 
+<b>colour_green</b>, 
+<b>colour_purple</b>
+<br/>
+ }</td></tr>
+<tr class="separator:a073aa4d0d1568bd95e563e702fb2368c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -152,10 +184,45 @@ Variables</h2></td></tr>
 </pre></dd></dl>
 <dl class="section date"><dt>Date</dt><dd>20130520 Initial version</dd></dl>
 <p>This framework controls pinball machine based on mc680x cpu's This file is a placeholder to include all seperate classes into a game. just use #include <a class="el" href="pinda_8h.html" title="Framework for controlling pinball hardware.">pinda.h</a> </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="aecaf6a9545fa815deb4b8e64e144ce43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="pinda_8h.html#aecaf6a9545fa815deb4b8e64e144ce43">Location</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>location of part </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aecaf6a9545fa815deb4b8e64e144ce43a33eb6eead20a0b2f3b379cb1a0b335e0"></a>loc_unknown</em>&nbsp;</td><td class="fielddoc">
+<p>location not known </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecaf6a9545fa815deb4b8e64e144ce43a866b6c488299dd5e3ed11ef12b2980b1"></a>loc_playfield</em>&nbsp;</td><td class="fielddoc">
+<p>part is on playfield </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecaf6a9545fa815deb4b8e64e144ce43a6957ad869921250ed36ed6bd18031f0b"></a>loc_head</em>&nbsp;</td><td class="fielddoc">
+<p>part is in head </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecaf6a9545fa815deb4b8e64e144ce43ad5daafa3dfecaad02408e01d2e2fb081"></a>loc_body</em>&nbsp;</td><td class="fielddoc">
+<p>part is in body (non playfield) </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecaf6a9545fa815deb4b8e64e144ce43aaeabac5c351d10d060f876e4f278df1d"></a>loc_door</em>&nbsp;</td><td class="fielddoc">
+<p>part is on coin door </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecaf6a9545fa815deb4b8e64e144ce43aa3c31ba683a0560dff29f242f971a154"></a>loc_top</em>&nbsp;</td><td class="fielddoc">
+<p>part is located on top of the head </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 23 2013 22:42:14 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 29 2013 20:51:24 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

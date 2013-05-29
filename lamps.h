@@ -32,6 +32,8 @@
 #ifndef LAMPS_h
 #define LAMPS_h
 
+	
+
 //include "pinda.h"
 //! baseclass to control lamps
 class lamps : public PindaObj {
@@ -63,8 +65,11 @@ class lamps : public PindaObj {
 		void allSet( uint8_t row1,uint8_t row2,uint8_t row3,uint8_t row4,uint8_t row5,uint8_t row6,uint8_t row7,uint8_t row8);
 		void allOff( void);
 		void allOn( void);
+		void setProperties(  Property * _properties );
 	//protected:
 		uint8_t lampdata[8]; //!< the standard lamp container
+		//Lamp properties[64];
+		 Property * properties;
 		uint8_t currentRow;
 };
 
@@ -115,6 +120,19 @@ class  lamps_williams11a : public lamps  {
 
 }; //lamps_williams11a
 //typedef void (lamps_williams11a::* interrupt_williams11a_ptr)(void);
+
+
+class  lamps_spi_matrix : public lamps  {
+	public:
+			lamps_spi_matrix( MCP23S17 * mcp, String _name="SPI MATRIX LAMPS");
+			void interrupt();
+	
+	private:
+		MCP23S17 * mcp;
+}; //lamps_spi_matrix
+
+
+
 
 
 //! class to control a single lamp

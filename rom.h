@@ -32,6 +32,26 @@ This is not needed in games but could be usefull for diagnostics
 #ifndef rom_h
 #define rom_h
 
+
+/* 
+intel hex
+:CCAAAATTDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDXX
+start = :
+CC byte count hex = 10/20 (16/32)
+AA address.4 = 16 bit addr
+TT data type = 00 data
+			01 EOF :00000001FF
+			02
+			03
+			04
+			05 
+DD data
+XX checksum (0x100 - (sum(CCAATTDD*) &FF ))
+CR
+
+
+
+*/
 //! class to access roms on the cpubus
 //! only needed for diagnostics
 class ROM : public PindaObj {
@@ -53,7 +73,13 @@ public:
 	uint8_t read_offset( unsigned int offset );
 
 	/** Dump content of ROM */
-	void dump();
+	void dump(void);
+	
+	
+	void ihex16(void);
+	void ihex32(void);
+	void checksums(void);
+	
 
 	// checksum
  

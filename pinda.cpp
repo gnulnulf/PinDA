@@ -81,9 +81,10 @@ void Pinda::StartTimer(void){
  // OCR1A = 31250;            // compare match register 16MHz/256/2Hz
   OCR5A = 62;  	// 16Mhz/256=62500 -> every ms..
  //OCR5A = 125;	
-  //  OCR1A = 6200;  	// 16Mhz/256=62500 -> every 100ms..
+ //   OCR1A = 6200;  	// 16Mhz/256=62500 -> every 100ms..
   TCCR5B |= (1 << WGM12);   // CTC mode
   TCCR5B |= (1 << CS12);    // 256 prescaler 
+  //tijdelijk uit
   TIMSK5 |= (1 << OCIE1A);  // enable timer compare interrupt
   interrupts();    
 }
@@ -91,6 +92,7 @@ void Pinda::StartTimer(void){
 // timer compare interrupt service routine
 ISR(TIMER5_COMPA_vect)          
 {
+	//tijdelijk uit
 	pinda.mainInterrupt();
 } //ISR pindaInterrupt
 /*

@@ -1,288 +1,562 @@
-C:/arduino-1.0.4/libraries/PinDA/lcdchars.cpp:255: warning: documented symbol `const int16_t lcdFont14' was not declared or defined.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:201: warning: Member MCP23S17 (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:202: warning: Member MCPADDR (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:203: warning: Member MCPDATA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:204: warning: Member IOCON (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:205: warning: Member IODIRA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:206: warning: Member IODIRB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:207: warning: Member IPOLA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:208: warning: Member IPOLB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:209: warning: Member GPIOA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:210: warning: Member GPIOB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:211: warning: Member GPINTENA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:212: warning: Member GPINTENB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:213: warning: Member INTCONA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:214: warning: Member INTCONB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:215: warning: Member DEFVALA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:216: warning: Member DEFVALB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:217: warning: Member GPPUA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:218: warning: Member GPPUB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:219: warning: Member OLATA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:220: warning: Member OLATB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:221: warning: Member INTFA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:222: warning: Member INTFB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:223: warning: Member INTCAPA (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:224: warning: Member INTCAPB (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.cpp:225: warning: Member HAEN (macro definition) of file CPUBUS.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:40: warning: Member CA1_CTL0 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:41: warning: Member CA1_CTL1 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:42: warning: Member DDRA_XS (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:43: warning: Member CA2_CTL0 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:44: warning: Member CA2_CTL1 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:45: warning: Member CA2_CTL2 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:46: warning: Member IRQA2 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:47: warning: Member IRQA1 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:49: warning: Member CB1_CTL0 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:50: warning: Member CB1_CTL1 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:51: warning: Member DDRB_XS (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:52: warning: Member CB2_CTL0 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:53: warning: Member CB2_CTL1 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:54: warning: Member CB2_CTL2 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:55: warning: Member IRQB2 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.cpp:56: warning: Member IRQB1 (macro definition) of file mc6821.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:100: warning: Member CLOCK_DIVIDER (macro definition) of file mcp23s17.h is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.cpp:93: warning: Member ISR(TIMER5_COMPA_vect) (function) of file pinda.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.cpp:38: warning: Member maxInterrupts (variable) of file pinda.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.cpp:39: warning: Member maxLoop (variable) of file pinda.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.cpp:68: warning: Member interruptFunctions[maxInterrupts] (variable) of file pinda.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.cpp:69: warning: Member interruptInterval[maxInterrupts] (variable) of file pinda.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.cpp:71: warning: Member loopFunctions[maxLoop] (variable) of file pinda.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/rom.cpp:41: warning: Member read(unsigned int address) (function) of file rom.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/rom.cpp:42: warning: Member read_offset(unsigned int address) (function) of file rom.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/rom.cpp:43: warning: Member dump() (function) of file rom.cpp is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.h:156: warning: Member Cpubus_Direct(String _name="CPUBUSDIRECT") (function) of class Cpubus_Direct is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.h:162: warning: Member writeref(const unsigned int &address, const uint8_t &dataref) (function) of class Cpubus_Direct is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:51: warning: Member DISPLAY_WIL11A(MC6821 *_piaalfa, MC6821 *_pia7seg, MC6821 *_piawidgets) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:53: warning: Member text1(String _text1) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:54: warning: Member text1a(String _text1) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:55: warning: Member text2(String _text2) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:56: warning: Member text2a(String _text2) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:57: warning: Member setScore1(String _txt) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:58: warning: Member setScore2(String _txt) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:59: warning: Member setScore3(String _txt) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:60: warning: Member setScore4(String _txt) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:61: warning: Member enableBlink(void) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:62: warning: Member disable(void) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/display.h:63: warning: Member blinkTime(uint8_t _blink) (function) of class DISPLAY_WIL11A is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:124: warning: Member LAMP(lamps *_lampptr, uint8_t index, String name="UNNAMED") (function) of class LAMP is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:126: warning: Member on(void) (function) of class LAMP is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:127: warning: Member off(void) (function) of class LAMP is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:128: warning: Member toggle(void) (function) of class LAMP is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:129: warning: Member setName(String _name) (function) of class LAMP is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:58: warning: Member off(uint8_t number) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:59: warning: Member toggle(uint8_t number) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:61: warning: Member set(uint8_t number, uint8_t state) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:62: warning: Member rowSet(const uint8_t row, const uint8_t data) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:63: warning: Member allSet(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4, uint8_t row5, uint8_t row6, uint8_t row7, uint8_t row8) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:64: warning: Member allOff(void) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:65: warning: Member allOn(void) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:68: warning: Member currentRow (variable) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:91: warning: Member lamps_demo(String _name="DEMO LAMPS") (function) of class lamps_demo is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:58: warning: Member off(uint8_t number) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:59: warning: Member toggle(uint8_t number) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:61: warning: Member set(uint8_t number, uint8_t state) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:62: warning: Member rowSet(const uint8_t row, const uint8_t data) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:63: warning: Member allSet(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4, uint8_t row5, uint8_t row6, uint8_t row7, uint8_t row8) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:64: warning: Member allOff(void) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:65: warning: Member allOn(void) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:68: warning: Member currentRow (variable) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:107: warning: Member lamps_williams11a(MC6821 *piaref, String _name="SYS11A LAMPS") (function) of class lamps_williams11a is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:58: warning: Member off(uint8_t number) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:59: warning: Member toggle(uint8_t number) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:61: warning: Member set(uint8_t number, uint8_t state) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:62: warning: Member rowSet(const uint8_t row, const uint8_t data) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:63: warning: Member allSet(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4, uint8_t row5, uint8_t row6, uint8_t row7, uint8_t row8) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:64: warning: Member allOff(void) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:65: warning: Member allOn(void) (function) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:111: warning: Member pia (variable) of class lamps_williams11a is not documented.
-C:/arduino-1.0.4/libraries/PinDA/lamps.h:68: warning: Member currentRow (variable) of class lamps is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:61: warning: Member outputA(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:62: warning: Member outputB(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:63: warning: Member allOnA(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:64: warning: Member allOnB(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:65: warning: Member allOffA(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:66: warning: Member allOffB(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:67: warning: Member inputA(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:68: warning: Member inputB(void) (function) of class MC6821 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:92: warning: argument 'number' of command @param is not found in the argument list of MC6821::isOn(uint8_t pin)
-C:/arduino-1.0.4/libraries/PinDA/mc6821.h:92: warning: The following parameters of MC6821::isOn(uint8_t pin) are not documented:
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:81: warning: Compound Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:125: warning: Compound lamps_spi_matrix is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:213: warning: Compound MCP23017 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lcdchars.cpp:255: warning: documented symbol `const int16_t lcdFont14' was not declared or defined.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:40: warning: Member CA1_CTL0 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:41: warning: Member CA1_CTL1 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:42: warning: Member DDRA_XS (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:43: warning: Member CA2_CTL0 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:44: warning: Member CA2_CTL1 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:45: warning: Member CA2_CTL2 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:46: warning: Member IRQA2 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:47: warning: Member IRQA1 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:49: warning: Member CB1_CTL0 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:50: warning: Member CB1_CTL1 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:51: warning: Member DDRB_XS (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:52: warning: Member CB2_CTL0 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:53: warning: Member CB2_CTL1 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:54: warning: Member CB2_CTL2 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:55: warning: Member IRQB2 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.cpp:56: warning: Member IRQB1 (macro definition) of file mc6821.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:195: warning: Member CLOCK_DIVIDER (macro definition) of file mcp23s17.h is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.cpp:94: warning: Member ISR(TIMER5_COMPA_vect) (function) of file pinda.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.cpp:38: warning: Member maxInterrupts (variable) of file pinda.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.cpp:39: warning: Member maxLoop (variable) of file pinda.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.cpp:68: warning: Member interruptFunctions[maxInterrupts] (variable) of file pinda.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.cpp:69: warning: Member interruptInterval[maxInterrupts] (variable) of file pinda.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.cpp:71: warning: Member loopFunctions[maxLoop] (variable) of file pinda.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:69: warning: Member LampColour (enumeration) of file pinda.h is not documented.
+C:/arduino-1.0.5/libraries/PinDA/rom.cpp:41: warning: Member read(unsigned int address) (function) of file rom.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/rom.cpp:42: warning: Member read_offset(unsigned int address) (function) of file rom.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/rom.cpp:43: warning: Member dump() (function) of file rom.cpp is not documented.
+C:/arduino-1.0.5/libraries/PinDA/CPUBUS.h:156: warning: Member Cpubus_Direct(String _name="CPUBUSDIRECT") (function) of class Cpubus_Direct is not documented.
+C:/arduino-1.0.5/libraries/PinDA/CPUBUS.h:162: warning: Member writeref(const unsigned int &address, const uint8_t &dataref) (function) of class Cpubus_Direct is not documented.
+C:/arduino-1.0.5/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
+C:/arduino-1.0.5/libraries/PinDA/CPUBUS.h:177: warning: Member Cpubus_SPI(MCP23S17 *_mcpa, MCP23S17 *_mcpd, String _name="CPUBUS SPI") (function) of class Cpubus_SPI is not documented.
+C:/arduino-1.0.5/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/CPUBUS.h:90: warning: Member status(void) (function) of class CPUBUSClass is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:51: warning: Member DISPLAY_WIL11A(MC6821 *_piaalfa, MC6821 *_pia7seg, MC6821 *_piawidgets) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:53: warning: Member text1(String _text1) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:54: warning: Member text1a(String _text1) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:55: warning: Member text2(String _text2) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:56: warning: Member text2a(String _text2) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:57: warning: Member setScore1(String _txt) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:58: warning: Member setScore2(String _txt) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:59: warning: Member setScore3(String _txt) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:60: warning: Member setScore4(String _txt) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:61: warning: Member enableBlink(void) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:62: warning: Member disable(void) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/display.h:63: warning: Member blinkTime(uint8_t _blink) (function) of class DISPLAY_WIL11A is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:142: warning: Member LAMP(lamps *_lampptr, uint8_t index, String name="UNNAMED") (function) of class LAMP is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:144: warning: Member on(void) (function) of class LAMP is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:145: warning: Member off(void) (function) of class LAMP is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:146: warning: Member toggle(void) (function) of class LAMP is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:147: warning: Member setName(String _name) (function) of class LAMP is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:60: warning: Member off(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:61: warning: Member toggle(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:63: warning: Member set(uint8_t number, uint8_t state) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:64: warning: Member rowSet(const uint8_t row, const uint8_t data) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:65: warning: Member allSet(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4, uint8_t row5, uint8_t row6, uint8_t row7, uint8_t row8) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:66: warning: Member allOff(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:67: warning: Member allOn(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:68: warning: Member setProperties(Property *_properties) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:72: warning: Member properties (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:73: warning: Member currentRow (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:96: warning: Member lamps_demo(String _name="DEMO LAMPS") (function) of class lamps_demo is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:60: warning: Member off(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:61: warning: Member toggle(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:63: warning: Member set(uint8_t number, uint8_t state) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:64: warning: Member rowSet(const uint8_t row, const uint8_t data) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:65: warning: Member allSet(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4, uint8_t row5, uint8_t row6, uint8_t row7, uint8_t row8) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:66: warning: Member allOff(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:67: warning: Member allOn(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:68: warning: Member setProperties(Property *_properties) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:72: warning: Member properties (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:73: warning: Member currentRow (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:127: warning: Member lamps_spi_matrix(MCP23S17 *mcp, String _name="SPI MATRIX LAMPS") (function) of class lamps_spi_matrix is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:60: warning: Member off(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:61: warning: Member toggle(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:63: warning: Member set(uint8_t number, uint8_t state) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:64: warning: Member rowSet(const uint8_t row, const uint8_t data) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:65: warning: Member allSet(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4, uint8_t row5, uint8_t row6, uint8_t row7, uint8_t row8) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:66: warning: Member allOff(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:67: warning: Member allOn(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:68: warning: Member setProperties(Property *_properties) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:72: warning: Member properties (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:73: warning: Member currentRow (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:112: warning: Member lamps_williams11a(MC6821 *piaref, String _name="SYS11A LAMPS") (function) of class lamps_williams11a is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:60: warning: Member off(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:61: warning: Member toggle(uint8_t number) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:63: warning: Member set(uint8_t number, uint8_t state) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:64: warning: Member rowSet(const uint8_t row, const uint8_t data) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:65: warning: Member allSet(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4, uint8_t row5, uint8_t row6, uint8_t row7, uint8_t row8) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:66: warning: Member allOff(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:67: warning: Member allOn(void) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:68: warning: Member setProperties(Property *_properties) (function) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:116: warning: Member pia (variable) of class lamps_williams11a is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:72: warning: Member properties (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/lamps.h:73: warning: Member currentRow (variable) of class lamps is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:61: warning: Member outputA(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:62: warning: Member outputB(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:63: warning: Member allOnA(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:64: warning: Member allOnB(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:65: warning: Member allOffA(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:66: warning: Member allOffB(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:67: warning: Member inputA(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:68: warning: Member inputB(void) (function) of class MC6821 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:92: warning: argument 'number' of command @param is not found in the argument list of MC6821::isOn(uint8_t pin)
+C:/arduino-1.0.5/libraries/PinDA/mc6821.h:92: warning: The following parameters of MC6821::isOn(uint8_t pin) are not documented:
   parameter 'pin'
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:55: warning: Member pinMode(bool mode) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:56: warning: Member port(uint16_t value) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:57: warning: Member port() (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:60: warning: Member pinMode(uint8_t pin, bool mode) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:61: warning: Member digitalWrite(uint8_t pin, bool value) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:62: warning: Member digitalRead(uint8_t pin) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:65: warning: Member GPIO_A0 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:66: warning: Member GPIO_A1 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:67: warning: Member GPIO_A2 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:68: warning: Member GPIO_A3 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:69: warning: Member GPIO_A4 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:70: warning: Member GPIO_A5 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:71: warning: Member GPIO_A6 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:72: warning: Member GPIO_A7 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:73: warning: Member GPIO_B0 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:74: warning: Member GPIO_B1 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:75: warning: Member GPIO_B2 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:76: warning: Member GPIO_B3 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:77: warning: Member GPIO_B4 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:78: warning: Member GPIO_B5 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:79: warning: Member GPIO_B6 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:80: warning: Member GPIO_B7 (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:136: warning: Member setup_ss(uint8_t slave_select_pin) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:137: warning: Member setup_device(uint8_t aaa_hw_addr) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:139: warning: Member read_addr(byte addr) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:140: warning: Member write_addr(byte addr, uint16_t data) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:141: warning: Member write_addr_byte(byte addr, uint8_t data) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:143: warning: Member byte2uint16(byte high_byte, byte low_byte) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:144: warning: Member uint16_high_byte(uint16_t uint16) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:145: warning: Member uint16_low_byte(uint16_t uint16) (function) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:130: warning: Member slave_select_pin (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:131: warning: Member aaa_hw_addr (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:133: warning: Member read_cmd (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:134: warning: Member write_cmd (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:104: warning: Member IOCONA (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:105: warning: Member IOCON (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:108: warning: Member SEQOP (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:109: warning: Member HAEN (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:118: warning: Member IODIRA (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:119: warning: Member IODIRB (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:120: warning: Member IODIR (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:122: warning: Member GPPUA (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:123: warning: Member GPPUB (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:124: warning: Member GPPU (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:126: warning: Member GPIOA (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:127: warning: Member GPIOB (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/mcp23s17.h:128: warning: Member GPIO (variable) of class MCP23S17 is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pindacom.h:126: warning: Member enableInterrupt(void) (function) of class PindaCom is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pindacom.h:128: warning: Member flank(void) (function) of class PindaCom is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pindacom.cpp:187: warning: found subsection command outside of section context!
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:76: warning: Member isChanged(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:77: warning: Member getString(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:78: warning: Member getFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:79: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:57: warning: Member getString(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:58: warning: Member getFlank(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:96: warning: Member hasFlank(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:57: warning: Member getString(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:58: warning: Member getFlank(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:96: warning: Member hasFlank(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:57: warning: Member getString(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:58: warning: Member getFlank(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:96: warning: Member hasFlank(void) (function) of class SWITCHES is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:72: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:74: warning: Member off(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/pinda.h:75: warning: Member toggle(void) (function) of class PindaObj is not documented.
-C:/arduino-1.0.4/libraries/PinDA/switches.h:155: warning: The following parameters of SWITCHES_williams11a::SWITCHES_williams11a(MC6821 *_pia, String _name="SWITCHES SYS11A") are not documented:
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:50: warning: Member pinMode(bool mode) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:51: warning: Member pinMode(uint8_t pin, bool mode) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:52: warning: Member port(uint16_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:53: warning: Member port() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:56: warning: Member digitalWrite(uint8_t pin, bool value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:57: warning: Member digitalRead(uint8_t pin) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:61: warning: Member pinModeA(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:62: warning: Member pinA(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:63: warning: Member portA() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:64: warning: Member portA(uint8_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:65: warning: Member ddrA(uint8_t val) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:68: warning: Member pinB(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:69: warning: Member portB() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:70: warning: Member portB(uint8_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:71: warning: Member ddrB(uint8_t val) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:72: warning: Member pinModeB(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:226: warning: Member setup_device(uint8_t aaa_hw_addr) (function) of class MCP23017 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:230: warning: Member read_addr(byte addr) (function) of class MCP23017 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:231: warning: Member read_addr_byte(byte addr) (function) of class MCP23017 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:232: warning: Member write_addr(byte addr, uint16_t data) (function) of class MCP23017 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:233: warning: Member write_addr_byte(byte addr, uint8_t data) (function) of class MCP23017 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:173: warning: Member byte2uint16(byte high_byte, byte low_byte) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:174: warning: Member uint16_high_byte(uint16_t uint16) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:175: warning: Member uint16_low_byte(uint16_t uint16) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:228: warning: Member mcp_addr (variable) of class MCP23017 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:163: warning: Member reset_pin (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:164: warning: Member aaa_hw_addr (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:76: warning: Member GPIO_A0 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:77: warning: Member GPIO_A1 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:78: warning: Member GPIO_A2 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:79: warning: Member GPIO_A3 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:80: warning: Member GPIO_A4 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:81: warning: Member GPIO_A5 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:82: warning: Member GPIO_A6 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:83: warning: Member GPIO_A7 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:84: warning: Member GPIO_B0 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:85: warning: Member GPIO_B1 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:86: warning: Member GPIO_B2 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:87: warning: Member GPIO_B3 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:88: warning: Member GPIO_B4 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:89: warning: Member GPIO_B5 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:90: warning: Member GPIO_B6 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:91: warning: Member GPIO_B7 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:94: warning: Member IODIRA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:95: warning: Member IODIRB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:96: warning: Member IODIR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:97: warning: Member IPOLA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:98: warning: Member IPOLB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:99: warning: Member GPINTENA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:100: warning: Member GPINTENB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:101: warning: Member DEFVALA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:102: warning: Member DEFVALB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:103: warning: Member INTCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:104: warning: Member INTCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:105: warning: Member IOCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:106: warning: Member IOCON (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:107: warning: Member IOCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:108: warning: Member GPPUA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:109: warning: Member GPPUB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:110: warning: Member INTFA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:111: warning: Member INTFB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:112: warning: Member INTCAPA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:113: warning: Member INTCAPB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:114: warning: Member GPIOA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:115: warning: Member GPIOB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:116: warning: Member OLATA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:117: warning: Member OLATB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:118: warning: Member GPPU (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:119: warning: Member GPIO (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:124: warning: Member B1IODIRA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:125: warning: Member B1IPOLA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:126: warning: Member B1GPINTENA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:127: warning: Member B1DEFVALA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:128: warning: Member B1INTCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:129: warning: Member B1IOCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:130: warning: Member B1GPPUA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:131: warning: Member B1INTFA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:132: warning: Member B1INTCAPA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:133: warning: Member B1GPIOA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:134: warning: Member B1OLATA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:135: warning: Member B1IOCON (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:136: warning: Member B1IODIR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:138: warning: Member B1IODIRB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:139: warning: Member B1IPOLB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:140: warning: Member B1GPINTENB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:141: warning: Member B1DEFVALB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:142: warning: Member B1INTCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:143: warning: Member B1IOCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:144: warning: Member B1GPPUB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:145: warning: Member B1INTFB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:146: warning: Member B1INTCAPB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:147: warning: Member B1GPIOB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:148: warning: Member B1OLATB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:150: warning: Member READ (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:151: warning: Member WRITE (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:154: warning: Member BANK (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:155: warning: Member MIRROR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:156: warning: Member SEQOP (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:157: warning: Member DISSLW (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:158: warning: Member HAEN (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:159: warning: Member ODR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:160: warning: Member INTPOL (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:50: warning: Member pinMode(bool mode) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:51: warning: Member pinMode(uint8_t pin, bool mode) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:52: warning: Member port(uint16_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:53: warning: Member port() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:56: warning: Member digitalWrite(uint8_t pin, bool value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:57: warning: Member digitalRead(uint8_t pin) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:61: warning: Member pinModeA(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:62: warning: Member pinA(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:63: warning: Member portA() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:64: warning: Member portA(uint8_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:65: warning: Member ddrA(uint8_t val) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:68: warning: Member pinB(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:69: warning: Member portB() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:70: warning: Member portB(uint8_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:71: warning: Member ddrB(uint8_t val) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:72: warning: Member pinModeB(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:203: warning: Member setup_ss(uint8_t slave_select_pin) (function) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:204: warning: Member setup_device(uint8_t aaa_hw_addr) (function) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:206: warning: Member read_addr(byte addr) (function) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:207: warning: Member read_addr_byte(byte addr) (function) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:208: warning: Member write_addr(byte addr, uint16_t data) (function) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:209: warning: Member write_addr_byte(byte addr, uint8_t data) (function) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:173: warning: Member byte2uint16(byte high_byte, byte low_byte) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:174: warning: Member uint16_high_byte(uint16_t uint16) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:175: warning: Member uint16_low_byte(uint16_t uint16) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:198: warning: Member read_cmd (variable) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:199: warning: Member write_cmd (variable) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:201: warning: Member slave_select_pin (variable) of class MCP23S17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:163: warning: Member reset_pin (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:164: warning: Member aaa_hw_addr (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:76: warning: Member GPIO_A0 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:77: warning: Member GPIO_A1 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:78: warning: Member GPIO_A2 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:79: warning: Member GPIO_A3 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:80: warning: Member GPIO_A4 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:81: warning: Member GPIO_A5 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:82: warning: Member GPIO_A6 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:83: warning: Member GPIO_A7 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:84: warning: Member GPIO_B0 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:85: warning: Member GPIO_B1 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:86: warning: Member GPIO_B2 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:87: warning: Member GPIO_B3 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:88: warning: Member GPIO_B4 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:89: warning: Member GPIO_B5 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:90: warning: Member GPIO_B6 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:91: warning: Member GPIO_B7 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:94: warning: Member IODIRA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:95: warning: Member IODIRB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:96: warning: Member IODIR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:97: warning: Member IPOLA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:98: warning: Member IPOLB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:99: warning: Member GPINTENA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:100: warning: Member GPINTENB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:101: warning: Member DEFVALA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:102: warning: Member DEFVALB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:103: warning: Member INTCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:104: warning: Member INTCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:105: warning: Member IOCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:106: warning: Member IOCON (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:107: warning: Member IOCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:108: warning: Member GPPUA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:109: warning: Member GPPUB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:110: warning: Member INTFA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:111: warning: Member INTFB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:112: warning: Member INTCAPA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:113: warning: Member INTCAPB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:114: warning: Member GPIOA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:115: warning: Member GPIOB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:116: warning: Member OLATA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:117: warning: Member OLATB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:118: warning: Member GPPU (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:119: warning: Member GPIO (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:124: warning: Member B1IODIRA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:125: warning: Member B1IPOLA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:126: warning: Member B1GPINTENA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:127: warning: Member B1DEFVALA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:128: warning: Member B1INTCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:129: warning: Member B1IOCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:130: warning: Member B1GPPUA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:131: warning: Member B1INTFA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:132: warning: Member B1INTCAPA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:133: warning: Member B1GPIOA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:134: warning: Member B1OLATA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:135: warning: Member B1IOCON (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:136: warning: Member B1IODIR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:138: warning: Member B1IODIRB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:139: warning: Member B1IPOLB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:140: warning: Member B1GPINTENB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:141: warning: Member B1DEFVALB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:142: warning: Member B1INTCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:143: warning: Member B1IOCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:144: warning: Member B1GPPUB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:145: warning: Member B1INTFB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:146: warning: Member B1INTCAPB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:147: warning: Member B1GPIOB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:148: warning: Member B1OLATB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:150: warning: Member READ (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:151: warning: Member WRITE (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:154: warning: Member BANK (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:155: warning: Member MIRROR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:156: warning: Member SEQOP (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:157: warning: Member DISSLW (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:158: warning: Member HAEN (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:159: warning: Member ODR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:160: warning: Member INTPOL (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:50: warning: Member pinMode(bool mode) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:51: warning: Member pinMode(uint8_t pin, bool mode) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:52: warning: Member port(uint16_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:53: warning: Member port() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:56: warning: Member digitalWrite(uint8_t pin, bool value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:57: warning: Member digitalRead(uint8_t pin) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:61: warning: Member pinModeA(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:62: warning: Member pinA(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:63: warning: Member portA() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:64: warning: Member portA(uint8_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:65: warning: Member ddrA(uint8_t val) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:68: warning: Member pinB(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:69: warning: Member portB() (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:70: warning: Member portB(uint8_t value) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:71: warning: Member ddrB(uint8_t val) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:72: warning: Member pinModeB(uint8_t pin, bool state) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:76: warning: Member GPIO_A0 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:77: warning: Member GPIO_A1 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:78: warning: Member GPIO_A2 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:79: warning: Member GPIO_A3 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:80: warning: Member GPIO_A4 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:81: warning: Member GPIO_A5 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:82: warning: Member GPIO_A6 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:83: warning: Member GPIO_A7 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:84: warning: Member GPIO_B0 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:85: warning: Member GPIO_B1 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:86: warning: Member GPIO_B2 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:87: warning: Member GPIO_B3 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:88: warning: Member GPIO_B4 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:89: warning: Member GPIO_B5 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:90: warning: Member GPIO_B6 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:91: warning: Member GPIO_B7 (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:168: warning: Member read_addr(byte addr) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:169: warning: Member read_addr_byte(byte addr) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:170: warning: Member write_addr(byte addr, uint16_t data) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:171: warning: Member write_addr_byte(byte addr, uint8_t data) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:173: warning: Member byte2uint16(byte high_byte, byte low_byte) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:174: warning: Member uint16_high_byte(uint16_t uint16) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:175: warning: Member uint16_low_byte(uint16_t uint16) (function) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:163: warning: Member reset_pin (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:164: warning: Member aaa_hw_addr (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:94: warning: Member IODIRA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:95: warning: Member IODIRB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:96: warning: Member IODIR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:97: warning: Member IPOLA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:98: warning: Member IPOLB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:99: warning: Member GPINTENA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:100: warning: Member GPINTENB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:101: warning: Member DEFVALA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:102: warning: Member DEFVALB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:103: warning: Member INTCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:104: warning: Member INTCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:105: warning: Member IOCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:106: warning: Member IOCON (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:107: warning: Member IOCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:108: warning: Member GPPUA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:109: warning: Member GPPUB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:110: warning: Member INTFA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:111: warning: Member INTFB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:112: warning: Member INTCAPA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:113: warning: Member INTCAPB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:114: warning: Member GPIOA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:115: warning: Member GPIOB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:116: warning: Member OLATA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:117: warning: Member OLATB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:118: warning: Member GPPU (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:119: warning: Member GPIO (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:124: warning: Member B1IODIRA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:125: warning: Member B1IPOLA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:126: warning: Member B1GPINTENA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:127: warning: Member B1DEFVALA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:128: warning: Member B1INTCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:129: warning: Member B1IOCONA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:130: warning: Member B1GPPUA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:131: warning: Member B1INTFA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:132: warning: Member B1INTCAPA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:133: warning: Member B1GPIOA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:134: warning: Member B1OLATA (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:135: warning: Member B1IOCON (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:136: warning: Member B1IODIR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:138: warning: Member B1IODIRB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:139: warning: Member B1IPOLB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:140: warning: Member B1GPINTENB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:141: warning: Member B1DEFVALB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:142: warning: Member B1INTCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:143: warning: Member B1IOCONB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:144: warning: Member B1GPPUB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:145: warning: Member B1INTFB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:146: warning: Member B1INTCAPB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:147: warning: Member B1GPIOB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:148: warning: Member B1OLATB (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:150: warning: Member READ (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:151: warning: Member WRITE (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:154: warning: Member BANK (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:155: warning: Member MIRROR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:156: warning: Member SEQOP (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:157: warning: Member DISSLW (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:158: warning: Member HAEN (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:159: warning: Member ODR (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/mcp23s17.h:160: warning: Member INTPOL (variable) of class MCP23X17 is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pindacom.h:126: warning: Member enableInterrupt(void) (function) of class PindaCom is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pindacom.h:128: warning: Member flank(void) (function) of class PindaCom is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pindacom.cpp:187: warning: found subsection command outside of section context!
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:82: warning: Member index (variable) of class Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:83: warning: Member name (variable) of class Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:84: warning: Member x (variable) of class Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:85: warning: Member y (variable) of class Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:86: warning: Member count (variable) of class Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:87: warning: Member col (variable) of class Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:88: warning: Member loc (variable) of class Property is not documented.
+C:/arduino-1.0.5/libraries/PinDA/rom.h:79: warning: Member ihex16(void) (function) of class ROM is not documented.
+C:/arduino-1.0.5/libraries/PinDA/rom.h:80: warning: Member ihex32(void) (function) of class ROM is not documented.
+C:/arduino-1.0.5/libraries/PinDA/rom.h:81: warning: Member checksums(void) (function) of class ROM is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:115: warning: Member isChanged(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:116: warning: Member getString(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:117: warning: Member getFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:118: warning: Member hasFlank(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:57: warning: Member getString(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:58: warning: Member getFlank(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:96: warning: Member hasFlank(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:57: warning: Member getString(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:58: warning: Member getFlank(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:96: warning: Member hasFlank(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:57: warning: Member getString(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:58: warning: Member getFlank(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:96: warning: Member hasFlank(void) (function) of class SWITCHES is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:111: warning: Member on(uint16_t delay=0) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:113: warning: Member off(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/pinda.h:114: warning: Member toggle(void) (function) of class PindaObj is not documented.
+C:/arduino-1.0.5/libraries/PinDA/switches.h:155: warning: The following parameters of SWITCHES_williams11a::SWITCHES_williams11a(MC6821 *_pia, String _name="SWITCHES SYS11A") are not documented:
   parameter '_name'
