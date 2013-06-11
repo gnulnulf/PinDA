@@ -23,7 +23,11 @@
 
 
 #include <stdint.h>
+#ifdef ARDUINO
 #include <avr/pgmspace.h>
+#else 
+#include "rpi/compatibility.h" 
+#endif
 #include "lcdchars.h"
 
 
@@ -46,7 +50,7 @@
 */
 
 /** 7 segment font */
-const int8_t lcdFont7[] PROGMEM =
+const uint8_t lcdFont7[] PROGMEM =
 {
 //    Pgfedcba
 

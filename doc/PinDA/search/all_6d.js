@@ -13,5 +13,6 @@ var searchData=
   ['mcp23s17',['MCP23S17',['../classMCP23S17.html',1,'MCP23S17'],['../classMCP23S17.html#a47e81be4746f042f8cf3e8c6c58ad9f8',1,'MCP23S17::MCP23S17(uint8_t slave_select)'],['../classMCP23S17.html#ab9c8589b93f55157d435265225adec41',1,'MCP23S17::MCP23S17(uint8_t slave_select, byte aaa_hw_addr)']]],
   ['mcp23s17_2eh',['mcp23s17.h',['../mcp23s17_8h.html',1,'']]],
   ['mcp23x17',['MCP23X17',['../classMCP23X17.html',1,'']]],
+  ['mcp_5faddr',['mcp_addr',['../classMCP23017.html#af412ac48a945ef8f0c4b0462df47d4f0',1,'MCP23017']]],
   ['min_5foff',['min_off',['../classSOLENOID.html#aed71d7ec3e89cde35d43a7f759728a2e',1,'SOLENOID']]]
 ];

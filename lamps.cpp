@@ -27,7 +27,7 @@
  
 */ 
 #include "pinda.h"
-# include "CPUBUS.h"
+#include "cpubus.h"
 #include "lamps.h"
 
 #include "mc6821.h"
@@ -79,7 +79,7 @@ void LAMP::toggle( void){
 void lamps::interrupt( void ) {
 	static uint8_t row=0;
 	print("L");
-	print(row);
+	//print(row);
 	row++;
 	if ( row>7) row=0;
 } //lamps::interrupt
@@ -92,7 +92,7 @@ void lamps::show(void){
 	for (uint8_t i=0;i<8;i++) {
 		printf("%02X ",lampdata[i]);
 	}
-	println();
+	println("");
 } //lamps::show
 
 void lamps::on(uint8_t number) {
@@ -154,6 +154,7 @@ void lamps::rowSet( const uint8_t row, const uint8_t  data) {
 
 
 
+#ifdef ARDUINO
 lamps_demo::lamps_demo(String _name) {
 	objName=_name;
 	DDRK = 0xff;
@@ -184,6 +185,7 @@ void lamps_demo::interrupt(void) {
 	row++;
 	if ( row>7) row=0;
 } // lamps_demo::interrupt
+#endif //lamps_demo
 
 
 

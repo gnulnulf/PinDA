@@ -93,6 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">MCP23017 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mcp23s17_8h_source.html">mcp23s17.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MCP23017:</div>
 <div class="dyncontent">
@@ -160,9 +162,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>pinModeB</b> (uint8_t
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac086b3733497eea49642886ef7a18494"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac086b3733497eea49642886ef7a18494"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup_device</b> (uint8_t aaa_hw_addr)</td></tr>
-<tr class="separator:ac086b3733497eea49642886ef7a18494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad39a40039de7343b528231e7fbcaa8e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad39a40039de7343b528231e7fbcaa8e2"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>read_addr</b> (byte addr)</td></tr>
 <tr class="separator:ad39a40039de7343b528231e7fbcaa8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,7 +188,8 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><b>uint16_low_byte</b> (
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:af412ac48a945ef8f0c4b0462df47d4f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af412ac48a945ef8f0c4b0462df47d4f0"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>mcp_addr</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23017.html#af412ac48a945ef8f0c4b0462df47d4f0">mcp_addr</a></td></tr>
+<tr class="memdesc:af412ac48a945ef8f0c4b0462df47d4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">store the i2c address <br/></td></tr>
 <tr class="separator:af412ac48a945ef8f0c4b0462df47d4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classMCP23X17"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classMCP23X17')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classMCP23X17.html">MCP23X17</a></td></tr>
 <tr class="memitem:a5d74f3855ea434c1dd4fa4d70447a572 inherit pro_attribs_classMCP23X17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d74f3855ea434c1dd4fa4d70447a572"></a>
@@ -429,7 +429,11 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ODR</
 static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>INTPOL</b> = 0b00000010</td></tr>
 <tr class="separator:a35e70cb7f1601d9cecf1a2235460cfeb inherit pro_static_attribs_classMCP23X17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classMCP23017.html">MCP23017</a> I2C 16 port IO expander class</p>
+<p>ArduinoMega &lt;-&gt; MCP SDA pin 20 = DIP13 SDL pin 21 = DIP12 /RESET = DIP18</p>
+<p>Don't forget to pullup the SDA/SDL lines </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a535ed5c3394fce20f856e26001c4a905"></a>
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +449,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>INTPO
 </div><div class="memdoc">
 
 <p>up to 8 expanders can be shared </p>
-<p>constructor for single expander constructor for an expander on a shared bus </p>
+<p>constructor for an expander on a shared bus </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">aaa_hw_addr</td><td>share index (0-7) </td></tr>
@@ -462,7 +466,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>INTPO
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 29 2013 20:51:25 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 29 2013 21:07:28 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

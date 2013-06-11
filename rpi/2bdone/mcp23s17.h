@@ -32,9 +32,14 @@ based on https://github.com/thejpster/Mcp23s17
 #ifndef MCP23X17_h
 #define MCP23X17_h
 
+#ifdef RASPBERRY
+
+#endif
+#ifdef ARDUINO
 #include "Arduino.h"
 #include <SPI.h>
 #include <Wire.h>
+#endif
 /**
 * This is the base class for the 23X17 family
 *
@@ -161,79 +166,102 @@ const static uint8_t INTPOL = 0b00000010;
 //const static uint8_t UNUSED = 0b00000001;
 
     uint8_t reset_pin;
-    byte aaa_hw_addr;
+    uint8_t aaa_hw_addr;
 
 
 	
-	virtual uint16_t read_addr(byte addr);
-    virtual uint8_t read_addr_byte(byte addr);
-    virtual void write_addr(byte addr, uint16_t data);
-	virtual	void write_addr_byte(byte addr, uint8_t data);
+	virtual uint16_t read_addr(uint8_t addr);
+    virtual uint8_t read_addr_byte(uint8_t addr);
+    virtual void write_addr(uint8_t addr, uint16_t data);
+	virtual	void write_addr_byte(uint8_t addr, uint8_t data);
 
-	uint16_t byte2uint16(byte high_byte, byte low_byte);
-	byte uint16_high_byte(uint16_t uint16);
-	byte uint16_low_byte(uint16_t uint16);
+	uint16_t byte2uint16(uint8_t high_byte, uint8_t low_byte);
+	uint8_t uint16_high_byte(uint16_t uint16);
+	uint8_t uint16_low_byte(uint16_t uint16);
 
 };
 
 
-//! class to control the SPI MCP23S17 IO expander
+#ifdef ENABLE_SPI
+/**
+*  MCP23S17 SPI 16 bit IO expander
+*
+*  ArduinoMega <-> MCP
+*  MISO pin 50 = DIP14
+*  MOSI pin 51 = DIP13
+*  SCK pin 52 = DIP12
+* ( /CS pin 53 = DIP11 ) hardcoded atm
+* /RESET = DIP18
+*/
 class MCP23S17 : public MCP23X17
 {
   public:
     //! constructor for single expander
     MCP23S17(
-		uint8_t slave_select	//!< arduino pin for the slave select
+		uint8_t slave_select=53	//!< arduino pin for the slave select
 	);
     //! constructor for an expander on a shared bus
 	//! up to 8 expanders can be shared
     MCP23S17(
 		uint8_t slave_select, 	//!< arduino pin for the slave select
-		byte aaa_hw_addr		//!< share index (0-7)
+		uint8_t aaa_hw_addr		//!< share index (0-7)
 	);
 
 	#define    CLOCK_DIVIDER (SPI_CLOCK_DIV2)           // SPI bus speed to be 1/2 of the processor clock speed - 8MHz on most Arduinos
 
   protected:
-      byte read_cmd;
-    byte write_cmd;
+	uint8_t read_cmd; //!< store read address
+    uint8_t write_cmd;	//!< store write address
 
-    uint8_t slave_select_pin;		
-
+    uint8_t slave_select_pin;		//!< store CS pin
+	
+	/** 
+	* setup spi CS pin
+	* @param slave_select_pin arduino pin number
+	*/
     void setup_ss(uint8_t slave_select_pin);
+	/** 
+	* setup mcp address
+	* @param aaa_hw_addr MCP number ( 0-7 )
+	*/
     void setup_device(uint8_t aaa_hw_addr);
 
-    uint16_t read_addr(byte addr);
-    uint8_t read_addr_byte(byte addr);
-    void write_addr(byte addr, uint16_t data);
-	void write_addr_byte(byte addr, uint8_t data);
+    uint16_t read_addr(uint8_t addr);
+    uint8_t read_addr_byte(uint8_t addr);
+    void write_addr(uint8_t addr, uint16_t data);
+	void write_addr_byte(uint8_t addr, uint8_t data);
 };
+#endif //EnABLE_SPI
 
-
+#ifdef ENABLE_I2C
+/**
+* MCP23017 I2C 16 port IO expander class
+*
+* ArduinoMega <-> MCP
+* SDA pin 20   = DIP13
+* SDL pin 21   = DIP12
+* /RESET       = DIP18
+*
+* Don't forget to pullup the SDA/SDL lines
+*/
 class MCP23017 : public MCP23X17 {
   public:
-    //! constructor for single expander
     //! constructor for an expander on a shared bus
 	//! up to 8 expanders can be shared
     MCP23017(
-	//	uint8_t slave_select, 	//!< arduino pin for the slave select
-		byte aaa_hw_addr		//!< share index (0-7)
+		uint8_t aaa_hw_addr		//!< share index (0-7)
 	);
-
-//	#define    CLOCK_DIVIDER (SPI_CLOCK_DIV2)           // SPI bus speed to be 1/2 of the processor clock speed - 8MHz on most Arduinos
-
   protected:
-    void setup_device(uint8_t aaa_hw_addr);
-
-	uint8_t mcp_addr;
+	uint8_t mcp_addr; //!< store the i2c address
 	
-    uint16_t read_addr(byte addr);
-    uint8_t read_addr_byte(byte addr);
-    void write_addr(byte addr, uint16_t data);
-	void write_addr_byte(byte addr, uint8_t data);
+    uint16_t read_addr(uint8_t addr);
+    uint8_t read_addr_byte(uint8_t addr);
+    void write_addr(uint8_t addr, uint16_t data);
+	void write_addr_byte(uint8_t addr, uint8_t data);
 };
 
 
+#endif //ENABLE_I2C
 
 #endif // MCP23X17_h
 

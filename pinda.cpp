@@ -28,8 +28,12 @@
 */ 
 #include "pinda.h"
 
+#ifdef RASPBERRY
+SPI * spiio;
+#endif
 
 #ifdef ARDUINO
+SPIClass * spiio;
 #define println(line) Serial.println(line)
 #define print(line) Serial.print(line)
 #endif
@@ -40,6 +44,13 @@ const int maxLoop=32;
 
 // constructor
 Pinda::Pinda(void) {
+#ifdef RASPBERRY
+spiio = new SPI();
+#endif
+#ifdef ARDUINO
+spiio = new SPIClass();
+#endif
+
 	interruptCounter=0;
 	interruptTop=0;
 	interruptFNTop=0;
@@ -60,10 +71,10 @@ void PindaObj::serviceLoop(void){}
 void PindaObj::on(uint16_t delay){}
 void PindaObj::off(void){}
 void PindaObj::toggle(void){}
-String PindaObj::getString(void){}
-String PindaObj::getFlank(void){}
-bool PindaObj::isChanged(void){}
-bool PindaObj::hasFlank(void){}
+String PindaObj::getString(void){return ""; }
+String PindaObj::getFlank(void){return ""; }
+bool PindaObj::isChanged(void){return false;}
+bool PindaObj::hasFlank(void){return false;}
 
 voidFunction interruptFunctions[ maxInterrupts ];
 unsigned int interruptInterval[maxInterrupts];
@@ -72,6 +83,7 @@ voidFunction loopFunctions[maxLoop];
 
 //pinda timer(s)
 void Pinda::StartTimer(void){
+#ifdef ARDUINO
   // initialize timer5
   noInterrupts();           // disable all interrupts
   TCCR5A = 0;
@@ -87,14 +99,18 @@ void Pinda::StartTimer(void){
   //tijdelijk uit
   TIMSK5 |= (1 << OCIE1A);  // enable timer compare interrupt
   interrupts();    
+#endif //ARDUINO
 }
 
+#ifdef ARDUINO
 // timer compare interrupt service routine
 ISR(TIMER5_COMPA_vect)          
 {
 	//tijdelijk uit
 	pinda.mainInterrupt();
 } //ISR pindaInterrupt
+
+#endif // ARDUINO
 /*
 //= &<PindaObj>solenoid22::getName();
 void (PindaObj::*PindaInterrupt)(void) = &PindaObj::interrupt;
@@ -202,14 +218,17 @@ void Pinda::loop(void){
 
 
 int Pinda::freeRam ( void) {
+#ifdef ARDUINO
   extern int __heap_start, *__brkval; 
   int v; 
   return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval); 
+#endif
 } //Pinda::freeRam
 
 String Pinda::status(void) {
 	String s;
 		s+= "\n### PinDA status ###";
+#ifdef ARDUINO
 		s+= "\nMemory Free        : " + String( freeRam() );
 		s+= "\nPindaInterrupts    : " + String( interruptTop );
 		s+= "\nFunctionInterrupts : " + String( interruptFNTop );
@@ -225,6 +244,7 @@ String Pinda::status(void) {
 			if ( serviceFunctions[ i ] ) count++;
 		}
 		s+= "\nFunctionLoop       : " + String( count );
+#endif
 		s+= "\n\n";
 		return s;
 } // Pinda::status

@@ -34,7 +34,8 @@
 
 	
 
-//include "pinda.h"
+#include "pinda.h"
+
 //! baseclass to control lamps
 class lamps : public PindaObj {
 	public:
@@ -149,8 +150,8 @@ class LAMP : PindaObj {
 	
 	private:
 		lamps * lampptr;
-		uint8_t index;
 		String name;
+		uint8_t index;
 }; //LAMP
 
 

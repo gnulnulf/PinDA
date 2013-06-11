@@ -99,28 +99,28 @@
 void DISPLAY_WIL11A::setScore1( String _txt) {
 	_txt += "                ";
 	for (int i=0;i<8;i++){
-		stext1[i+1]=_txt.charAt( i );
+		stext1[i+1]=_txt.CHARAT( i );
 	}
 } 
 
 void DISPLAY_WIL11A::setScore2( String _txt) {
 	_txt += "                ";
 	for (int i=0;i<8;i++){
-		stext1[i+9]=_txt.charAt( i );
+		stext1[i+9]=_txt.CHARAT( i );
 	}
 } 
 
 void DISPLAY_WIL11A::setScore3( String _txt) {
 	_txt += "                ";
 	for (int i=0;i<8;i++){
-		stext2[i+1]=_txt.charAt( i );
+		stext2[i+1]=_txt.CHARAT( i );
 	}
 } 
 
 void DISPLAY_WIL11A::setScore4( String _txt) {
 	_txt += "                ";
 	for (int i=0;i<8;i++){
-		stext2[i+9]=_txt.charAt( i );
+		stext2[i+9]=_txt.CHARAT( i );
 	}
 } 
 
@@ -129,14 +129,14 @@ void DISPLAY_WIL11A::setScore4( String _txt) {
 void DISPLAY_WIL11A::text1( String _text1) {
 	_text1 += "                ";
 	for (int i=0;i<16;i++){
-		stext1[i]=_text1.charAt( i );
+		stext1[i]=_text1.CHARAT( i );
 	}
 } 
 
 void DISPLAY_WIL11A::text2( String _text2) {
 	_text2 += "                ";
 	for (int i=0;i<16;i++){
-		stext2[i]=_text2.charAt( i );
+		stext2[i]=_text2.CHARAT( i );
 	}
 } 
 

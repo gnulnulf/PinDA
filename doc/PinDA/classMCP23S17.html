@@ -94,9 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>class to control the SPI <a class="el" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> IO expander  
- <a href="classMCP23S17.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="mcp23s17_8h_source.html">mcp23s17.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MCP23S17:</div>
@@ -168,11 +165,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>pinModeB</b> (uint8_t
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:adc533f57a1c273a561ba8c43ef16583b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc533f57a1c273a561ba8c43ef16583b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup_ss</b> (uint8_t slave_select_pin)</td></tr>
+<tr class="memitem:adc533f57a1c273a561ba8c43ef16583b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23S17.html#adc533f57a1c273a561ba8c43ef16583b">setup_ss</a> (uint8_t <a class="el" href="classMCP23S17.html#a4dd9535162684571fe934fd26b3f5531">slave_select_pin</a>)</td></tr>
 <tr class="separator:adc533f57a1c273a561ba8c43ef16583b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe8b764df74c1cd67d6f80abed9779a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfe8b764df74c1cd67d6f80abed9779a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup_device</b> (uint8_t aaa_hw_addr)</td></tr>
+<tr class="memitem:abfe8b764df74c1cd67d6f80abed9779a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23S17.html#abfe8b764df74c1cd67d6f80abed9779a">setup_device</a> (uint8_t aaa_hw_addr)</td></tr>
 <tr class="separator:abfe8b764df74c1cd67d6f80abed9779a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca0ab791c54a6ac93d1b54c94418ab5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acca0ab791c54a6ac93d1b54c94418ab5"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>read_addr</b> (byte addr)</td></tr>
@@ -200,13 +195,16 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><b>uint16_low_byte</b> (
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a1a21ef06797ed6899ab8f86087a90389"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a21ef06797ed6899ab8f86087a90389"></a>
-byte&#160;</td><td class="memItemRight" valign="bottom"><b>read_cmd</b></td></tr>
+byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23S17.html#a1a21ef06797ed6899ab8f86087a90389">read_cmd</a></td></tr>
+<tr class="memdesc:a1a21ef06797ed6899ab8f86087a90389"><td class="mdescLeft">&#160;</td><td class="mdescRight">store read address <br/></td></tr>
 <tr class="separator:a1a21ef06797ed6899ab8f86087a90389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9c64890ebb6e80306fdb070578782c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9c64890ebb6e80306fdb070578782c0"></a>
-byte&#160;</td><td class="memItemRight" valign="bottom"><b>write_cmd</b></td></tr>
+byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23S17.html#ad9c64890ebb6e80306fdb070578782c0">write_cmd</a></td></tr>
+<tr class="memdesc:ad9c64890ebb6e80306fdb070578782c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">store write address <br/></td></tr>
 <tr class="separator:ad9c64890ebb6e80306fdb070578782c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dd9535162684571fe934fd26b3f5531"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dd9535162684571fe934fd26b3f5531"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>slave_select_pin</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMCP23S17.html#a4dd9535162684571fe934fd26b3f5531">slave_select_pin</a></td></tr>
+<tr class="memdesc:a4dd9535162684571fe934fd26b3f5531"><td class="mdescLeft">&#160;</td><td class="mdescRight">store CS pin <br/></td></tr>
 <tr class="separator:a4dd9535162684571fe934fd26b3f5531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classMCP23X17"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classMCP23X17')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classMCP23X17.html">MCP23X17</a></td></tr>
 <tr class="memitem:a5d74f3855ea434c1dd4fa4d70447a572 inherit pro_attribs_classMCP23X17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d74f3855ea434c1dd4fa4d70447a572"></a>
@@ -447,7 +445,8 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>INTPO
 <tr class="separator:a35e70cb7f1601d9cecf1a2235460cfeb inherit pro_static_attribs_classMCP23X17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>class to control the SPI <a class="el" href="classMCP23S17.html" title="class to control the SPI MCP23S17 IO expander">MCP23S17</a> IO expander </p>
+<div class="textblock"><p><a class="el" href="classMCP23S17.html">MCP23S17</a> SPI 16 bit IO expander</p>
+<p>ArduinoMega &lt;-&gt; MCP MISO pin 50 = DIP14 MOSI pin 51 = DIP13 SCK pin 52 = DIP12 ( /CS pin 53 = DIP11 ) /RESET = DIP18 </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a47e81be4746f042f8cf3e8c6c58ad9f8"></a>
 <div class="memitem">
@@ -509,6 +508,69 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>INTPO
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="abfe8b764df74c1cd67d6f80abed9779a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MCP23S17::setup_device </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>aaa_hw_addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>setup mcp address </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aaa_hw_addr</td><td>MCP number ( 0-7 ) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adc533f57a1c273a561ba8c43ef16583b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MCP23S17::setup_ss </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_select_pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>setup spi CS pin </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slave_select_pin</td><td>arduino pin number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="mcp23s17_8h_source.html">mcp23s17.h</a></li>
 <li>mcp23s17.cpp</li>
@@ -516,7 +578,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>INTPO
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 29 2013 20:51:25 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 29 2013 21:07:28 for PinDA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

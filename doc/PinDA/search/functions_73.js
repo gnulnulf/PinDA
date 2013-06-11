@@ -9,6 +9,8 @@ var searchData=
   ['setlampbank',['setLampBank',['../classPindaCom.html#a3da2c20fbba4ef862345feb2fdb6340c',1,'PindaCom']]],
   ['setsolenoid',['setSolenoid',['../classPindaCom.html#a037c996b8907842b373934bde37d612b',1,'PindaCom']]],
   ['setswitchbank',['setSwitchBank',['../classPindaCom.html#a10e6db2ad1e3cd6728cfe303f70a3257',1,'PindaCom']]],
+  ['setup_5fdevice',['setup_device',['../classMCP23S17.html#abfe8b764df74c1cd67d6f80abed9779a',1,'MCP23S17']]],
+  ['setup_5fss',['setup_ss',['../classMCP23S17.html#adc533f57a1c273a561ba8c43ef16583b',1,'MCP23S17']]],
   ['show',['show',['../classlamps.html#a9db2202f4a95fbbe1364a0a01b347661',1,'lamps::show()'],['../classSWITCHES.html#af8d7c8e653cf6a5c7651881d494d84f7',1,'SWITCHES::show()']]],
   ['solenoid',['SOLENOID',['../classSOLENOID.html#ad4cb26d275db1859b8d5f2caabb9408b',1,'SOLENOID']]],
   ['solenoid_5fdemo',['SOLENOID_demo',['../classSOLENOID__demo.html#a989d6637e9ecc181dedd378a1b38e17b',1,'SOLENOID_demo']]],

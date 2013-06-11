@@ -1,0 +1,59 @@
+display.cpp: In member function ‘void DISPLAY_WIL11A::setScore2(std::string)’:
+display.cpp:109:13: warning: array subscript is above array bounds [-Warray-bounds]
+display.cpp: In member function ‘void DISPLAY_WIL11A::setScore4(std::string)’:
+display.cpp:123:13: warning: array subscript is above array bounds [-Warray-bounds]
+lamps.cpp: In member function ‘void lamps::show()’:
+lamps.cpp:95:2: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+pinda.cpp: In member function ‘int Pinda::freeRam()’:
+pinda.cpp:226:1: warning: no return statement in function returning non-void [-Wreturn-type]
+build/rpi/./cpubus.o: In function `CPUBUSClass::interrupt()':
+cpubus.cpp:(.text+0x0): multiple definition of `CPUBUSClass::interrupt()'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x0): first defined here
+build/rpi/./cpubus.o: In function `CPUBUSClass::serviceLoop()':
+cpubus.cpp:(.text+0x4): multiple definition of `CPUBUSClass::serviceLoop()'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x4): first defined here
+build/rpi/./cpubus.o: In function `CPUBUSClass::reset()':
+cpubus.cpp:(.text+0x8): multiple definition of `CPUBUSClass::reset()'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x8): first defined here
+build/rpi/./cpubus.o: In function `CPUBUSClass::read(unsigned int)':
+cpubus.cpp:(.text+0xc): multiple definition of `CPUBUSClass::read(unsigned int)'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0xc): first defined here
+build/rpi/./cpubus.o: In function `CPUBUSClass::write(unsigned int, unsigned char)':
+cpubus.cpp:(.text+0x14): multiple definition of `CPUBUSClass::write(unsigned int, unsigned char)'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x14): first defined here
+build/rpi/./cpubus.o: In function `Cpubus_SPI::write(unsigned int, unsigned char)':
+cpubus.cpp:(.text+0x18): multiple definition of `Cpubus_SPI::write(unsigned int, unsigned char)'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x18): first defined here
+build/rpi/./cpubus.o: In function `Cpubus_SPI::read(unsigned int)':
+cpubus.cpp:(.text+0xe0): multiple definition of `Cpubus_SPI::read(unsigned int)'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0xe0): first defined here
+build/rpi/./cpubus.o: In function `CPUBUSClass::CPUBUSClass()':
+cpubus.cpp:(.text+0x178): multiple definition of `CPUBUSClass::CPUBUSClass()'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x178): first defined here
+build/rpi/./cpubus.o:(.data.rel.ro+0x18): multiple definition of `vtable for CPUBUSClass'
+build/rpi/./cpubus.o:(.data.rel.ro+0x18): first defined here
+build/rpi/./cpubus.o: In function `CPUBUSClass::status()':
+cpubus.cpp:(.text+0x1b8): multiple definition of `CPUBUSClass::status()'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x1b8): first defined here
+build/rpi/./cpubus.o: In function `Cpubus_SPI::Cpubus_SPI(MCP23S17*, MCP23S17*, std::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+cpubus.cpp:(.text+0x3b8): multiple definition of `Cpubus_SPI::Cpubus_SPI(MCP23S17*, MCP23S17*, std::basic_string<char, std::char_traits<char>, std::allocator<char> >)'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x3b8): first defined here
+build/rpi/./cpubus.o:(.data.rel.ro+0x50): multiple definition of `vtable for Cpubus_SPI'
+build/rpi/./cpubus.o:(.data.rel.ro+0x50): first defined here
+build/rpi/./cpubus.o:(.rodata+0x0): multiple definition of `typeinfo name for CPUBUSClass'
+build/rpi/./cpubus.o:(.rodata+0x0): first defined here
+build/rpi/./cpubus.o:(.data.rel.ro+0x0): multiple definition of `typeinfo for CPUBUSClass'
+build/rpi/./cpubus.o:(.data.rel.ro+0x0): first defined here
+build/rpi/./cpubus.o:(.rodata+0x10): multiple definition of `typeinfo name for Cpubus_SPI'
+build/rpi/./cpubus.o:(.rodata+0x10): first defined here
+build/rpi/./cpubus.o:(.data.rel.ro+0xc): multiple definition of `typeinfo for Cpubus_SPI'
+build/rpi/./cpubus.o:(.data.rel.ro+0xc): first defined here
+build/rpi/./cpubus.o: In function `CPUBUSClass::CPUBUSClass()':
+cpubus.cpp:(.text+0x178): multiple definition of `CPUBUSClass::CPUBUSClass()'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x178): first defined here
+build/rpi/./cpubus.o: In function `Cpubus_SPI::Cpubus_SPI(MCP23S17*, MCP23S17*, std::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+cpubus.cpp:(.text+0x3b8): multiple definition of `Cpubus_SPI::Cpubus_SPI(MCP23S17*, MCP23S17*, std::basic_string<char, std::char_traits<char>, std::allocator<char> >)'
+build/rpi/./cpubus.o:cpubus.cpp:(.text+0x3b8): first defined here
+build/rpi/./mcp23s17.o:(.data.rel.ro+0x8): undefined reference to `typeinfo for MCP23X17'
+collect2: ld returned 1 exit status
+make[1]: *** [mcptest] Error 1

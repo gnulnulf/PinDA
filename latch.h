@@ -70,8 +70,8 @@ it is used for solenoids in system11 systems
 		bool isOn(uint8_t bit);
 		
 	private:
-		CPUBUSClass * bus;	//!< cpubus pointer
 		uint8_t state;		//!< current state of latch data
+		CPUBUSClass * bus;	//!< cpubus pointer
 //		String name;
 		unsigned int address;	//!< address on CPUBUS
 }; 

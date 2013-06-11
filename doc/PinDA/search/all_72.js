@@ -2,6 +2,7 @@ var searchData=
 [
   ['readme',['README',['../md_README.html',1,'']]],
   ['read',['read',['../classCPUBUSClass.html#a85460788cf313181a99724e98fa556fe',1,'CPUBUSClass::read()'],['../classCpubus__Direct.html#a7be2589d95fd0246528d8d1e39f929c0',1,'Cpubus_Direct::read()'],['../classCpubus__SPI.html#aca078ce47184aa534a13f6518041a35a',1,'Cpubus_SPI::read()'],['../classROM.html#a3698532ceef0725a688701cb2f87cf98',1,'ROM::read()']]],
+  ['read_5fcmd',['read_cmd',['../classMCP23S17.html#a1a21ef06797ed6899ab8f86087a90389',1,'MCP23S17']]],
   ['read_5fcra',['read_cra',['../classMC6821.html#a0e175c66f8a21c54bf2f1fa33ec1abf0',1,'MC6821']]],
   ['read_5fcrb',['read_crb',['../classMC6821.html#a0a03d067395eb7aa3a96fedc53fdc016',1,'MC6821']]],
   ['read_5foffset',['read_offset',['../classROM.html#a77e69479f22c916c54bd23b7d7be06f4',1,'ROM']]],

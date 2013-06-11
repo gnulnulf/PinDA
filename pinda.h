@@ -26,8 +26,12 @@
 This file is a placeholder to include all seperate classes into a game.
 just use \#include pinda.h
 */
+
 #ifndef PINDA_h
 #define PINDA_h
+
+#define ENABLE_SPI
+//#define ENABLE_I2C
 
 
 // --------------------------------------------------------
@@ -39,14 +43,29 @@ typedef void (*voidFunction) (void);
 // --------------------------------------------------------
 // Standard Includes
 // --------------------------------------------------------
-#include <avr/io.h>
-#include <avr/interrupt.h>
 #include <inttypes.h>
-#include <String>
 
-#include <Wire.h>
+
+
+#ifdef RASPBERRY
+#include "rpi/compatibility.h"
+#include "rpi/spi.h"
+#include <string>
+#define String std::string
+#define CHARAT at
+extern SPI* spiio;
+#endif //RASPBERRY
 
 #ifdef ARDUINO 
+#define CHARAT charAt
+#include <SPI.h>
+//spiio = new SPI();
+extern SPIClass* spiio;
+#include <Wire.h>
+//#include <String>
+#include <string.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
 #include "Arduino.h"
 //#define println(line) Serial.println(line)
 //#define print(line) Serial.print(line)
@@ -234,7 +253,7 @@ extern Pinda pinda;
 // --------------------------------------------------------
 
 // Class to access the CPU(680n) BUS
-#include "CPUBUS.h"
+#include "cpubus.h"
 
 // mc6821 access
 #include "mc6821.h"
@@ -242,22 +261,22 @@ extern Pinda pinda;
 #include "latch.h"
 
 //rom access 
-#include "rom.h"
+//#include "rom.h"
 
 //lamps 
 #include "lamps.h"
 
 //switches
-#include "switches.h"
+//#include "switches.h"
 
 //solenoids
 #include "solenoids.h"
 
 //protocol master-slave
-#include "pindacom.h"
+//#include "pindacom.h"
 
 //display
-//#include "lcdchars.h"
+#include "lcdchars.h"
 #include "display.h"
 
 // --------------------------------------------------------

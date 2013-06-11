@@ -31,7 +31,7 @@
 * Includes
 ******************************************************************************/
 # include "pinda.h"
-# include "CPUBUS.h"
+# include "cpubus.h"
 # include "mc6821.h"
 
 /*****************************************************************************
@@ -231,7 +231,7 @@ bool MC6821::isOn( uint8_t pin) {
 	} else {
 		if (pin<16) {
 			// when defined as output, see cache 
-			if (ddrb_sv & (1<<pin-8) ) {
+			if (( ddrb_sv ) & (1<<(pin-8)) ) {
 				return ( pdrb_sv & (1<<(pin-8) ))?true:false;
 			} else {
 				return ( read_pdrb() & (1<<(pin-8)) )?true:false;

@@ -1,3 +1,7 @@
+#build 
+build/rpi/
+build/arduino/
+
 # Compiled Object files
 *.slo
 *.lo
