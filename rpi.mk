@@ -11,12 +11,15 @@
 # use make all and make install to install the examples
 # You can change the install directory by editing the prefix line
 #
+LIBDIR=/usr/local/lib
+LIBNAME=libpinda.so.1.0
+
 prefix := /opt/pinda
 RASPBERRY= -DRASPBERRY
 
 # The recommended compiler flags for the Raspberry Pi
 CCFLAGS= $(RASPBERRY) -Wall -Ofast -mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s
-GPP=g++
+GPP=$(CROSSPATH)g++
 #CCFLAGS=
 
 # define all programs
@@ -28,9 +31,10 @@ SOURCES += $(wildcard ./rpi/*.cpp)
 OBJECTS=$(join $(addprefix build/rpi/, $(dir $(SOURCES))), $(notdir $(SOURCES:.cpp=.o))) 
 //OBJECTS+=$(BUILDDIR)mcptest.o
 //OBJECTSRPI=$(join $(addprefix build/rpi/, $(dir $(SOURCES))), $(notdir $(SOURCES:.cpp=.o))) 
+#LDLIBS= -lpinda
 
 
-all: ${PROGRAMS}
+all: ${LIBNAME} ${PROGRAMS}
 	@echo [ALL $(OBJECTS)]
 
 
@@ -38,18 +42,27 @@ all: ${PROGRAMS}
 #${PROGRAMS}: ${SOURCES}
 #	@g++ ${CCFLAGS} -Wall -I. -L. $@.cpp -o $@
 
-build/rpi/mcptest.o:
-	@echo [COMPILE i $<]
-	@$(GPP) ${CCFLAGS} -fPIC -o $@ -c mcptest.ino $(LDFLAGS) $(LDLIBS)
+#mcptest.o:
+#	@echo [COMPILE i $<]
+#	@$(GPP) ${CCFLAGS} -fPIC -o $@ -c mcptest.ino $(LDFLAGS) $(LDLIBS)
 
 build/rpi/%.o:%.cpp
 	@echo [COMPILE b $<]
 	@$(GPP) ${CCFLAGS} -fPIC -o $@ -c $< $(LDFLAGS) $(LDLIBS)
 
 
-mcptest: $(OBJECTS)
+$(LIBNAME): $(OBJECTS)
+	@echo [LIB ${LIBNAME}]
+	@g++ -shared -Wl,-soname,libpinda.so.1 ${CCFLAGS}  -o ${LIBNAME}  $(OBJECTS)
+
+libstatic:	$(OBJECTS)
+	@echo [STATIC LIB libpinda.a]
+	@ar rvs libpinda.a $(OBJECTS)
+	
+mcptest: $(LIBNAME)
 	@echo [CREATE $@ ]
-	@$(GPP) ${CCFLAGS} -o build/rpi/$@ $< $(LDFLAGS) $(LDLIBS) build/rpi/mcptest.o $(OBJECTS)
+	@$(GPP) ${CCFLAGS} -o build/rpi/$@ -lpinda -L. $(LDFLAGS) $(LDLIBS) -x c++  mcptest.ino 
+#	@$(GPP) ${CCFLAGS} -o build/rpi/$@-static $(LDFLAGS) -x c++  mcptest.ino libpinda.a
 
 	
 .c.o:
@@ -59,11 +72,18 @@ mcptest: $(OBJECTS)
 clean:
 	@rm -rf $(PROGRAMS) $(OBJECTS)
 
-install: all
-	test -d $(prefix) || mkdir $(prefix)
-	test -d $(prefix)/bin || mkdir $(prefix)/bin
-	for prog in $(PROGRAMS); do \
-	  install -m 0755 $$prog $(prefix)/bin; \
-	done
+libinstall: $(LIBNAME)
+	@echo "[INSTALL ${LIBDIR}/${LIBNAME}]"
+	@cp ${LIBNAME} ${LIBDIR}/${LIBNAME}
+	@ln -sf ${LIBDIR}/${LIBNAME} ${LIBDIR}/libpinda.so.1
+	@ln -sf ${LIBDIR}/${LIBNAME} ${LIBDIR}/libpinda.so
+	@ldconfig
 
-.PHONY: install
+install: all
+	@test -d $(prefix) || mkdir $(prefix)
+	@test -d $(prefix)/bin || mkdir $(prefix)/bin
+	@for prog in $(PROGRAMS); do \
+	@  install -m 0755 $$prog $(prefix)/bin; \
+	@done
+
+.PHONY: install 

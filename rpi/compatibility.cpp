@@ -1,20 +1,27 @@
 
 #include "compatibility.h"
+
 /**********************************************************************/
 /**
  * This function is added in order to simulate arduino delay() function
  * @param milisec
- */
-//SerialFake Serial;
+*/
+SerialFake Serial;
 
-void digitalWrite(uint8_t a, uint8_t b) {
+void digitalWrite(uint8_t pin, uint8_t value) {
+ GPIO::write(pin, value);
+
 }
-void pinMode(uint8_t a, bool b){}
+void pinMode(uint8_t pin, bool direction){
+GPIO::open(pin, direction);
+}
 
-void SerialFake::begin( uint32_t speed) {}
-void SerialFake::print( String str) {}
-void SerialFake::println( String str) {}
-void SerialFake::printf( String str) {}
+void SerialFake::begin( uint32_t speed) {std::cout << "Serial SPEED : "<<speed << std::endl;}
+void SerialFake::p( std::string s) {std::cout<< "PRINT" << s;}
+void SerialFake::print( std::string s) {std::cout <<"P"<< s;}
+void SerialFake::println( std::string s) {std::cout << "PRINTLN : " << (std::string)s << std::endl;}
+void SerialFake::printf( String s) {}
+ SerialFake::operator bool() {return 1==1;}
 
 void __msleep(int milisec)
 {

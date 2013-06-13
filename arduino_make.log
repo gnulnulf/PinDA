@@ -1,0 +1,4 @@
+/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp: In function ‘void store_char(unsigned char, ring_buffer*)’:
+/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp:84:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp: In member function ‘virtual size_t HardwareSerial::write(uint8_t)’:
+/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp:392:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]

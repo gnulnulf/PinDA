@@ -32,11 +32,22 @@ else
         HOSTOS:=$(UNAME_S)
     endif
 endif
-LOGFILE=$(TARGETOS)$(TARGETARCH).log
+LOGFILE=$(TARGET)_make.log
+ifeq ($(HOSTARCH),arm)
+	CROSS=0
+	
+else
+	@echo [CROSS COMPILE ]
+	CROSS=1
+	CROSSPREFIX=/opt/tools/arm-bcm2708/arm-bcm2708-linux-gnueabi/arm-bcm2708-linux-gnueabi/bin/
+endif
 bin:.status
 	@make -f $(TARGET).mk  2> $(LOGFILE)
-clean:
-	@make -f $(TARGET).mk clean 2> $(LOGFILE)
+
+$(MAKECMDGOALS):
+	@make -f $(TARGET).mk $(MAKECMDGOALS) 2> $(LOGFILE)
+
+
 
 rpi:.status
 	@make -f rpi.mk 2> $(LOGFILE)

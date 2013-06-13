@@ -19,6 +19,7 @@
 #include <inttypes.h>
 
 #include <string>
+#include <iostream>
 #include <stdint.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -91,15 +92,17 @@ long __millis();
 class SerialFake {
 	public:
 		void begin(uint32_t speed);
-		void print(String str);
-		void printf(String str);
-		void println(String str);
+		void p(std::string s);
+		void print(std::string s);
+		void printf(std::string s);
+		void println(std::string s);
 		//bool SerialFake(void);
+		operator bool(void);
 		
 
 
 };
-//SerialFake Serial;
+extern SerialFake Serial;
 
 
 #ifdef	__cplusplus

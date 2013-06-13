@@ -61,7 +61,7 @@ extern SPI* spiio;
 #include <SPI.h>
 //spiio = new SPI();
 extern SPIClass* spiio;
-#include <Wire.h>
+//#include <Wire.h>
 //#include <String>
 #include <string.h>
 #include <avr/io.h>
@@ -70,7 +70,7 @@ extern SPIClass* spiio;
 //#define println(line) Serial.println(line)
 //#define print(line) Serial.print(line)
 #else
-#include "arduino_compat.h"
+//#include "arduino_compat.h"
 #endif
 
 
@@ -253,31 +253,32 @@ extern Pinda pinda;
 // --------------------------------------------------------
 
 // Class to access the CPU(680n) BUS
-#include "cpubus.h"
+//#include "cpubus.h"
 
 // mc6821 access
-#include "mc6821.h"
+//#include "mc6821.h"
+#include "mcp23s17.h"
 
-#include "latch.h"
+//#include "latch.h"
 
 //rom access 
 //#include "rom.h"
 
 //lamps 
-#include "lamps.h"
+//#include "lamps.h"
 
 //switches
 //#include "switches.h"
 
 //solenoids
-#include "solenoids.h"
+//#include "solenoids.h"
 
 //protocol master-slave
 //#include "pindacom.h"
 
 //display
-#include "lcdchars.h"
-#include "display.h"
+//#include "lcdchars.h"
+//#include "display.h"
 
 // --------------------------------------------------------
 // Framework Documentation

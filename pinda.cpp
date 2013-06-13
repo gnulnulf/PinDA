@@ -34,8 +34,8 @@ SPI * spiio;
 
 #ifdef ARDUINO
 SPIClass * spiio;
-#define println(line) Serial.println(line)
-#define print(line) Serial.print(line)
+//#define println(line) Serial.println(line)
+//#define print(line) Serial.print(line)
 #endif
 
 
@@ -46,6 +46,8 @@ const int maxLoop=32;
 Pinda::Pinda(void) {
 #ifdef RASPBERRY
 spiio = new SPI();
+spiio->setdevice("/dev/spidev0.0");
+spiio->init();
 #endif
 #ifdef ARDUINO
 spiio = new SPIClass();
@@ -164,7 +166,7 @@ int Pinda::AddLoop ( voidFunction fun ){
 			return i;
 		}
 	}
-	println("{ERROR:Out of loopslots}");
+	Serial.println("{ERROR:Out of loopslots}");
 	return -1;
 }
 
@@ -177,7 +179,7 @@ int Pinda::AddInterrupt ( voidFunction fun, unsigned int interval ){
 			return i;
 		}
 	}
-	println("{ERROR:Out of interruptslots}");
+	Serial.println("{ERROR:Out of interruptslots}");
 	return -1;
 }
 
@@ -190,7 +192,7 @@ int Pinda::AddInterrupt ( PindaObj * obj, unsigned int interval ){
 			return i;
 		}
 	}
-	println("{ERROR:Out of interruptslots}");
+	Serial.println("{ERROR:Out of interruptslots}");
 	return -1;
 }
 
@@ -222,6 +224,8 @@ int Pinda::freeRam ( void) {
   extern int __heap_start, *__brkval; 
   int v; 
   return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval); 
+#else
+return 0;
 #endif
 } //Pinda::freeRam
 
