@@ -61,8 +61,8 @@
 /******************************************************************************
  * Base class
  ******************************************************************************/
-//void CPUBUSClass::interrupt(void ){};
-//void CPUBUSClass::serviceLoop(void ){};
+void CPUBUSClass::interrupt(void ){};
+void CPUBUSClass::serviceLoop(void ){};
 //CPUBUSClass::CPUBUSClass(void){};
 //	 void CPUBUSClass::init(void);
 //uint8_t CPUBUSClass::read(int address);
@@ -72,11 +72,11 @@
 //	 void CPUBUSClass::set_read();
 //	 void CPUBUSClass::set_write();
 
-//void CPUBUSClass::reset(void ){};
+void CPUBUSClass::reset(void ){};
 
-//uint8_t CPUBUSClass::read(const unsigned int address){ return 0;};
+uint8_t CPUBUSClass::read(const unsigned int address){ return 0;};
 
-//v//oid CPUBUSClass::write(const unsigned int address, const uint8_t data){};
+void CPUBUSClass::write(const unsigned int address, const uint8_t data){};
 
 
 String CPUBUSClass::status(void) {

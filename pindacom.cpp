@@ -34,7 +34,9 @@
  ******************************************************************************/
  #include "pinda.h"
  #include "pindacom.h"
- 
+ #ifdef RASPBERRY
+ #include <iostream>
+ #endif
 /******************************************************************************
 * Definitions
 ******************************************************************************/
@@ -68,6 +70,7 @@ bool PindaCom::isReady( void ) {
 }
 
 void PindaCom::interrupt(void) {
+#ifdef ARDUINO
 	if ( ( enable ) && (!msgReady) ) {
 //	Serial.print(".");
 	
@@ -89,9 +92,11 @@ void PindaCom::interrupt(void) {
 	}
   }
 }
+#endif
 }//PindaCom::interrupt
 
 void PindaCom::serialIn() {
+#ifdef ARDUINO
   while (( Serial.available()  ) && (!msgReady) )  {
     char in = (char)Serial.read(); 
 	if (  in == '{' ){
@@ -110,7 +115,8 @@ void PindaCom::serialIn() {
 		}
 	}
   }
-}
+#endif
+} //serialIn
 
 void PindaCom::setLampBank( uint8_t index, PindaObj * obj) {
 	if ( index < lampBanks ) {
@@ -137,22 +143,44 @@ String PindaCom::status( void ) {
 	// dump lamp banks
 	for ( uint8_t i=0; i<lampBanks ;i++) {
 		if ( lampBank [ i ] ) {
+#ifdef ARDUINO
 			s+= "\nLAMPBANK " + String(i)+ ": " + ( lampBank[i]->*PindaGetName )();
+#endif	
+#ifdef RASPBERRY
+		char buf[80];
+		sprintf(buf,"\nLAMPBANK %02d : %s ", i, ( lampBank[i]->*PindaGetName )().c_str());
+		s+= buf;
+#endif
+
 		}
 	}
 	// dump switch banks
 	for ( uint8_t i=0; i<switchBanks ;i++) {
 		if ( switchBank [ i ] ) {
+#ifdef ARDUINO
 			s+= "\nSWITCHBANK " + String(i)+ ": " + ( switchBank[i]->*PindaGetName )();
+#endif	
+#ifdef RASPBERRY
+		char buf[80];
+		sprintf(buf,"\nSWITCHBANK %02d : %s ", i, ( switchBank[i]->*PindaGetName )().c_str());
+		s+= buf;
+#endif
 		}
 	}
 	// dump solenoids
 	for ( uint8_t i=0; i<solenoids ;i++) {
 		if ( solenoid [ i ] ) {
+#ifdef ARDUINO
 			s+= "\nSOLENOID " + String(i)+ ": " + ( solenoid[i]->*PindaGetName )();
+#endif	
+#ifdef RASPBERRY
+		char buf[80];
+		sprintf(buf,"\nSOLENOID %02d : %s ", i, ( solenoid[i]->*PindaGetName )().c_str());
+		s+= buf;
+#endif
 		}
 	}
-	
+
 	s+= "\n";
 	return s;
 }
@@ -166,7 +194,13 @@ void PindaCom::flank(void) {
 			String (PindaObj::*PindaGetFlank)(void) = &PindaObj::getFlank;
 			bool (PindaObj::*PindaHasFlank)(void) = &PindaObj::hasFlank;
 			if( ( switchBank[i]->*PindaHasFlank )() ) {
+			#ifdef ARDUINO
 				Serial.println("{S"+String( i,HEX )+( switchBank[i]->*PindaGetFlank )() +"}" );
+			#endif
+			#ifdef RASPBERRY
+				cout << "{S" << i << ( switchBank[i]->*PindaGetFlank )() <<endl;
+			#endif
+			
 			}			
 		}
 	}
@@ -177,9 +211,11 @@ void PindaCom::parseMsg( void ) {
 	String (PindaObj::*PindaGetName)(void) = &PindaObj::getName;
 
 	char cmd=message.CHARAT(0);
+#ifdef ARDUINO
 	Serial.println("MSG: "+message );
 	Serial.println("CMD: "+String(cmd) );
 	Serial.println("LEN: "+String(message.length() ) );
+#endif
 	switch( cmd ) {
 
 		// --------------------------------------------------------

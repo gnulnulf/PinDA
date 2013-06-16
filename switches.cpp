@@ -66,13 +66,20 @@ void SWITCHES::show(void){
 	for (uint8_t i=0;i<8;i++) {
 		printf("%02X ",switchdata[i]);
 	}
-	println();
+	printf("\n");
 } //SWITCHES::show
 
 String SWITCHES::getString(void){
 	String s;
 	for (uint8_t i=0;i<8;i++) {
+		#ifdef ARDUINO
 		s+= String( switchdata[i], HEX )+" ";
+		#endif
+		#ifdef RASPBERRY  
+		char buf[10];
+		sprintf(buf,"%02X ", switchdata[i]);
+		s+= buf;
+		#endif
 	}
 	return s;
 } //SWITCHES::getString
@@ -80,10 +87,17 @@ String SWITCHES::getString(void){
 String SWITCHES::getFlank(void){
 	String s,t;
 	for (uint8_t i=0;i<8;i++) {
+	#ifdef ARDUINO
 		t="0"+String( flankupdata[i], HEX );
 		s+= t.substring(t.length()-2);
 		t="0"+String( flankdowndata[i], HEX );
 		s+= t.substring(t.length()-2);
+	#endif
+	#ifdef RASPBERRY
+		char buf[10];
+		sprintf(buf,"%02X%02X", flankupdata[i],flankdowndata[i] );
+		s+= buf;
+	#endif 
 		flankupdata[i]=0;
 		flankdowndata[i]=0;
 	}
@@ -171,7 +185,8 @@ row87_______
 
 */
 void SWITCHES_demo::interrupt(void) {
-	uint8_t number=currentRow * 9;
+#ifdef ARDUINO
+	//uint8_t number=currentRow * 9;
 	uint8_t index[8] = { 
 		sw1_pin,
 		sw2_pin,
@@ -197,6 +212,7 @@ void SWITCHES_demo::interrupt(void) {
 	
 	currentRow++;
 	if ( currentRow>7) currentRow=0;
+#endif
 } // switches_demo::interrupt
 
 

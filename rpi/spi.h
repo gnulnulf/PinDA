@@ -3,6 +3,8 @@
  * Author: Purinda Gunasekara <purinda@gmail.com>
  * 
  * Created on 24 June 2012, 11:00 AM
+ *
+ * changed by Arco van Geest <arco@appeltaart.mine.nu>
  */
 
 #ifndef SPI_H
@@ -28,7 +30,17 @@ class SPI {
 public:
 	
 	SPI();
-	uint8_t transfer(uint8_t tx_);
+	uint8_t transfernot(uint8_t tx_ );
+	uint8_t transfer(uint8_t tx_[], uint8_t length );
+	uint16_t transfer16(uint8_t tx_[] ,uint8_t length);
+
+//	uint8_t read(uint8_t tx_[]);
+//	uint16_t read(uint8_t tx_[]);
+//	uint32_t read(uint8_t tx_[]);
+
+	
+	
+	void transfer3(uint8_t cmd_,uint8_t reg_,uint8_t data_);
 	virtual ~SPI();
 	void init();	
 	void begin();

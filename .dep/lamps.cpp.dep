@@ -10,9 +10,9 @@ build/arduino/lamps.o: lamps.cpp pinda.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/Printable.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/new.h \
  /usr/share/arduino/hardware/arduino/variants/mega/pins_arduino.h \
- /usr/share/arduino/libraries/Wire/Wire.h \
- /usr/share/arduino/hardware/arduino/cores/arduino/Stream.h cpubus.h \
- mcp23s17.h mc6821.h latch.h lamps.h solenoids.h lcdchars.h display.h
+ mc6821.h cpubus.h mcp23s17.h /usr/share/arduino/libraries/Wire/Wire.h \
+ /usr/share/arduino/hardware/arduino/cores/arduino/Stream.h latch.h rom.h \
+ lamps.h switches.h solenoids.h pindacom.h display.h
 
 pinda.h:
 
@@ -38,22 +38,26 @@ pinda.h:
 
 /usr/share/arduino/hardware/arduino/variants/mega/pins_arduino.h:
 
-/usr/share/arduino/libraries/Wire/Wire.h:
-
-/usr/share/arduino/hardware/arduino/cores/arduino/Stream.h:
+mc6821.h:
 
 cpubus.h:
 
 mcp23s17.h:
 
-mc6821.h:
+/usr/share/arduino/libraries/Wire/Wire.h:
+
+/usr/share/arduino/hardware/arduino/cores/arduino/Stream.h:
 
 latch.h:
 
+rom.h:
+
 lamps.h:
+
+switches.h:
 
 solenoids.h:
 
-lcdchars.h:
+pindacom.h:
 
 display.h:

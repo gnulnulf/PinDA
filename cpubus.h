@@ -78,25 +78,25 @@ class CPUBUSClass  : public PindaObj {
 	//virtual void init(void)=0;
 	
 	//! placeholder for interrupts
-	virtual void interrupt(void)=0;
+	virtual void interrupt(void);
 		
 	//! placeholder for untimed serviceLoop
-	virtual void serviceLoop(void)=0;
+	virtual void serviceLoop(void);
 	
 	
 	//! read byte from bus
-    virtual uint8_t read(const unsigned int address)=0;
+    virtual uint8_t read(const unsigned int address);
 	
 	//! write byte to bus
     virtual void write(const unsigned int address, const uint8_t data)=0;
 
 	//! toggle reset port on 68xx bus low
-	virtual void reset(void)=0;
+	virtual void reset(void);
 	// status
 	// getname
 	// interrupt
 	//String objName;
-	String status(void);
+	virtual String status(void);
 	protected:
 		unsigned long reads;		//!< amount of cpubus reads (diag)
 		unsigned long writes;		//!< amount of cpubus writes

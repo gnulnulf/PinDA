@@ -11,8 +11,9 @@ build/arduino/mcptest.o: mcptest.ino \
  /usr/share/arduino/hardware/arduino/variants/mega/pins_arduino.h \
  printf.h /usr/share/arduino/libraries/SPI/SPI.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h pinda.h \
- mcp23s17.h /usr/share/arduino/libraries/Wire/Wire.h \
- /usr/share/arduino/hardware/arduino/cores/arduino/Stream.h
+ mc6821.h cpubus.h mcp23s17.h /usr/share/arduino/libraries/Wire/Wire.h \
+ /usr/share/arduino/hardware/arduino/cores/arduino/Stream.h latch.h rom.h \
+ lamps.h switches.h solenoids.h pindacom.h display.h
 
 /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h:
 
@@ -42,8 +43,26 @@ printf.h:
 
 pinda.h:
 
+mc6821.h:
+
+cpubus.h:
+
 mcp23s17.h:
 
 /usr/share/arduino/libraries/Wire/Wire.h:
 
 /usr/share/arduino/hardware/arduino/cores/arduino/Stream.h:
+
+latch.h:
+
+rom.h:
+
+lamps.h:
+
+switches.h:
+
+solenoids.h:
+
+pindacom.h:
+
+display.h:

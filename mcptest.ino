@@ -1,7 +1,11 @@
 #ifdef RASPBERRY
 #include <iostream>
 #include "rpi/compatibility.h" 
-#define MCP_SELECT 8
+#define MCP_SELECT 7
+#define spio spi
+#include "rpi/spi.h"
+//#include <linux/spi/spidev.h>
+
 #endif
 
 
@@ -18,13 +22,40 @@
 Pinda pinda;
 
 
-MCP23S17 mcp0( MCP_SELECT, 0);
-MCP23S17 mcp1( MCP_SELECT, 1);
+//MCP23S17 mcp0( MCP_SELECT, 0);
+//MCP23S17 mcp1( MCP_SELECT, 1);
 //MCP23017 mcp0(0);
 
-uint8_t a=0;
+MCP23S17 mcpaddr( MCP_SELECT, 0);
+MCP23S17 mcpdata( MCP_SELECT, 1);
+//MCP23S17 mcpswitch( 53, 2);
+MCP23S17 mcplamps( MCP_SELECT, 2);
+
+Cpubus_SPI Cpubus(&mcpaddr, &mcpdata, "CPUBUS SPI");
+
+//PIA initialisation
+MC6821 PIAU10( &Cpubus , 0x2100 , "U10 SOLENOID/SOUND");
+MC6821 PIAU38( &Cpubus , 0x3000 , "U38 SWITCH");
+MC6821 PIAU41( &Cpubus , 0x2c00 , "U41 ALFADISPLAY" );
+MC6821 PIAU42( &Cpubus , 0x3400 , "U42 DISPLAY/WIDGET" );
+MC6821 PIAU51( &Cpubus , 0x2800 , "U51 DISPLAY" );
+MC6821 PIAU54( &Cpubus , 0x2400 , "U54 LAMPS" );
+
+// latched io
+LATCH8 latch_u28(&Cpubus, 0x2200, "U28 SOLENOIDS");
+
+
+//SPI * spiio;
+
+uint16_t x=0;
 void setup() {
-spiio->begin();
+//spiio = new SPI();
+//spiio->setdevice("/dev/spidev0.0");
+
+//spiio->setspeed(2000000);
+ //       spiio->setbits(8);
+//spiio->init();
+
     Serial.begin(115200);
   
   while (!Serial) {
@@ -58,29 +89,34 @@ Wire.write(0x12);             // Set Memory Pointer to Bank A
 Wire.write(0x55);                 // Write the Byte
 Wire.endTransmission();       // Close connection
   */
- mcp0.pinMode(true);
-  mcp1.pinMode(false);
- mcp0.port(0x3333);
-  mcp1.port(0xffff);  
- // mcp0.
+	mcpaddr.pinMode(0xffff);
+	mcpdata.pinMode(false);
+	mcpaddr.port(0x3333);
+	mcpdata.port(0xffff);  
 }
 
 
 
 void loop(void) {
+//digitalWrite( 8, LOW );
+//spiio->transfer3(0x40,0,x);
+//digitalWrite( 8, HIGH );
+
 	//cout << "Loop 1" <<endl;
-  a++;
-  mcp0.portA( a );
-delay(200);  
+  x++;
+  mcpaddr.port( x );
+//  mcpaddr.portA( x );
+//  mcpaddr.portB( ~x );
+delay(1);  
 }
 
 
 #ifdef RASPBERRY
 int main(void) {
 setup();
-//while(1) {
-loop();
-//}
+while(1) {
+	loop();
+}
 
 }
 #endif

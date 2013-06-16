@@ -43,15 +43,13 @@ MCP23S17::MCP23S17(uint8_t slave_select_pin, uint8_t aaa_hw_addr)
 //  spiio->setClockDivider(CLOCK_DIVIDER);   // Sets the SPI bus speed
 #ifdef ARDUINO
   spiio->setBitOrder(MSBFIRST);            // Sets SPI bus bit order (this is the default, setting it for good form!)
-#endif
- // spiio->setDataMode(SPI_MODE0);           // Sets the SPI bus timing mode (this is the default, setting it for good form!)
-  
-  //spiio->setClockDivider(0 );   // Sets the SPI bus speed
-  
-  ::digitalWrite(slave_select_pin, LOW);
-  spiio->transfer(0x40);
+ spiio->setDataMode(SPI_MODE0);           // Sets the SPI bus timing mode (this is the default, setting it for good form!)
+ spiio->setClockDivider(0 );   // Sets the SPI bus speed
+ ::digitalWrite(slave_select_pin, LOW);
 
-  spiio->transfer(IOCON);
+   spiio->transfer(0x40);
+
+ spiio->transfer(IOCON);
   spiio->transfer(0x08);
   ::digitalWrite(slave_select_pin, HIGH);
 
@@ -61,6 +59,15 @@ MCP23S17::MCP23S17(uint8_t slave_select_pin, uint8_t aaa_hw_addr)
   spiio->transfer(0b00001000);
   ::digitalWrite(slave_select_pin, HIGH);
   
+
+ #endif
+  
+#ifdef RASPBERRY 
+ spiio->transfer3(0x40,IOCON,0x08);
+ //uint8_t a[3]={0b01001110,IOCON,0x08};
+  spiio->transfer3(0b01001110,IOCON,0x08);
+
+ #endif
   
   
   // We enable HAEN on all connected devices before we can address them individually
@@ -92,10 +99,12 @@ uint8_t MCP23X17::uint16_low_byte(uint16_t uint16)
 
 void MCP23S17::setup_ss(uint8_t slave_select_pin)
 {
+	#ifdef ARDUINO
   // Set slave select (Chip Select) pin for SPI Bus, and start high (disabled)
   ::pinMode(slave_select_pin,OUTPUT);
   ::digitalWrite(slave_select_pin,HIGH);
   this->slave_select_pin = slave_select_pin;
+  #endif
 }
 
 void MCP23S17::setup_device(uint8_t aaa_hw_addr)
@@ -108,43 +117,87 @@ void MCP23S17::setup_device(uint8_t aaa_hw_addr)
 
 uint16_t MCP23S17::read_addr(uint8_t addr)
 {
-  uint8_t low_byte;
+#ifdef RASPBERRY
+	uint8_t d[4];
+	d[0]=write_cmd;
+	d[1]=addr;
+	d[2]=0;
+	d[3]=0;
+	return spiio->transfer16( d ,4 );
+#endif
+
+#ifdef ARDUINO
+	uint8_t low_byte;
   uint8_t high_byte;
   ::digitalWrite(slave_select_pin, LOW);
   spiio->transfer(read_cmd);
   spiio->transfer(addr);
-  low_byte  = spiio->transfer(0x0/*dummy data for read*/);
-  high_byte = spiio->transfer(0x0/*dummy data for read*/);
+  low_byte  = spiio->transfer((uint8_t)0x0/*dummy data for read*/);
+  high_byte = spiio->transfer((uint8_t)0x0/*dummy data for read*/);
   ::digitalWrite(slave_select_pin, HIGH);
   return byte2uint16(high_byte,low_byte);
+ #endif
 }
 
 uint8_t MCP23S17::read_addr_byte(uint8_t addr)
 {
+#ifdef RASPBERRY
+	uint8_t d[3];
+	d[0]=write_cmd;
+	d[1]=addr;
+	d[2]=0;
+	return spiio->transfer( d ,3);
+#endif
+
+#ifdef ARDUINO
   uint8_t low_byte;
-  ::digitalWrite(slave_select_pin, LOW);
+ ::digitalWrite(slave_select_pin, LOW);
 //	PORTB &= ~(1<<PB0);
   spiio->transfer(read_cmd);
-  spiio->transfer(addr);
-  low_byte  = spiio->transfer(0x0/*dummy data for read*/);
+ spiio->transfer(addr);
+ low_byte  = spiio->transfer((uint8_t)0x0/*dummy data for read*/);
   ::digitalWrite(slave_select_pin, HIGH);
 	//PORTB |= (1<<PB0);
   return low_byte;
+#endif
 }
 
 
 void MCP23S17::write_addr(uint8_t addr, uint16_t data)
 {
+#ifdef RASPBERRY
+	//uint8_t d[4]={write_cmd, addr, (uint8_t)(data>>8) ,(uint8_t)(data&0xff) };
+	uint8_t d[4];
+	d[0]=write_cmd;
+	d[1]=addr;
+	d[3]=(uint8_t)(data>>8);
+	d[2]=(uint8_t)(data&0xff);
+	spiio->transfer( d,4 );
+#endif
+
+#ifdef ARDUINO
   ::digitalWrite(slave_select_pin, LOW);
   spiio->transfer(write_cmd);
   spiio->transfer(addr);
   spiio->transfer(uint16_low_byte(data));
   spiio->transfer(uint16_high_byte(data));
   ::digitalWrite(slave_select_pin, HIGH);
+#endif
 }
 
 void MCP23S17::write_addr_byte(uint8_t addr, uint8_t data)
 {
+#ifdef RASPBERRY
+
+	uint8_t d[3];
+	d[0]=write_cmd;
+	d[1]=addr;
+	d[2]=data;
+
+	spiio->transfer( d ,3);
+#endif
+
+#ifdef ARDUINO
 //	PORTB &= ~(1<<PB0);
   ::digitalWrite(slave_select_pin, LOW);
   spiio->transfer(write_cmd);
@@ -152,6 +205,7 @@ void MCP23S17::write_addr_byte(uint8_t addr, uint8_t data)
   spiio->transfer(data);
   ::digitalWrite(slave_select_pin, HIGH);
 //  	PORTB |= (1<<PB0);
+#endif
 }
 
 
@@ -174,7 +228,7 @@ void MCP23X17::portA(uint8_t value)
 
 void MCP23X17::portB(uint8_t value)
 {
-  write_addr_byte(GPIOA,value);
+  write_addr_byte(GPIOB,value);
 }
 
 uint8_t MCP23X17::portA(void)

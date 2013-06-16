@@ -24,7 +24,7 @@ GPP=$(CROSSPATH)g++
 
 # define all programs
 #PROGRAMS = scanner pingtest pongtest
-PROGRAMS = mcptest
+PROGRAMS = mcptest cpubustest
 SOURCES = $(wildcard *.cpp)
 SOURCES += $(wildcard ./rpi/*.cpp)
 #OBJECTS = build/rpi/$(SOURCES:.cpp=.o)
@@ -59,6 +59,11 @@ libstatic:	$(OBJECTS)
 	@echo [STATIC LIB libpinda.a]
 	@ar rvs libpinda.a $(OBJECTS)
 	
+cpubustest: $(LIBNAME)
+	@echo [CREATE $@ ]
+	@$(GPP) ${CCFLAGS} -o build/rpi/$@ -lpinda -L. $(LDFLAGS) $(LDLIBS) -x c++  cpubustest.ino 
+#	@$(GPP) ${CCFLAGS} -o build/rpi/$@-static $(LDFLAGS) -x c++  cpubustest.ino libpinda.a
+
 mcptest: $(LIBNAME)
 	@echo [CREATE $@ ]
 	@$(GPP) ${CCFLAGS} -o build/rpi/$@ -lpinda -L. $(LDFLAGS) $(LDLIBS) -x c++  mcptest.ino 

@@ -106,7 +106,7 @@ void DISPLAY_WIL11A::setScore1( String _txt) {
 void DISPLAY_WIL11A::setScore2( String _txt) {
 	_txt += "                ";
 	for (int i=0;i<8;i++){
-		stext1[i+9]=_txt.CHARAT( i );
+		stext1[(i+9)]=_txt.CHARAT( i );
 	}
 } 
 

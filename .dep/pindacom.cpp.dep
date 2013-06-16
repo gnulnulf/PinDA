@@ -1,4 +1,4 @@
-build/arduino/solenoids.o: solenoids.cpp pinda.h \
+build/arduino/pindacom.o: pindacom.cpp pinda.h \
  /usr/share/arduino/libraries/SPI/SPI.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/binary.h \

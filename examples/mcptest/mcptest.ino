@@ -51,6 +51,7 @@ Wire.endTransmission();       // Close connection
 void loop(void) {
   a++;
   mcp0.portA( a );
+  mcp0.portB( ~a );
 delay(200);  
 }
 

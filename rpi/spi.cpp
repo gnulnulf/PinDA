@@ -6,42 +6,40 @@
  * 
  * Inspired from spidev test in linux kernel documentation
  * www.kernel.org/doc/Documentation/spi/spidev_test.c 
+ *
+ * changed by Arco van Geest <arco@appeltaart.mine.nu>
  */
 
 #include "spi.h"
+#include <iostream>
 
 SPI::SPI() {
-	
-//	this->device = "/dev/spidev0.0";;
+	this->device = "/dev/spidev0.0";;
 	this->bits = 8;
 //	this->speed = 24000000; // 24Mhz - proly doesnt work
 //	this->speed = 16000000; // 16Mhz 
 //	this->speed = 8000000; // 8Mhz 
-	this->speed = 2000000; // 2Mhz 
+	this->speed = 5000000; // 2Mhz 
 	this->mode = 0;
-
-//	this->init();
+	this->init();
 }
 
 void SPI::begin(void) {}
 
-void SPI::setbits( uint8_t bits )
-{
+void SPI::setbits( uint8_t bits ) {
  this->bits = bits;
 }
 
-void SPI::setspeed( uint32_t speed )
-{
+void SPI::setspeed( uint32_t speed ) {
  this->speed = speed;
 }
 
-void SPI::setdevice( string devicefile ) 
-{
+void SPI::setdevice( string devicefile ) {
 	this->device = devicefile;
 }
 
-void SPI::init()
-{
+void SPI::init() {
+cout << "SPI INIT" <<endl;
 	int ret;
 	this->fd = open(this->device.c_str(), O_RDWR);
 	if (this->fd < 0)
@@ -49,7 +47,6 @@ void SPI::init()
 		perror("can't open device");
 		abort();
 	}
-
 	/*
 	 * spi mode
 	 */
@@ -99,9 +96,96 @@ void SPI::init()
 		perror("can't set max speed hz");
 		abort();						
 	}
+} //init
+
+void SPI::transfer3 (uint8_t cmd,uint8_t reg, uint8_t data)
+{
+uint8_t spiBufTx [3] ;
+uint8_t spiBufRx [3] ;
+struct spi_ioc_transfer spi ;
+spiBufTx [0] = cmd ;
+spiBufTx [1] = reg ;
+spiBufTx [2] = data ;
+//cout << "SPI transfer3 "<< spiBufTx[0]+0 << "-"<<  spiBufTx[1]+0 <<"-"<< spiBufTx[2]+0 <<endl;
+spi.tx_buf = (unsigned long)spiBufTx ;
+spi.rx_buf = (unsigned long)spiBufRx ;
+
+spi.len = 3 ;
+spi.delay_usecs = 0 ;
+spi.speed_hz = this->speed ;
+spi.bits_per_word = this->bits;
+ioctl (this->fd, SPI_IOC_MESSAGE(1), &spi) ;
 }
 
-uint8_t SPI::transfer(uint8_t tx_)
+
+
+uint8_t SPI::transfer (uint8_t data[] ,uint8_t length) {
+	int ret;
+	int sz=length;
+	if ( length > 15 ) {
+			perror("message size too big");
+			abort();		
+	}
+	uint8_t spiBufTx [16] ;
+	uint8_t spiBufRx [16] ;
+	for ( uint8_t i=0; i<sz;i++) {
+		spiBufTx[i]=data[i];
+	}
+	
+	struct spi_ioc_transfer spi ;
+	spi.tx_buf = (unsigned long)spiBufTx ;
+	spi.rx_buf = (unsigned long)spiBufRx ;
+	spi.len = sz ;
+	spi.delay_usecs = 0 ;
+	spi.speed_hz = this->speed ;
+	spi.bits_per_word = this->bits ;
+
+//cout << "SPI transfer8 ("<< sz  << ") "<<  spiBufTx[0]+0 << "-"<< spiBufTx[1]+0 <<"-"<< spiBufTx[2]+0 <<"-"<<spiBufTx[3]+0 <<endl;
+
+	ret = ioctl(this->fd, SPI_IOC_MESSAGE(1), &spi);
+	if (ret < 1)
+	{
+		perror("can't send spi message");
+		abort();		
+	}
+	return spiBufRx[sz-1];
+} //transfer array
+
+uint16_t SPI::transfer16(uint8_t data[] ,uint8_t length) {
+	int ret;
+	uint8_t size=length;
+	if ( size > 15 ) {
+			perror("message size too big");
+			abort();		
+	}
+	uint8_t spiBufTx [16] ;
+	uint8_t spiBufRx [16] ;
+	for ( uint8_t i=0; i<size;i++) {
+		spiBufTx[i]=data[i];
+	}
+cout << "SPI transfer16 "<< size <<endl;
+	
+	struct spi_ioc_transfer spi ;
+	spi.tx_buf = (unsigned long)spiBufTx ;
+	spi.rx_buf = (unsigned long)spiBufRx ;
+	spi.len = size ;
+	spi.delay_usecs = 0 ;
+	spi.speed_hz = this->speed ;
+	spi.bits_per_word = this->bits ;
+
+	ret = ioctl(this->fd, SPI_IOC_MESSAGE(1), &spi);
+	if (ret < 1)
+	{
+		perror("can't send spi message");
+		abort();		
+	}
+	return (spiBufRx[size-2] << 8) & spiBufRx[size-1];
+} //transfer array
+
+
+
+
+uint8_t SPI::transfernot(uint8_t tx_)
 {
 	int ret;
 	// One byte is transfered at once

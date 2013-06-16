@@ -47,6 +47,9 @@ Pinda::Pinda(void) {
 #ifdef RASPBERRY
 spiio = new SPI();
 spiio->setdevice("/dev/spidev0.0");
+
+//spiio->setspeed(2000000);
+//        spiio->setbits(8);
 spiio->init();
 #endif
 #ifdef ARDUINO

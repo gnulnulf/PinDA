@@ -256,29 +256,29 @@ extern Pinda pinda;
 //#include "cpubus.h"
 
 // mc6821 access
-//#include "mc6821.h"
+#include "mc6821.h"
 #include "mcp23s17.h"
 
-//#include "latch.h"
+#include "latch.h"
 
 //rom access 
-//#include "rom.h"
+#include "rom.h"
 
 //lamps 
-//#include "lamps.h"
+#include "lamps.h"
 
 //switches
-//#include "switches.h"
+#include "switches.h"
 
 //solenoids
-//#include "solenoids.h"
+#include "solenoids.h"
 
 //protocol master-slave
-//#include "pindacom.h"
+#include "pindacom.h"
 
 //display
 //#include "lcdchars.h"
-//#include "display.h"
+#include "display.h"
 
 // --------------------------------------------------------
 // Framework Documentation
