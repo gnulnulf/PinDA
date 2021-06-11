@@ -42,7 +42,7 @@ typedef void (*voidFunction) (void);
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <inttypes.h>
-#include <String>
+#include <string.h>
 
 #include <Wire.h>
 
