@@ -1,4 +1,4 @@
-Arduino Mega -> 6809 socket
+## Arduino Mega -> 6809 socket
 
 ```
 PA0-7 A0-A7
@@ -23,7 +23,7 @@ PK7 I/O *not a 6809 line
 
 ```
 
-6809pin | 6809 | atmel2560  | arduinopin |
+6809pin | 6809signal | atmel2560  | arduinopin |
 |--:| -----|  -------: | -----: |
 |8| A0 | PA0 | D22 |
 |9| A1 | PA1 | D23 |
@@ -57,3 +57,75 @@ PK7 I/O *not a 6809 line
 |4| /FIRQ | PF5  |A5|
 |3| /IRQ | PF6  |A6|
 |2| /NMI| PF7 |A7 |
+
+
+## to DMD controller
+marked * signals are not from cpu
+
+J202 | 6809signal | atmel2560  | arduinopin |
+|--:| -----|  -------: | -----: |
+|1| A12| PC4 | D33 |
+|2| GND|
+|3| A11| PC3 | D34 |
+|4| GND|
+|5| A10| PC2 | D35 |
+|6| GND|
+|7| A9| PC1 | D36 |
+|8| GND|
+|9| A8 | PC0 | D37 |
+|10| GND|
+|11| A7 | PA7 | D29 |
+|12| GND|
+|13| A6 | PA6 | D28 |
+|14| GND|
+|15| A5 | PA5 | D27 |
+|16| GND|
+|17| /FIRQ | PF5  |A5|
+|18| GND|
+|19| IO* | PK7  |A15|
+|20| GND|
+|21| /IRQ | PF6  |A6|
+|22| GND|
+|23|E |PF1|A1|
+|24| GND|
+|25|Q |PF2  |A2|
+|26| GND|
+
+
+J202 | 6809signal | atmel2560  | arduinopin |
+|--:| -----|  -------: | -----: |
+|1| D7 | PL7 | D42 |
+|2| GND|
+|3| D6 | PL6 | D43 |
+|4| GND|
+|5| D5 | PL5 | D44 |
+|6| GND|
+|7| D4 | PL4 | D45 |
+|8| GND|
+|9| D3 | PL3 | D46 |
+|10| GND|
+|11| D2 | PL2 | D47 |
+|12| GND|
+|13| D1 | PL1 | D48 |
+|14| GND|
+|15| D0 | PL0 | D49 |
+|16| GND|
+|17| A4 | PA4 | D26 |
+|18| GND|
+|19| A3 | PA3 | D25 |
+|20| GND|
+|21| A2 | PA2 | D24 |
+|22| GND|
+|23| A1 | PA1 | D23 |
+|24| GND|
+|25| A0 | PA0 | D22 |
+|26| GND|
+|27|BLANK*||
+|28| GND|
+|29|WDEN||
+|30| GND|
+|31|R/W| PF0| A0|
+|32| NC|
+|33| /RESET | PF3   |A3|
+|34| /FIRQ | PF5  |A5|
+
