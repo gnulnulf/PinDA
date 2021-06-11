@@ -1,4 +1,4 @@
-Arduino Mega -> 6802 socket
+## Arduino Mega -> 6802 socket
 
 ```
 PA0-7 A0-A7
@@ -48,3 +48,6 @@ PF7   /NMI
 |3| MR | PF5  |A5|
 |4| /IRQ | PF6  |A6|
 |6| /NMI| PF7 |A7 |
+|1|VSS
+|8|VCC
+|21|VSS
