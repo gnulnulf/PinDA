@@ -120,9 +120,9 @@ J202 | 6809signal | atmel2560  | arduinopin |
 |24| GND|
 |25| A0 | PA0 | D22 |
 |26| GND|
-|27|BLANK*||
+|27|BLANK* | PK5 | A13 | 
 |28| GND|
-|29|WDEN||
+|29|WDEN| PK6 | A14|
 |30| GND|
 |31|R/W| PF0| A0|
 |32| NC|
